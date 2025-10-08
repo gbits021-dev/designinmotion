@@ -9,14 +9,28 @@ export default function Home() {
 
   return (
     <main id="top" className="text-gray-800">
-      {/* HERO SECTION */}
-      {/* HERO SECTION */}
-<section
-  className="relative h-[60vh] sm:h-[50vh] bg-cover bg-center text-white flex flex-col justify-between"
-  style={{
-    backgroundImage: "url('/Asset 1.png')",
-  }}
->
+      import Image from "next/image"; // add at the top of your file
+
+{/* HERO SECTION */}
+<section className="relative h-[60vh] sm:h-[50vh] flex flex-col justify-between text-white overflow-hidden">
+  {/* Optimized responsive banner */}
+  <div className="absolute inset-0 -z-10">
+    <Image
+      src="/banner.jpg" // this is your new uploaded banner file
+      alt="Design in Motion Banner"
+      fill
+      priority
+      quality={90}
+      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
+      style={{
+        objectFit: "cover",
+        objectPosition: "center top",
+      }}
+    />
+    {/* Optional subtle overlay to improve contrast */}
+    <div className="absolute inset-0 bg-black/25" />
+  </div>
+
   {/* Top Row: Title + Flags */}
   <div className="flex justify-between items-start px-4 pt-4 sm:px-8 sm:pt-6">
     {/* Title + Logo (Side by Side, with background) */}
@@ -25,7 +39,7 @@ export default function Home() {
         {t[lang].title}
       </h1>
       <img
-        src={lang === "ka" ? "/თეთრი ლოგო.png" : "/Asset 7.png"}
+        src={lang === "ka" ? "/dio-logo-ka.png" : "/dio-logo-en.png"}
         alt="DIO Logo"
         className="h-10 sm:h-12 md:h-14 object-contain"
       />
@@ -45,7 +59,6 @@ export default function Home() {
           className="w-6 h-4 sm:w-8 sm:h-5 rounded-sm border border-white/40"
         />
       </button>
-
       <button
         onClick={() => setLang("en")}
         className={`transition transform hover:scale-105 ${
@@ -136,6 +149,7 @@ export default function Home() {
     )}
   </div>
 </section>
+
 
       {/* ABOUT */}
       <section
