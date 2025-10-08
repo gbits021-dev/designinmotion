@@ -61,15 +61,13 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Centered Text */}
-        <div className="text-center px-4 mt-6 sm:mt-0 z-10">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 drop-shadow-lg">
-            {t[lang].title}
-          </h2>
-          <p className="text-sm sm:text-base md:text-lg max-w-2xl mx-auto drop-shadow-md">
-            {t[lang].subtitle}
-          </p>
-        </div>
+        {/* Centered Subtitle Only */}
+<div className="text-center px-4 mt-6 sm:mt-0 z-10">
+  <p className="inline-block bg-blue-800/90 text-white text-sm sm:text-base md:text-lg max-w-3xl mx-auto px-4 py-2 rounded-md shadow-lg backdrop-blur-sm">
+    {t[lang].subtitle}
+  </p>
+</div>
+
 
         {/* --- BOTTOM NAVIGATION AREA --- */}
         <div className="relative">
