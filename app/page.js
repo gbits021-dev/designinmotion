@@ -41,59 +41,64 @@ export default function Home() {
   };
 
   return (
-    <main id="top">
-      {/* HEADER */}
-      <header className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur border-b border-gray-200 z-50">
-        <div className="max-w-6xl mx-auto flex items-center justify-between p-4">
-          {/* Logo */}
-          <a
-            href="#top"
-            className="font-bold text-blue-700 text-lg hover:text-blue-900 transition"
-          >
-            Design in Motion
-          </a>
-
-          {/* Navigation Menu */}
-          <nav className="hidden md:flex space-x-6">
-            <a href="#about" className="text-gray-700 hover:text-blue-700 transition">
-              {t[lang].menu[0]}
-            </a>
-            <a href="#partners" className="text-gray-700 hover:text-blue-700 transition">
-              {t[lang].menu[1]}
-            </a>
-            <a href="#venue" className="text-gray-700 hover:text-blue-700 transition">
-              {t[lang].menu[2]}
-            </a>
-            <a href="#agenda" className="text-gray-700 hover:text-blue-700 transition">
-              {t[lang].menu[3]}
-            </a>
-            <a href="#registration" className="text-gray-700 hover:text-blue-700 transition">
-              {t[lang].menu[4]}
-            </a>
-          </nav>
-
-          {/* Language Toggle */}
-          <div className="flex items-center">
+    <main id="top" className="text-gray-800">
+      {/* HERO SECTION */}
+      <section
+        className="relative h-screen bg-cover bg-center text-white flex flex-col justify-between"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1920&q=80')",
+        }}
+      >
+        {/* Top Row: Title & Language */}
+        <div className="flex justify-between items-center px-8 pt-6">
+          <h1 className="text-2xl font-bold tracking-wide">
+            {t[lang].title} <span className="text-blue-300">by DIO</span>
+          </h1>
+          <div>
             <button
               onClick={() => setLang("ka")}
-              className={`mr-2 ${lang === "ka" ? "font-semibold text-blue-700" : ""}`}
+              className={`mr-2 ${lang === "ka" ? "font-semibold text-blue-300" : ""}`}
             >
               🇬🇪
             </button>
             <button
               onClick={() => setLang("en")}
-              className={`${lang === "en" ? "font-semibold text-blue-700" : ""}`}
+              className={`${lang === "en" ? "font-semibold text-blue-300" : ""}`}
             >
               🇬🇧
             </button>
           </div>
         </div>
-      </header>
 
-      {/* HERO SECTION */}
-      <section className="pt-24 bg-gradient-to-b from-blue-700 to-blue-900 text-white text-center py-32">
-        <h2 className="text-4xl font-bold mb-4">{t[lang].title}</h2>
-        <p className="text-lg">{t[lang].subtitle}</p>
+        {/* Centered Text */}
+        <div className="text-center px-4">
+          <h2 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">
+            {t[lang].title}
+          </h2>
+          <p className="text-lg md:text-xl max-w-2xl mx-auto drop-shadow-md">
+            {t[lang].subtitle}
+          </p>
+        </div>
+
+        {/* Bottom Menu */}
+        <nav className="bg-black/40 backdrop-blur-sm w-full py-4 flex justify-center space-x-6 text-sm md:text-base">
+          <a href="#about" className="hover:text-blue-300 transition">
+            {t[lang].menu[0]}
+          </a>
+          <a href="#partners" className="hover:text-blue-300 transition">
+            {t[lang].menu[1]}
+          </a>
+          <a href="#venue" className="hover:text-blue-300 transition">
+            {t[lang].menu[2]}
+          </a>
+          <a href="#agenda" className="hover:text-blue-300 transition">
+            {t[lang].menu[3]}
+          </a>
+          <a href="#registration" className="hover:text-blue-300 transition">
+            {t[lang].menu[4]}
+          </a>
+        </nav>
       </section>
 
       {/* ABOUT */}
