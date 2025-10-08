@@ -182,50 +182,60 @@ export default function Home() {
           </div>
         </section>
 
-        {/* COUNTDOWN TIMER SECTION - 20% */}
+        {/* COUNTDOWN TIMER SECTION - 20% - DIGITAL CLOCK STYLE */}
         <section className="bg-[#21263A] h-[20%] flex items-center justify-center px-4">
-          <div className="w-full max-w-5xl">
-            <h2 className="text-white text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 text-center">
+          <div className="w-full max-w-5xl text-center">
+            <h2 className="text-white text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-3 sm:mb-4">
               {lang === "en" ? "Event Starts In" : "ღონისძიება იწყება"}
             </h2>
             
-            <div className="grid grid-cols-4 gap-2 sm:gap-3 md:gap-4 mb-2 sm:mb-3">
+            {/* Digital Clock Style Countdown */}
+            <div className="flex items-center justify-center gap-2 sm:gap-3 mb-2 sm:mb-3">
               {/* Days */}
-              <div className="bg-white/10 backdrop-blur-md rounded-lg p-2 sm:p-3 md:p-4 shadow-xl border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105 text-center">
-                <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">
-                  {timeLeft.days}
+              <div className="text-center">
+                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tabular-nums">
+                  {String(timeLeft.days).padStart(2, '0')}
                 </div>
-                <div className="text-blue-200 text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-semibold uppercase tracking-wide mt-0.5 sm:mt-1">
+                <div className="text-blue-200 text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-semibold uppercase tracking-wide mt-1">
                   {lang === "en" ? "Days" : "დღე"}
                 </div>
               </div>
 
+              {/* Separator : */}
+              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white pb-5">:</div>
+
               {/* Hours */}
-              <div className="bg-white/10 backdrop-blur-md rounded-lg p-2 sm:p-3 md:p-4 shadow-xl border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105 text-center">
-                <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">
-                  {timeLeft.hours}
+              <div className="text-center">
+                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tabular-nums">
+                  {String(timeLeft.hours).padStart(2, '0')}
                 </div>
-                <div className="text-blue-200 text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-semibold uppercase tracking-wide mt-0.5 sm:mt-1">
+                <div className="text-blue-200 text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-semibold uppercase tracking-wide mt-1">
                   {lang === "en" ? "Hours" : "საათი"}
                 </div>
               </div>
 
+              {/* Separator : */}
+              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white pb-5">:</div>
+
               {/* Minutes */}
-              <div className="bg-white/10 backdrop-blur-md rounded-lg p-2 sm:p-3 md:p-4 shadow-xl border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105 text-center">
-                <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">
-                  {timeLeft.minutes}
+              <div className="text-center">
+                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tabular-nums">
+                  {String(timeLeft.minutes).padStart(2, '0')}
                 </div>
-                <div className="text-blue-200 text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-semibold uppercase tracking-wide mt-0.5 sm:mt-1">
+                <div className="text-blue-200 text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-semibold uppercase tracking-wide mt-1">
                   {lang === "en" ? "Minutes" : "წუთი"}
                 </div>
               </div>
 
+              {/* Separator : */}
+              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white pb-5">:</div>
+
               {/* Seconds */}
-              <div className="bg-white/10 backdrop-blur-md rounded-lg p-2 sm:p-3 md:p-4 shadow-xl border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105 text-center">
-                <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">
-                  {timeLeft.seconds}
+              <div className="text-center">
+                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tabular-nums">
+                  {String(timeLeft.seconds).padStart(2, '0')}
                 </div>
-                <div className="text-blue-200 text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-semibold uppercase tracking-wide mt-0.5 sm:mt-1">
+                <div className="text-blue-200 text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-semibold uppercase tracking-wide mt-1">
                   {lang === "en" ? "Seconds" : "წამი"}
                 </div>
               </div>
