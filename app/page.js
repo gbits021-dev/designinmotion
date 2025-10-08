@@ -24,11 +24,12 @@ export default function Home() {
       <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-wide">
         {t[lang].title}
       </h1>
-      <img
-  src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/DIO_logo_placeholder.svg/2560px-DIO_logo_placeholder.svg.png"
+    <img
+  src="/თეთრი ლოგო.png"
   alt="DIO Logo"
-  className="h-6 sm:h-8"
+  className="h-8 sm:h-10 object-contain"
 />
+
     </div>
 
     {/* Flags */}
