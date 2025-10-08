@@ -38,7 +38,7 @@ export default function Home() {
               {t[lang].title}
             </h1>
             <img
-              src={lang === "ka" ? "/dio-logo-ka.png" : "/dio-logo-en.png"}
+              src={lang === "ka" ? "/dio-logo-ka.svg" : "/dio-logo-en.svg"}
               alt="DIO Logo"
               className="h-10 sm:h-12 md:h-14 object-contain"
             />
