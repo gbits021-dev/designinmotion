@@ -25,10 +25,10 @@ export default function Home() {
         {t[lang].title}
       </h1>
       <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/DIO_logo_placeholder.svg/2560px-DIO_logo_placeholder.svg.png"
-        alt="DIO Logo"
-        className="h-6 sm:h-8"
-      />
+  src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/DIO_logo_placeholder.svg/2560px-DIO_logo_placeholder.svg.png"
+  alt="DIO Logo"
+  className="h-6 sm:h-8"
+/>
     </div>
 
     {/* Flags */}
