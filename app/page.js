@@ -7,7 +7,8 @@ export default function Home() {
     en: {
       menu: ["About", "Partners", "Venue", "Agenda", "Registration"],
       title: "Design in Motion",
-      subtitle: "DIO Architects Event 2025 – Innovation in Architecture and Building Systems",
+      subtitle:
+        "DIO Architects Event 2025 – Innovation in Architecture and Building Systems",
       about: "About the Event",
       aboutText:
         "Design in Motion brings together architects, designers, and developers to explore innovation in architecture, sustainability, and design.",
@@ -24,7 +25,8 @@ export default function Home() {
     ka: {
       menu: ["შესახებ", "პარტნიორები", "ადგილი", "დღის პროგრამა", "რეგისტრაცია"],
       title: "Design in Motion",
-      subtitle: "DIO არქიტექტორთა ღონისძიება 2025 – ინოვაცია არქიტექტურასა და მშენებლობაში",
+      subtitle:
+        "DIO არქიტექტორთა ღონისძიება 2025 – ინოვაცია არქიტექტურასა და მშენებლობაში",
       about: "ღონისძიების შესახებ",
       aboutText:
         "Design in Motion აერთიანებს არქიტექტორებს, დიზაინერებსა და დეველოპერებს, რათა ერთად განიხილონ ინოვაციები არქიტექტურაში, მდგრადობაში და დიზაინში.",
@@ -44,77 +46,86 @@ export default function Home() {
     <main id="top" className="text-gray-800">
       {/* HERO SECTION */}
       <section
-        className="relative h-[60vh] bg-cover bg-center text-white flex flex-col justify-between"
+        className="relative h-[60vh] sm:h-[50vh] bg-cover bg-center text-white flex flex-col justify-between"
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1920&q=80')",
         }}
       >
-        {/* Top Row: Title & Language */}
-        <div className="flex justify-between items-center px-8 pt-6">
-          <div className="flex items-center">
-            <h1 className="text-2xl md:text-3xl font-bold tracking-wide">
+        {/* Top Row: Title + Language */}
+        <div className="flex flex-wrap justify-between items-center px-4 pt-4 sm:px-8 sm:pt-6">
+          <div className="flex items-center space-x-2">
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-wide">
               {t[lang].title}
             </h1>
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/DIO_logo_placeholder.svg/2560px-DIO_logo_placeholder.svg.png"
               alt="DIO Logo"
-              className="h-8 ml-2"
+              className="h-6 sm:h-8"
             />
           </div>
-          <div>
+
+          {/* Language Flags */}
+          <div className="flex items-center space-x-3 mt-2 sm:mt-0">
             <button
               onClick={() => setLang("ka")}
-              className={`mr-2 ${lang === "ka" ? "font-semibold text-blue-300" : ""}`}
+              className={`transition transform hover:scale-105 ${
+                lang === "ka" ? "opacity-100" : "opacity-60"
+              }`}
             >
-              🇬🇪
+              <img
+                src="https://flagcdn.com/w20/ge.png"
+                alt="Georgian"
+                className="w-6 h-4 sm:w-8 sm:h-5 rounded-sm border border-white/40"
+              />
             </button>
+
             <button
               onClick={() => setLang("en")}
-              className={`${lang === "en" ? "font-semibold text-blue-300" : ""}`}
+              className={`transition transform hover:scale-105 ${
+                lang === "en" ? "opacity-100" : "opacity-60"
+              }`}
             >
-              🇬🇧
+              <img
+                src="https://flagcdn.com/w20/gb.png"
+                alt="English"
+                className="w-6 h-4 sm:w-8 sm:h-5 rounded-sm border border-white/40"
+              />
             </button>
           </div>
         </div>
 
         {/* Centered Text */}
         <div className="text-center px-4">
-          <h2 className="text-4xl md:text-5xl font-bold mb-3 drop-shadow-lg">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 drop-shadow-lg">
             {t[lang].title}
           </h2>
-          <p className="text-base md:text-lg max-w-2xl mx-auto drop-shadow-md">
+          <p className="text-sm sm:text-base md:text-lg max-w-2xl mx-auto drop-shadow-md">
             {t[lang].subtitle}
           </p>
         </div>
 
         {/* Bottom Menu */}
-        <nav className="bg-black/50 backdrop-blur-sm w-full py-5 flex justify-center space-x-8 text-base md:text-lg font-semibold">
-          <a href="#about" className="hover:text-blue-300 transition">
-            {t[lang].menu[0]}
-          </a>
-          <a href="#partners" className="hover:text-blue-300 transition">
-            {t[lang].menu[1]}
-          </a>
-          <a href="#venue" className="hover:text-blue-300 transition">
-            {t[lang].menu[2]}
-          </a>
-          <a href="#agenda" className="hover:text-blue-300 transition">
-            {t[lang].menu[3]}
-          </a>
-          <a href="#registration" className="hover:text-blue-300 transition">
-            {t[lang].menu[4]}
-          </a>
+        <nav className="bg-black/50 backdrop-blur-sm w-full py-4 overflow-x-auto whitespace-nowrap flex justify-center space-x-4 sm:space-x-6 md:space-x-8 text-sm sm:text-base md:text-lg font-semibold scrollbar-hide">
+          {t[lang].menu.map((m, i) => (
+            <a
+              key={i}
+              href={`#${["about", "partners", "venue", "agenda", "registration"][i]}`}
+              className="hover:text-blue-300 transition px-2"
+            >
+              {m}
+            </a>
+          ))}
         </nav>
       </section>
 
       {/* ABOUT */}
       <section
         id="about"
-        className="max-w-6xl mx-auto py-20 grid md:grid-cols-2 gap-8 px-4"
+        className="max-w-6xl mx-auto py-16 sm:py-20 grid md:grid-cols-2 gap-8 px-4"
       >
         <div>
-          <h3 className="text-3xl font-semibold text-blue-700 mb-4">
+          <h3 className="text-2xl sm:text-3xl font-semibold text-blue-700 mb-4">
             {t[lang].about}
           </h3>
           <p>{t[lang].aboutText}</p>
@@ -129,12 +140,12 @@ export default function Home() {
       </section>
 
       {/* PARTNERS */}
-      <section id="partners" className="bg-gray-50 py-20">
+      <section id="partners" className="bg-gray-50 py-16 sm:py-20">
         <div className="max-w-6xl mx-auto px-4 text-center">
-          <h3 className="text-3xl font-semibold text-blue-700 mb-10">
+          <h3 className="text-2xl sm:text-3xl font-semibold text-blue-700 mb-10">
             {t[lang].partners}
           </h3>
-          <div className="grid md:grid-cols-3 gap-10">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-10">
             {[
               { name: "DIO", link: "https://dio.ge" },
               { name: "Aluplast", link: "https://aluplast.net" },
@@ -156,8 +167,8 @@ export default function Home() {
       </section>
 
       {/* VENUE */}
-      <section id="venue" className="max-w-6xl mx-auto py-20 px-4 text-center">
-        <h3 className="text-3xl font-semibold text-blue-700 mb-4">
+      <section id="venue" className="max-w-6xl mx-auto py-16 sm:py-20 px-4 text-center">
+        <h3 className="text-2xl sm:text-3xl font-semibold text-blue-700 mb-4">
           {t[lang].venue}
         </h3>
         <p className="mb-2">📅 {t[lang].date}</p>
@@ -174,8 +185,8 @@ export default function Home() {
       </section>
 
       {/* AGENDA */}
-      <section id="agenda" className="py-20 bg-white text-center">
-        <h3 className="text-3xl font-semibold text-blue-700 mb-6">
+      <section id="agenda" className="py-16 sm:py-20 bg-white text-center">
+        <h3 className="text-2xl sm:text-3xl font-semibold text-blue-700 mb-6">
           {t[lang].agenda}
         </h3>
         <img
@@ -186,8 +197,8 @@ export default function Home() {
       </section>
 
       {/* REGISTRATION */}
-      <section id="registration" className="bg-gray-50 py-20 text-center">
-        <h3 className="text-3xl font-semibold text-blue-700 mb-4">
+      <section id="registration" className="bg-gray-50 py-16 sm:py-20 text-center">
+        <h3 className="text-2xl sm:text-3xl font-semibold text-blue-700 mb-4">
           {t[lang].registration}
         </h3>
         <p className="mb-6">{t[lang].free}</p>
