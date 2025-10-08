@@ -1,12 +1,44 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import translations from "./translations";
-import Image from "next/image"; // ✅ correct position — always at top
+import Image from "next/image";
 
 export default function Home() {
   const [lang, setLang] = useState("en");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
   const t = translations;
+
+  // Countdown Timer Logic
+  useEffect(() => {
+    const eventDate = new Date("2025-11-20T11:00:00").getTime();
+
+    const updateCountdown = () => {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+
+      if (distance > 0) {
+        setTimeLeft({
+          days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((distance % (1000 * 60)) / 1000),
+        });
+      } else {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+      }
+    };
+
+    updateCountdown();
+    const interval = setInterval(updateCountdown, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <main id="top" className="text-gray-800">
@@ -15,7 +47,7 @@ export default function Home() {
         {/* Optimized responsive banner */}
         <div className="absolute inset-0 -z-10">
           <Image
-            src="/banner.jpg" // ✅ make sure this file exists in /public/
+            src="/banner.jpg"
             alt="Design in Motion Banner"
             fill
             priority
@@ -26,7 +58,6 @@ export default function Home() {
               objectPosition: "center top",
             }}
           />
-          {/* Optional overlay for better contrast */}
           <div className="absolute inset-0 bg-black/25" />
         </div>
 
@@ -146,6 +177,63 @@ export default function Home() {
               ))}
             </nav>
           )}
+        </div>
+      </section>
+
+      {/* COUNTDOWN TIMER SECTION */}
+      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 py-12 sm:py-16">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <h2 className="text-white text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-12">
+            {lang === "en" ? "Event Starts In" : "ღონისძიება იწყება"}
+          </h2>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 max-w-4xl mx-auto">
+            {/* Days */}
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-6 shadow-2xl border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+              <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-2">
+                {timeLeft.days}
+              </div>
+              <div className="text-blue-200 text-sm sm:text-base md:text-lg font-semibold uppercase tracking-wider">
+                {lang === "en" ? "Days" : "დღე"}
+              </div>
+            </div>
+
+            {/* Hours */}
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-6 shadow-2xl border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+              <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-2">
+                {timeLeft.hours}
+              </div>
+              <div className="text-blue-200 text-sm sm:text-base md:text-lg font-semibold uppercase tracking-wider">
+                {lang === "en" ? "Hours" : "საათი"}
+              </div>
+            </div>
+
+            {/* Minutes */}
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-6 shadow-2xl border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+              <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-2">
+                {timeLeft.minutes}
+              </div>
+              <div className="text-blue-200 text-sm sm:text-base md:text-lg font-semibold uppercase tracking-wider">
+                {lang === "en" ? "Minutes" : "წუთი"}
+              </div>
+            </div>
+
+            {/* Seconds */}
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-6 shadow-2xl border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+              <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-2">
+                {timeLeft.seconds}
+              </div>
+              <div className="text-blue-200 text-sm sm:text-base md:text-lg font-semibold uppercase tracking-wider">
+                {lang === "en" ? "Seconds" : "წამი"}
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-8 sm:mt-10">
+            <p className="text-blue-100 text-base sm:text-lg md:text-xl font-medium">
+              📅 {t[lang].date} | 🏛️ {t[lang].place}
+            </p>
+          </div>
         </div>
       </section>
 
