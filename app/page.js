@@ -185,11 +185,11 @@ export default function Home() {
         {/* COUNTDOWN TIMER SECTION - 20% */}
         <section className="bg-[#21263A] h-[20%] flex items-center justify-center px-4">
           <div className="w-full max-w-5xl">
-            <h2 className="text-white text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 text-center">
+            <h2 className="text-white text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 text-center">
               {lang === "en" ? "Event Starts In" : "ღონისძიება იწყება"}
             </h2>
             
-            <div className="grid grid-cols-4 gap-2 sm:gap-3 md:gap-4">
+            <div className="grid grid-cols-4 gap-2 sm:gap-3 md:gap-4 mb-2 sm:mb-3">
               {/* Days */}
               <div className="bg-white/10 backdrop-blur-md rounded-lg p-2 sm:p-3 md:p-4 shadow-xl border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105 text-center">
                 <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">
@@ -229,6 +229,13 @@ export default function Home() {
                   {lang === "en" ? "Seconds" : "წამი"}
                 </div>
               </div>
+            </div>
+
+            {/* Event Details */}
+            <div className="text-center">
+              <p className="text-blue-100 text-[10px] sm:text-xs md:text-sm lg:text-base font-medium">
+                📅 {t[lang].date} | 🏛️ {t[lang].place}
+              </p>
             </div>
           </div>
         </section>
@@ -290,7 +297,7 @@ export default function Home() {
           {t[lang].venue}
         </h3>
         <p className="mb-2">📅 {t[lang].date}</p>
-        <p className="mb-4">🏛️ {t[lang].place}</p>
+        <p className="mb-4">🏛️ {t[lang].placeDetailed}</p>
         <iframe
           title="Map"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2977.4926763019713!2d44.80099097649392!3d41.69453997126108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40440cd7de7e0a07%3A0x48e82e1c1a0b5935!2sTbilisi%20Marriott%20Hotel!5e0!3m2!1sen!2sge!4v1696000000000!5m2!1sen!2sge"
