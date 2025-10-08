@@ -17,20 +17,18 @@ export default function Home() {
       "url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1920&q=80')",
   }}
 >
-  {/* Top Row: Title + Flags */}
-  <div className="flex justify-between items-center px-4 pt-4 sm:px-8 sm:pt-6">
-    {/* Title + Logo */}
-    <div className="flex items-center space-x-2">
-      <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-wide">
-        {t[lang].title}
-      </h1>
-    <img
-  src="/თეთრი ლოგო.png"
-  alt="DIO Logo"
-  className="h-8 sm:h-10 object-contain"
-/>
+{/* Title + Logo (with background) */}
+<div className="bg-[#21263A]/90 px-4 py-3 rounded-md shadow-md flex flex-col items-start">
+  <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-wide text-white">
+    {t[lang].title}
+  </h1>
+  <img
+    src={lang === "ka" ? "/თეთრი ლოგო.png" : "/Asset 7.png"}
+    alt="DIO Logo"
+    className="mt-2 h-10 sm:h-12 md:h-14 object-contain"
+  />
+</div>
 
-    </div>
 
     {/* Flags */}
     <div className="flex items-center space-x-3 mt-2 sm:mt-0">
@@ -64,10 +62,11 @@ export default function Home() {
 
   {/* Blue Subtitle Bar (Bottom of Hero) */}
   <div className="absolute bottom-14 w-full text-center">
-    <p className="inline-block bg-blue-800/90 text-white text-sm sm:text-base md:text-lg px-6 py-2 rounded-md shadow-lg backdrop-blur-sm">
-      {t[lang].subtitle}
-    </p>
-  </div>
+  <p className="inline-block bg-[#21263A]/95 text-white text-sm sm:text-base md:text-lg max-w-3xl mx-auto px-6 py-2 rounded-md shadow-lg backdrop-blur-sm">
+    {t[lang].subtitle}
+  </p>
+</div>
+
 
   {/* --- BOTTOM NAVIGATION AREA --- */}
   <div className="relative">
