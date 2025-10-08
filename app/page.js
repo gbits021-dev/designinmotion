@@ -17,9 +17,9 @@ export default function Home() {
             "url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1920&q=80')",
         }}
       >
-        {/* Top Row: Title + Language + Mobile Menu Button */}
-        <div className="flex justify-between items-center px-4 pt-4 sm:px-8 sm:pt-6 relative z-20">
-          {/* Logo & Title */}
+        {/* Top Row: Title + Flags */}
+        <div className="flex justify-between items-center px-4 pt-4 sm:px-8 sm:pt-6">
+          {/* Title + Logo */}
           <div className="flex items-center space-x-2">
             <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-wide">
               {t[lang].title}
@@ -31,40 +31,72 @@ export default function Home() {
             />
           </div>
 
-          {/* Language + Hamburger */}
-          <div className="flex items-center space-x-4">
-            {/* Flags */}
-            <div className="flex items-center space-x-2">
-              <button
-                onClick={() => setLang("ka")}
-                className={`transition transform hover:scale-105 ${
-                  lang === "ka" ? "opacity-100" : "opacity-60"
-                }`}
-              >
-                <img
-                  src="https://flagcdn.com/w20/ge.png"
-                  alt="Georgian"
-                  className="w-6 h-4 sm:w-8 sm:h-5 rounded-sm border border-white/40"
-                />
-              </button>
-              <button
-                onClick={() => setLang("en")}
-                className={`transition transform hover:scale-105 ${
-                  lang === "en" ? "opacity-100" : "opacity-60"
-                }`}
-              >
-                <img
-                  src="https://flagcdn.com/w20/gb.png"
-                  alt="English"
-                  className="w-6 h-4 sm:w-8 sm:h-5 rounded-sm border border-white/40"
-                />
-              </button>
-            </div>
-
-            {/* Hamburger Icon */}
+          {/* Flags */}
+          <div className="flex items-center space-x-3 mt-2 sm:mt-0">
             <button
-              className="sm:hidden flex flex-col justify-center space-y-1 w-6 h-6 focus:outline-none"
+              onClick={() => setLang("ka")}
+              className={`transition transform hover:scale-105 ${
+                lang === "ka" ? "opacity-100" : "opacity-60"
+              }`}
+            >
+              <img
+                src="https://flagcdn.com/w20/ge.png"
+                alt="Georgian"
+                className="w-6 h-4 sm:w-8 sm:h-5 rounded-sm border border-white/40"
+              />
+            </button>
+
+            <button
+              onClick={() => setLang("en")}
+              className={`transition transform hover:scale-105 ${
+                lang === "en" ? "opacity-100" : "opacity-60"
+              }`}
+            >
+              <img
+                src="https://flagcdn.com/w20/gb.png"
+                alt="English"
+                className="w-6 h-4 sm:w-8 sm:h-5 rounded-sm border border-white/40"
+              />
+            </button>
+          </div>
+        </div>
+
+        {/* Centered Text */}
+        <div className="text-center px-4 mt-6 sm:mt-0 z-10">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 drop-shadow-lg">
+            {t[lang].title}
+          </h2>
+          <p className="text-sm sm:text-base md:text-lg max-w-2xl mx-auto drop-shadow-md">
+            {t[lang].subtitle}
+          </p>
+        </div>
+
+        {/* --- BOTTOM NAVIGATION AREA --- */}
+        <div className="relative">
+          {/* Desktop Menu */}
+          <nav className="hidden sm:flex bg-black/50 backdrop-blur-sm w-full py-4 justify-center space-x-6 md:space-x-8 text-base font-semibold">
+            {t[lang].menu.map((m, i) => (
+              <a
+                key={i}
+                href={`#${[
+                  "about",
+                  "partners",
+                  "venue",
+                  "agenda",
+                  "registration",
+                ][i]}`}
+                className="hover:text-blue-300 transition"
+              >
+                {m}
+              </a>
+            ))}
+          </nav>
+
+          {/* Mobile Hamburger Button */}
+          <div className="sm:hidden flex justify-center bg-black/60 backdrop-blur-sm py-4">
+            <button
               onClick={() => setMenuOpen(!menuOpen)}
+              className="flex flex-col justify-center space-y-1 w-8 h-8"
             >
               <span
                 className={`block h-0.5 bg-white transform transition duration-300 ${
@@ -83,46 +115,29 @@ export default function Home() {
               ></span>
             </button>
           </div>
+
+          {/* Mobile Dropdown Menu */}
+          {menuOpen && (
+            <nav className="sm:hidden absolute bottom-[60px] left-0 w-full bg-black/85 backdrop-blur-lg flex flex-col items-center py-4 space-y-3 text-lg font-medium z-10">
+              {t[lang].menu.map((m, i) => (
+                <a
+                  key={i}
+                  href={`#${[
+                    "about",
+                    "partners",
+                    "venue",
+                    "agenda",
+                    "registration",
+                  ][i]}`}
+                  className="hover:text-blue-300 transition"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {m}
+                </a>
+              ))}
+            </nav>
+          )}
         </div>
-
-        {/* Centered Text */}
-        <div className="text-center px-4 mt-6 sm:mt-0 z-10">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 drop-shadow-lg">
-            {t[lang].title}
-          </h2>
-          <p className="text-sm sm:text-base md:text-lg max-w-2xl mx-auto drop-shadow-md">
-            {t[lang].subtitle}
-          </p>
-        </div>
-
-        {/* Desktop Menu */}
-        <nav className="hidden sm:flex bg-black/50 backdrop-blur-sm w-full py-4 justify-center space-x-6 md:space-x-8 text-base font-semibold">
-          {t[lang].menu.map((m, i) => (
-            <a
-              key={i}
-              href={`#${["about", "partners", "venue", "agenda", "registration"][i]}`}
-              className="hover:text-blue-300 transition"
-            >
-              {m}
-            </a>
-          ))}
-        </nav>
-
-        {/* Mobile Dropdown Menu */}
-        {menuOpen && (
-          <nav className="sm:hidden absolute top-[60px] left-0 w-full bg-black/80 backdrop-blur-lg flex flex-col items-center py-4 space-y-3 text-lg font-medium z-10">
-            {t[lang].menu.map((m, i) => (
-              <a
-                key={i}
-                href={`#${["about", "partners", "venue", "agenda", "registration"][i]}`}
-                className="hover:text-blue-300 transition"
-                onClick={() => setMenuOpen(false)}
-              >
-                {m}
-              </a>
-            ))}
-          </nav>
-        )}
       </section>
 
       {/* ABOUT */}
