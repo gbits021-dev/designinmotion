@@ -5,6 +5,7 @@ export default function Home() {
   const [lang, setLang] = useState("en");
   const t = {
     en: {
+      menu: ["About", "Partners", "Venue", "Agenda", "Registration"],
       title: "Design in Motion",
       subtitle: "DIO Architects Event 2025 – Innovation in Architecture and Building Systems",
       about: "About the Event",
@@ -12,6 +13,7 @@ export default function Home() {
         "Design in Motion brings together architects, designers, and developers to explore innovation in architecture, sustainability, and design.",
       partners: "Partners",
       venue: "Venue & Date",
+      agenda: "Agenda",
       registration: "Registration",
       date: "20 November 2025, 11:00 – 16:00",
       place: "Hotel Stamba, Tbilisi",
@@ -20,6 +22,7 @@ export default function Home() {
       rights: "© 2025 DIO. All rights reserved.",
     },
     ka: {
+      menu: ["შესახებ", "პარტნიორები", "ადგილი", "დღის პროგრამა", "რეგისტრაცია"],
       title: "Design in Motion",
       subtitle: "DIO არქიტექტორთა ღონისძიება 2025 – ინოვაცია არქიტექტურასა და მშენებლობაში",
       about: "ღონისძიების შესახებ",
@@ -27,6 +30,7 @@ export default function Home() {
         "Design in Motion აერთიანებს არქიტექტორებს, დიზაინერებსა და დეველოპერებს, რათა ერთად განიხილონ ინოვაციები არქიტექტურაში, მდგრადობაში და დიზაინში.",
       partners: "პარტნიორები",
       venue: "ადგილი და თარიღი",
+      agenda: "დღის პროგრამა",
       registration: "რეგისტრაცია",
       date: "20 ნოემბერი 2025, 11:00 – 16:00",
       place: "სასტუმრო სტამბა, თბილისი",
@@ -37,25 +41,70 @@ export default function Home() {
   };
 
   return (
-    <main>
+    <main id="top">
+      {/* HEADER */}
       <header className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur border-b border-gray-200 z-50">
         <div className="max-w-6xl mx-auto flex items-center justify-between p-4">
-          <h1 className="font-bold text-lg text-blue-700">Design in Motion</h1>
-          <div>
-            <button onClick={() => setLang('ka')} className="mr-2">🇬🇪</button>
-            <button onClick={() => setLang('en')}>🇬🇧</button>
+          {/* Logo */}
+          <a
+            href="#top"
+            className="font-bold text-blue-700 text-lg hover:text-blue-900 transition"
+          >
+            Design in Motion
+          </a>
+
+          {/* Navigation Menu */}
+          <nav className="hidden md:flex space-x-6">
+            <a href="#about" className="text-gray-700 hover:text-blue-700 transition">
+              {t[lang].menu[0]}
+            </a>
+            <a href="#partners" className="text-gray-700 hover:text-blue-700 transition">
+              {t[lang].menu[1]}
+            </a>
+            <a href="#venue" className="text-gray-700 hover:text-blue-700 transition">
+              {t[lang].menu[2]}
+            </a>
+            <a href="#agenda" className="text-gray-700 hover:text-blue-700 transition">
+              {t[lang].menu[3]}
+            </a>
+            <a href="#registration" className="text-gray-700 hover:text-blue-700 transition">
+              {t[lang].menu[4]}
+            </a>
+          </nav>
+
+          {/* Language Toggle */}
+          <div className="flex items-center">
+            <button
+              onClick={() => setLang("ka")}
+              className={`mr-2 ${lang === "ka" ? "font-semibold text-blue-700" : ""}`}
+            >
+              🇬🇪
+            </button>
+            <button
+              onClick={() => setLang("en")}
+              className={`${lang === "en" ? "font-semibold text-blue-700" : ""}`}
+            >
+              🇬🇧
+            </button>
           </div>
         </div>
       </header>
 
+      {/* HERO SECTION */}
       <section className="pt-24 bg-gradient-to-b from-blue-700 to-blue-900 text-white text-center py-32">
         <h2 className="text-4xl font-bold mb-4">{t[lang].title}</h2>
         <p className="text-lg">{t[lang].subtitle}</p>
       </section>
 
-      <section id="about" className="max-w-6xl mx-auto py-20 grid md:grid-cols-2 gap-8 px-4">
+      {/* ABOUT */}
+      <section
+        id="about"
+        className="max-w-6xl mx-auto py-20 grid md:grid-cols-2 gap-8 px-4"
+      >
         <div>
-          <h3 className="text-3xl font-semibold text-blue-700 mb-4">{t[lang].about}</h3>
+          <h3 className="text-3xl font-semibold text-blue-700 mb-4">
+            {t[lang].about}
+          </h3>
           <p>{t[lang].aboutText}</p>
         </div>
         <div>
@@ -67,16 +116,25 @@ export default function Home() {
         </div>
       </section>
 
+      {/* PARTNERS */}
       <section id="partners" className="bg-gray-50 py-20">
         <div className="max-w-6xl mx-auto px-4 text-center">
-          <h3 className="text-3xl font-semibold text-blue-700 mb-10">{t[lang].partners}</h3>
+          <h3 className="text-3xl font-semibold text-blue-700 mb-10">
+            {t[lang].partners}
+          </h3>
           <div className="grid md:grid-cols-3 gap-10">
             {[
               { name: "DIO", link: "https://dio.ge" },
               { name: "Aluplast", link: "https://aluplast.net" },
               { name: "Aluprof", link: "https://aluprof.eu" },
             ].map((p) => (
-              <a key={p.name} href={p.link} target="_blank" rel="noopener noreferrer" className="bg-white rounded-lg shadow p-6 hover:shadow-lg transition">
+              <a
+                key={p.name}
+                href={p.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white rounded-lg shadow p-6 hover:shadow-lg transition"
+              >
                 <h4 className="font-semibold text-lg mb-2">{p.name}</h4>
                 <p className="text-sm text-gray-600">Visit site →</p>
               </a>
@@ -85,8 +143,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="venue" className="max-w-6xl mx-auto py-20 px-4">
-        <h3 className="text-3xl font-semibold text-blue-700 mb-4">{t[lang].venue}</h3>
+      {/* VENUE */}
+      <section id="venue" className="max-w-6xl mx-auto py-20 px-4 text-center">
+        <h3 className="text-3xl font-semibold text-blue-700 mb-4">
+          {t[lang].venue}
+        </h3>
         <p className="mb-2">📅 {t[lang].date}</p>
         <p className="mb-4">🏛️ {t[lang].place}</p>
         <iframe
@@ -100,8 +161,23 @@ export default function Home() {
         ></iframe>
       </section>
 
+      {/* AGENDA */}
+      <section id="agenda" className="py-20 bg-white text-center">
+        <h3 className="text-3xl font-semibold text-blue-700 mb-6">
+          {t[lang].agenda}
+        </h3>
+        <img
+          src="https://images.unsplash.com/photo-1581091215367-59ab6c741e85"
+          alt="Agenda"
+          className="max-w-4xl mx-auto rounded-lg shadow-lg"
+        />
+      </section>
+
+      {/* REGISTRATION */}
       <section id="registration" className="bg-gray-50 py-20 text-center">
-        <h3 className="text-3xl font-semibold text-blue-700 mb-4">{t[lang].registration}</h3>
+        <h3 className="text-3xl font-semibold text-blue-700 mb-4">
+          {t[lang].registration}
+        </h3>
         <p className="mb-6">{t[lang].free}</p>
         <a
           href="https://docs.google.com/forms/d/your_form_id_here"
@@ -113,6 +189,7 @@ export default function Home() {
         </a>
       </section>
 
+      {/* FOOTER */}
       <footer className="bg-blue-900 text-white py-8 text-center">
         <p className="text-sm">{t[lang].rights}</p>
       </footer>
