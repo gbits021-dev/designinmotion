@@ -43,7 +43,7 @@ export default function Home() {
   return (
     <main id="top" className="text-gray-800">
       {/* HERO SECTION */}
-      <section className="relative h-[60vh] sm:h-[50vh] flex flex-col justify-between text-white overflow-hidden">
+      <section className="relative h-[80vh] flex flex-col justify-between text-white overflow-hidden">
         {/* Optimized responsive banner */}
         <div className="absolute inset-0 -z-10">
           <Image
