@@ -42,123 +42,81 @@ export default function Home() {
 
   return (
     <main id="top" className="text-gray-800">
-      {/* HERO SECTION */}
-      <section className="relative h-[80vh] flex flex-col justify-between text-white overflow-hidden">
-        {/* Optimized responsive banner */}
-        <div className="absolute inset-0 -z-10">
-          <Image
-            src="/banner.jpg"
-            alt="Design in Motion Banner"
-            fill
-            priority
-            quality={90}
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
-            style={{
-              objectFit: "cover",
-              objectPosition: "center top",
-            }}
-          />
-          <div className="absolute inset-0 bg-black/25" />
-        </div>
-
-        {/* Top Row: Title + Flags */}
-        <div className="flex justify-between items-start px-4 pt-4 sm:px-8 sm:pt-6">
-          {/* Title + Logo */}
-          <div className="bg-[#21263A]/90 px-5 py-3 rounded-md shadow-md flex items-center space-x-3">
-            <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-wide text-white">
-              {t[lang].title}
-            </h1>
-            <img
-              src={lang === "ka" ? "/dio-logo-ka.svg" : "/dio-logo-en.svg"}
-              alt="DIO Logo"
-              className="h-10 sm:h-12 md:h-14 object-contain"
+      {/* HERO + COUNTDOWN CONTAINER - 100vh total */}
+      <div className="h-screen flex flex-col">
+        {/* HERO SECTION - 80% */}
+        <section className="relative h-[80%] flex flex-col justify-between text-white overflow-hidden">
+          {/* Banner Image */}
+          <div className="absolute inset-0 -z-10">
+            <Image
+              src="/banner.jpg"
+              alt="Design in Motion Banner"
+              fill
+              priority
+              quality={90}
+              sizes="100vw"
+              style={{
+                objectFit: "cover",
+                objectPosition: "center top",
+              }}
             />
+            <div className="absolute inset-0 bg-black/25" />
           </div>
 
-          {/* Flags */}
-          <div className="flex items-center space-x-3 mt-2 sm:mt-0">
-            <button
-              onClick={() => setLang("ka")}
-              className={`transition transform hover:scale-105 ${
-                lang === "ka" ? "opacity-100" : "opacity-60"
-              }`}
-            >
+          {/* Top Row: Title + Flags */}
+          <div className="flex justify-between items-start px-4 pt-4 sm:px-8 sm:pt-6">
+            {/* Title + Logo */}
+            <div className="bg-[#21263A]/90 px-5 py-3 rounded-md shadow-md flex items-center space-x-3">
+              <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-wide text-white">
+                {t[lang].title}
+              </h1>
               <img
-                src="https://flagcdn.com/w20/ge.png"
-                alt="Georgian"
-                className="w-6 h-4 sm:w-8 sm:h-5 rounded-sm border border-white/40"
+                src={lang === "ka" ? "/dio-logo-ka.svg" : "/dio-logo-en.svg"}
+                alt="DIO Logo"
+                className="h-10 sm:h-12 md:h-14 object-contain"
               />
-            </button>
-            <button
-              onClick={() => setLang("en")}
-              className={`transition transform hover:scale-105 ${
-                lang === "en" ? "opacity-100" : "opacity-60"
-              }`}
-            >
-              <img
-                src="https://flagcdn.com/w20/gb.png"
-                alt="English"
-                className="w-6 h-4 sm:w-8 sm:h-5 rounded-sm border border-white/40"
-              />
-            </button>
-          </div>
-        </div>
+            </div>
 
-        {/* Subtitle Bar (Bottom of Hero) */}
-        <div className="absolute bottom-14 w-full text-center">
-          <p className="inline-block bg-[#21263A]/95 text-white text-sm sm:text-base md:text-lg max-w-3xl mx-auto px-6 py-2 rounded-md shadow-lg backdrop-blur-sm">
-            {t[lang].subtitle}
-          </p>
-        </div>
-
-        {/* --- BOTTOM NAVIGATION AREA --- */}
-        <div className="relative">
-          {/* Desktop Menu */}
-          <nav className="hidden sm:flex bg-black/50 backdrop-blur-sm w-full py-4 justify-center space-x-6 md:space-x-8 text-base font-semibold">
-            {t[lang].menu.map((m, i) => (
-              <a
-                key={i}
-                href={`#${[
-                  "about",
-                  "partners",
-                  "venue",
-                  "agenda",
-                  "registration",
-                ][i]}`}
-                className="hover:text-blue-300 transition"
+            {/* Flags */}
+            <div className="flex items-center space-x-3 mt-2 sm:mt-0">
+              <button
+                onClick={() => setLang("ka")}
+                className={`transition transform hover:scale-105 ${
+                  lang === "ka" ? "opacity-100" : "opacity-60"
+                }`}
               >
-                {m}
-              </a>
-            ))}
-          </nav>
-
-          {/* Mobile Hamburger */}
-          <div className="sm:hidden flex justify-center bg-black/60 backdrop-blur-sm py-4">
-            <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="flex flex-col justify-center space-y-1 w-8 h-8"
-            >
-              <span
-                className={`block h-0.5 bg-white transform transition duration-300 ${
-                  menuOpen ? "rotate-45 translate-y-1.5" : ""
+                <img
+                  src="https://flagcdn.com/w20/ge.png"
+                  alt="Georgian"
+                  className="w-6 h-4 sm:w-8 sm:h-5 rounded-sm border border-white/40"
+                />
+              </button>
+              <button
+                onClick={() => setLang("en")}
+                className={`transition transform hover:scale-105 ${
+                  lang === "en" ? "opacity-100" : "opacity-60"
                 }`}
-              ></span>
-              <span
-                className={`block h-0.5 bg-white transition duration-300 ${
-                  menuOpen ? "opacity-0" : "opacity-100"
-                }`}
-              ></span>
-              <span
-                className={`block h-0.5 bg-white transform transition duration-300 ${
-                  menuOpen ? "-rotate-45 -translate-y-1.5" : ""
-                }`}
-              ></span>
-            </button>
+              >
+                <img
+                  src="https://flagcdn.com/w20/gb.png"
+                  alt="English"
+                  className="w-6 h-4 sm:w-8 sm:h-5 rounded-sm border border-white/40"
+                />
+              </button>
+            </div>
           </div>
 
-          {/* Mobile Dropdown */}
-          {menuOpen && (
-            <nav className="sm:hidden absolute bottom-[60px] left-0 w-full bg-black/85 backdrop-blur-lg flex flex-col items-center py-4 space-y-3 text-lg font-medium z-10">
+          {/* Subtitle Bar (Bottom of Hero) */}
+          <div className="absolute bottom-14 w-full text-center px-4">
+            <p className="inline-block bg-[#21263A]/95 text-white text-sm sm:text-base md:text-lg max-w-3xl mx-auto px-6 py-2 rounded-md shadow-lg backdrop-blur-sm">
+              {t[lang].subtitle}
+            </p>
+          </div>
+
+          {/* --- BOTTOM NAVIGATION AREA --- */}
+          <div className="relative">
+            {/* Desktop Menu */}
+            <nav className="hidden sm:flex bg-black/50 backdrop-blur-sm w-full py-4 justify-center space-x-6 md:space-x-8 text-base font-semibold">
               {t[lang].menu.map((m, i) => (
                 <a
                   key={i}
@@ -170,72 +128,111 @@ export default function Home() {
                     "registration",
                   ][i]}`}
                   className="hover:text-blue-300 transition"
-                  onClick={() => setMenuOpen(false)}
                 >
                   {m}
                 </a>
               ))}
             </nav>
-          )}
-        </div>
-      </section>
 
-      {/* COUNTDOWN TIMER SECTION */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 py-12 sm:py-16">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <h2 className="text-white text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-12">
-            {lang === "en" ? "Event Starts In" : "ღონისძიება იწყება"}
-          </h2>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 max-w-4xl mx-auto">
-            {/* Days */}
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-6 shadow-2xl border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
-              <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-2">
-                {timeLeft.days}
-              </div>
-              <div className="text-blue-200 text-sm sm:text-base md:text-lg font-semibold uppercase tracking-wider">
-                {lang === "en" ? "Days" : "დღე"}
-              </div>
+            {/* Mobile Hamburger */}
+            <div className="sm:hidden flex justify-center bg-black/60 backdrop-blur-sm py-4">
+              <button
+                onClick={() => setMenuOpen(!menuOpen)}
+                className="flex flex-col justify-center space-y-1 w-8 h-8"
+              >
+                <span
+                  className={`block h-0.5 bg-white transform transition duration-300 ${
+                    menuOpen ? "rotate-45 translate-y-1.5" : ""
+                  }`}
+                ></span>
+                <span
+                  className={`block h-0.5 bg-white transition duration-300 ${
+                    menuOpen ? "opacity-0" : "opacity-100"
+                  }`}
+                ></span>
+                <span
+                  className={`block h-0.5 bg-white transform transition duration-300 ${
+                    menuOpen ? "-rotate-45 -translate-y-1.5" : ""
+                  }`}
+                ></span>
+              </button>
             </div>
 
-            {/* Hours */}
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-6 shadow-2xl border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
-              <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-2">
-                {timeLeft.hours}
-              </div>
-              <div className="text-blue-200 text-sm sm:text-base md:text-lg font-semibold uppercase tracking-wider">
-                {lang === "en" ? "Hours" : "საათი"}
-              </div>
-            </div>
+            {/* Mobile Dropdown */}
+            {menuOpen && (
+              <nav className="sm:hidden absolute bottom-[60px] left-0 w-full bg-black/85 backdrop-blur-lg flex flex-col items-center py-4 space-y-3 text-lg font-medium z-10">
+                {t[lang].menu.map((m, i) => (
+                  <a
+                    key={i}
+                    href={`#${[
+                      "about",
+                      "partners",
+                      "venue",
+                      "agenda",
+                      "registration",
+                    ][i]}`}
+                    className="hover:text-blue-300 transition"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    {m}
+                  </a>
+                ))}
+              </nav>
+            )}
+          </div>
+        </section>
 
-            {/* Minutes */}
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-6 shadow-2xl border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
-              <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-2">
-                {timeLeft.minutes}
+        {/* COUNTDOWN TIMER SECTION - 20% */}
+        <section className="bg-[#21263A] h-[20%] flex items-center justify-center px-4">
+          <div className="w-full max-w-5xl">
+            <h2 className="text-white text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 text-center">
+              {lang === "en" ? "Event Starts In" : "ღონისძიება იწყება"}
+            </h2>
+            
+            <div className="grid grid-cols-4 gap-2 sm:gap-3 md:gap-4">
+              {/* Days */}
+              <div className="bg-white/10 backdrop-blur-md rounded-lg p-2 sm:p-3 md:p-4 shadow-xl border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105 text-center">
+                <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">
+                  {timeLeft.days}
+                </div>
+                <div className="text-blue-200 text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-semibold uppercase tracking-wide mt-0.5 sm:mt-1">
+                  {lang === "en" ? "Days" : "დღე"}
+                </div>
               </div>
-              <div className="text-blue-200 text-sm sm:text-base md:text-lg font-semibold uppercase tracking-wider">
-                {lang === "en" ? "Minutes" : "წუთი"}
-              </div>
-            </div>
 
-            {/* Seconds */}
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-6 shadow-2xl border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
-              <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-2">
-                {timeLeft.seconds}
+              {/* Hours */}
+              <div className="bg-white/10 backdrop-blur-md rounded-lg p-2 sm:p-3 md:p-4 shadow-xl border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105 text-center">
+                <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">
+                  {timeLeft.hours}
+                </div>
+                <div className="text-blue-200 text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-semibold uppercase tracking-wide mt-0.5 sm:mt-1">
+                  {lang === "en" ? "Hours" : "საათი"}
+                </div>
               </div>
-              <div className="text-blue-200 text-sm sm:text-base md:text-lg font-semibold uppercase tracking-wider">
-                {lang === "en" ? "Seconds" : "წამი"}
+
+              {/* Minutes */}
+              <div className="bg-white/10 backdrop-blur-md rounded-lg p-2 sm:p-3 md:p-4 shadow-xl border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105 text-center">
+                <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">
+                  {timeLeft.minutes}
+                </div>
+                <div className="text-blue-200 text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-semibold uppercase tracking-wide mt-0.5 sm:mt-1">
+                  {lang === "en" ? "Minutes" : "წუთი"}
+                </div>
+              </div>
+
+              {/* Seconds */}
+              <div className="bg-white/10 backdrop-blur-md rounded-lg p-2 sm:p-3 md:p-4 shadow-xl border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105 text-center">
+                <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">
+                  {timeLeft.seconds}
+                </div>
+                <div className="text-blue-200 text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-semibold uppercase tracking-wide mt-0.5 sm:mt-1">
+                  {lang === "en" ? "Seconds" : "წამი"}
+                </div>
               </div>
             </div>
           </div>
-
-          <div className="mt-8 sm:mt-10">
-            <p className="text-blue-100 text-base sm:text-lg md:text-xl font-medium">
-              📅 {t[lang].date} | 🏛️ {t[lang].place}
-            </p>
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       {/* ABOUT */}
       <section
@@ -296,7 +293,7 @@ export default function Home() {
         <p className="mb-4">🏛️ {t[lang].place}</p>
         <iframe
           title="Map"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3047.579591451229!2d44.78325907596716!3d41.70766517378264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40440cde2061b5b3%3A0x2b5cb1bfc4ee8eb1!2sStamba%20Hotel%20Tbilisi!5e0!3m2!1sen!2sge!4v1696000000000!5m2!1sen!2sge"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2977.4926763019713!2d44.80099097649392!3d41.69453997126108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40440cd7de7e0a07%3A0x48e82e1c1a0b5935!2sTbilisi%20Marriott%20Hotel!5e0!3m2!1sen!2sge!4v1696000000000!5m2!1sen!2sge"
           width="100%"
           height="400"
           allowFullScreen=""
