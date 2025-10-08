@@ -1,46 +1,10 @@
 "use client";
 import { useState } from "react";
+import translations from "./translations";
 
 export default function Home() {
   const [lang, setLang] = useState("en");
-  const t = {
-    en: {
-      menu: ["About", "Partners", "Venue", "Agenda", "Registration"],
-      title: "Design in Motion",
-      subtitle:
-        "DIO Architects Event 2025 – Innovation in Architecture and Building Systems",
-      about: "About the Event",
-      aboutText:
-        "Design in Motion brings together architects, designers, and developers to explore innovation in architecture, sustainability, and design.",
-      partners: "Partners",
-      venue: "Venue & Date",
-      agenda: "Agenda",
-      registration: "Registration",
-      date: "20 November 2025, 11:00 – 16:00",
-      place: "Hotel Stamba, Tbilisi",
-      register: "Fill the Google Form",
-      free: "Participation is free — please confirm your attendance.",
-      rights: "© 2025 DIO. All rights reserved.",
-    },
-    ka: {
-      menu: ["შესახებ", "პარტნიორები", "ადგილი", "დღის პროგრამა", "რეგისტრაცია"],
-      title: "Design in Motion",
-      subtitle:
-        "DIO არქიტექტორთა ღონისძიება 2025 – ინოვაცია არქიტექტურასა და მშენებლობაში",
-      about: "ღონისძიების შესახებ",
-      aboutText:
-        "Design in Motion აერთიანებს არქიტექტორებს, დიზაინერებსა და დეველოპერებს, რათა ერთად განიხილონ ინოვაციები არქიტექტურაში, მდგრადობაში და დიზაინში.",
-      partners: "პარტნიორები",
-      venue: "ადგილი და თარიღი",
-      agenda: "დღის პროგრამა",
-      registration: "რეგისტრაცია",
-      date: "20 ნოემბერი 2025, 11:00 – 16:00",
-      place: "სასტუმრო სტამბა, თბილისი",
-      register: "შეავსეთ ფორმა",
-      free: "მონაწილეობა უფასოა — გთხოვთ დაადასტუროთ თქვენი დასწრება.",
-      rights: "© 2025 DIO. ყველა უფლება დაცულია.",
-    },
-  };
+  const t = translations; // shorthand for easier usage
 
   return (
     <main id="top" className="text-gray-800">
