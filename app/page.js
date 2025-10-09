@@ -122,83 +122,83 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Subtitle Bar - Right above menu */}
-          <div className="absolute bottom-0 w-full text-center px-4 pb-2">
+          {/* Subtitle Bar */}
+          <div className="absolute bottom-24 sm:bottom-20 w-full text-center px-4">
             <p className="inline-block bg-[#21263A]/95 text-white text-sm sm:text-base md:text-lg max-w-3xl mx-auto px-6 py-2 rounded-md shadow-lg backdrop-blur-sm">
               {t[lang].subtitle}
             </p>
           </div>
+
+          {/* NAVIGATION MENU - Bottom of Hero, LARGE */}
+          <nav className="absolute bottom-0 w-full bg-black/60 backdrop-blur-sm py-5 flex justify-center space-x-8 md:space-x-12 lg:space-x-16 text-lg md:text-xl font-semibold text-white border-t border-white/10 sticky top-0 z-50">
+            {t[lang].menu.map((m, i) => (
+              <a
+                key={i}
+                href={`#${[
+                  "about",
+                  "architects-club",
+                  "partners",
+                  "venue",
+                  "agenda",
+                  "registration",
+                ][i]}`}
+                className="hover:text-blue-300 transition"
+              >
+                {m}
+              </a>
+            ))}
+          </nav>
         </section>
 
-        {/* COUNTDOWN TIMER - Part of hero, not separate */}
-        <section className="bg-[#21263A] py-6">
+        {/* COUNTDOWN TIMER - Below hero */}
+        <section className="bg-[#21263A] py-8">
           <div className="w-full max-w-5xl mx-auto px-4 text-center">
-            <h2 className="text-white text-sm sm:text-base md:text-lg font-bold mb-3">
+            <h2 className="text-white text-base sm:text-lg md:text-xl font-bold mb-4">
               {lang === "en" ? "Event Starts In" : "ღონისძიება იწყება"}
             </h2>
             
-            <div className="flex items-center justify-center gap-2 sm:gap-3 mb-2">
+            <div className="flex items-center justify-center gap-3 sm:gap-4 mb-3">
               <div className="text-center">
-                <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tabular-nums">
+                <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-white tabular-nums">
                   {String(timeLeft.days).padStart(2, '0')}
                 </div>
-                <div className="text-blue-200 text-[10px] sm:text-xs font-semibold uppercase tracking-wide mt-1">
+                <div className="text-blue-200 text-xs sm:text-sm font-semibold uppercase tracking-wide mt-1">
                   {lang === "en" ? "Days" : "დღე"}
                 </div>
               </div>
-              <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-white pb-4">:</div>
+              <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-white pb-5">:</div>
               <div className="text-center">
-                <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tabular-nums">
+                <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-white tabular-nums">
                   {String(timeLeft.hours).padStart(2, '0')}
                 </div>
-                <div className="text-blue-200 text-[10px] sm:text-xs font-semibold uppercase tracking-wide mt-1">
+                <div className="text-blue-200 text-xs sm:text-sm font-semibold uppercase tracking-wide mt-1">
                   {lang === "en" ? "Hours" : "საათი"}
                 </div>
               </div>
-              <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-white pb-4">:</div>
+              <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-white pb-5">:</div>
               <div className="text-center">
-                <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tabular-nums">
+                <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-white tabular-nums">
                   {String(timeLeft.minutes).padStart(2, '0')}
                 </div>
-                <div className="text-blue-200 text-[10px] sm:text-xs font-semibold uppercase tracking-wide mt-1">
+                <div className="text-blue-200 text-xs sm:text-sm font-semibold uppercase tracking-wide mt-1">
                   {lang === "en" ? "Minutes" : "წუთი"}
                 </div>
               </div>
-              <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-white pb-4">:</div>
+              <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-white pb-5">:</div>
               <div className="text-center">
-                <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tabular-nums">
+                <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-white tabular-nums">
                   {String(timeLeft.seconds).padStart(2, '0')}
                 </div>
-                <div className="text-blue-200 text-[10px] sm:text-xs font-semibold uppercase tracking-wide mt-1">
+                <div className="text-blue-200 text-xs sm:text-sm font-semibold uppercase tracking-wide mt-1">
                   {lang === "en" ? "Seconds" : "წამი"}
                 </div>
               </div>
             </div>
-            <p className="text-blue-100 text-xs sm:text-sm font-medium">
+            <p className="text-blue-100 text-sm sm:text-base font-medium">
               📅 {t[lang].date} | 🏛️ {t[lang].place}
             </p>
           </div>
         </section>
-
-        {/* NAVIGATION - Below countdown */}
-        <nav className="sticky top-0 z-50 bg-[#21263A] backdrop-blur-sm w-full py-3 flex justify-center space-x-6 md:space-x-8 text-sm font-semibold text-white border-t border-white/10">
-          {t[lang].menu.map((m, i) => (
-            <a
-              key={i}
-              href={`#${[
-                "about",
-                "architects-club",
-                "partners",
-                "venue",
-                "agenda",
-                "registration",
-              ][i]}`}
-              className="hover:text-blue-300 transition"
-            >
-              {m}
-            </a>
-          ))}
-        </nav>
       </div>
 
       {/* ABOUT - Compact Height */}
