@@ -268,25 +268,25 @@ export default function Home() {
         </section>
       </div>
 
-      {/* ABOUT - Inspired by SHARE Georgia Design */}
+      {/* ABOUT - Improved Poster Size */}
       <section
         id="about"
         className="max-w-7xl mx-auto py-20 sm:py-28 px-4"
       >
-        <div className="grid md:grid-cols-5 gap-12 items-center">
-          {/* Left - Portrait Poster */}
+        <div className="grid md:grid-cols-5 gap-12 items-stretch">
+          {/* Left - Taller Portrait Poster */}
           <div className="md:col-span-2">
-            <div className="relative">
+            <div className="relative h-full min-h-[700px]">
               <img
-                src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&h=900"
+                src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&h=1200"
                 alt="Design in Motion Poster"
-                className="w-full rounded-2xl shadow-2xl"
+                className="w-full h-full rounded-2xl shadow-2xl object-cover"
               />
             </div>
           </div>
 
           {/* Right - Content */}
-          <div className="md:col-span-3 space-y-6">
+          <div className="md:col-span-3 space-y-6 flex flex-col justify-center">
             <div>
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-4">
                 {lang === "en" 
@@ -326,25 +326,23 @@ export default function Home() {
         </div>
       </section>
 
-      {/* DIO'S ARCHITECTS CLUB - Inspired by Yellow Ticket Section */}
-      <section id="architects-club" className="relative min-h-screen flex items-center py-20">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920"
-            alt="Architecture Background"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/95 via-yellow-400/90 to-transparent"></div>
+      {/* DIO'S ARCHITECTS CLUB - Classy Minimalist Design */}
+      <section id="architects-club" className="relative min-h-screen flex items-center py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
+        {/* Subtle Pattern Overlay */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+            backgroundSize: '40px 40px'
+          }}></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 w-full">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Left - Image Slider */}
+            {/* Left - Image Slider with Sharp Edges */}
             <div>
               <div className="relative">
-                {/* Main Image */}
-                <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+                {/* Main Image - NO ROUNDED CORNERS */}
+                <div className="relative h-[500px] overflow-hidden shadow-2xl">
                   <img
                     src={clubImages[currentSlide]}
                     alt={`Past Event ${currentSlide + 1}`}
@@ -354,7 +352,7 @@ export default function Home() {
                   {/* Previous Button */}
                   <button
                     onClick={prevSlide}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-3 shadow-xl transition-all duration-200 hover:scale-110"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 p-3 shadow-xl transition-all duration-200 hover:scale-110"
                     aria-label="Previous image"
                   >
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -365,7 +363,7 @@ export default function Home() {
                   {/* Next Button */}
                   <button
                     onClick={nextSlide}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-3 shadow-xl transition-all duration-200 hover:scale-110"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 p-3 shadow-xl transition-all duration-200 hover:scale-110"
                     aria-label="Next image"
                   >
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -374,7 +372,7 @@ export default function Home() {
                   </button>
                   
                   {/* Slide Counter */}
-                  <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/70 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                  <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/70 text-white px-4 py-2 text-sm font-semibold">
                     {currentSlide + 1} / {clubImages.length}
                   </div>
                 </div>
@@ -385,10 +383,10 @@ export default function Home() {
                     <button
                       key={index}
                       onClick={() => setCurrentSlide(index)}
-                      className={`h-3 rounded-full transition-all duration-300 ${
+                      className={`h-3 transition-all duration-300 ${
                         index === currentSlide 
-                          ? 'bg-gray-900 w-12' 
-                          : 'bg-gray-400 w-3 hover:bg-gray-600'
+                          ? 'bg-white w-12' 
+                          : 'bg-white/40 w-3 hover:bg-white/60'
                       }`}
                       aria-label={`Go to slide ${index + 1}`}
                     />
@@ -396,27 +394,27 @@ export default function Home() {
                 </div>
 
                 {/* Title Below Slider */}
-                <h4 className="text-center mt-6 text-2xl font-bold text-gray-900">
+                <h4 className="text-center mt-6 text-2xl font-bold text-white">
                   {lang === "en" ? "Past Events" : "წარსული ღონისძიებები"}
                 </h4>
               </div>
             </div>
 
-            {/* Right - Content with Transparent Background */}
+            {/* Right - Content with White Text */}
             <div className="space-y-6">
               <div>
-                <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">
+                <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
                   {lang === "en" ? "DIO's Architects Club" : "დიოს არქიტექტორთა კლუბი"}
                 </h2>
-                <h3 className="text-2xl font-semibold text-gray-800 mb-6">
+                <h3 className="text-2xl font-semibold text-blue-300 mb-6">
                   {lang === "en" ? "Join Our Community" : "შემოგვიერთდით"}
                 </h3>
               </div>
 
-              <div className="space-y-4 text-gray-900 text-lg leading-relaxed">
+              <div className="space-y-4 text-gray-100 text-lg leading-relaxed">
                 {lang === "en" ? (
                   <>
-                    <p className="font-semibold">
+                    <p className="font-semibold text-white">
                       The DIO Architects Club was founded on April 14, 2016, with a vision to unite leading architects, designers, and industry professionals.
                     </p>
                     
@@ -424,27 +422,27 @@ export default function Home() {
                       Our mission is to foster collaboration between DIO and the architectural community, providing members with exclusive insights into cutting-edge products and innovations.
                     </p>
 
-                    <div className="bg-white/40 backdrop-blur-sm rounded-xl p-6 mt-6">
-                      <p className="font-bold text-xl mb-4 text-gray-900">Active Members Enjoy:</p>
+                    <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-6 mt-6">
+                      <p className="font-bold text-xl mb-4 text-white">Active Members Enjoy:</p>
                       <ul className="space-y-3">
                         <li className="flex items-start">
-                          <span className="text-yellow-700 font-bold mr-2">✓</span>
+                          <span className="text-blue-400 font-bold mr-2 text-xl">✓</span>
                           <span>Special benefits on DIO products</span>
                         </li>
                         <li className="flex items-start">
-                          <span className="text-yellow-700 font-bold mr-2">✓</span>
+                          <span className="text-blue-400 font-bold mr-2 text-xl">✓</span>
                           <span>Exclusive visits to European partner facilities</span>
                         </li>
                         <li className="flex items-start">
-                          <span className="text-yellow-700 font-bold mr-2">✓</span>
+                          <span className="text-blue-400 font-bold mr-2 text-xl">✓</span>
                           <span>Masterclasses with world-renowned architects</span>
                         </li>
                         <li className="flex items-start">
-                          <span className="text-yellow-700 font-bold mr-2">✓</span>
+                          <span className="text-blue-400 font-bold mr-2 text-xl">✓</span>
                           <span>Networking with industry leaders</span>
                         </li>
                         <li className="flex items-start">
-                          <span className="text-yellow-700 font-bold mr-2">✓</span>
+                          <span className="text-blue-400 font-bold mr-2 text-xl">✓</span>
                           <span>Early access to new innovations</span>
                         </li>
                       </ul>
@@ -452,7 +450,7 @@ export default function Home() {
                   </>
                 ) : (
                   <>
-                    <p className="font-semibold">
+                    <p className="font-semibold text-white">
                       დიოს არქიტექტორთა კლუბი ჩამოყალიბდა 2016 წლის 14 აპრილს, წამყვანი არქიტექტორებისა და დიზაინერების გაერთიანების მიზნით.
                     </p>
                     
@@ -460,27 +458,27 @@ export default function Home() {
                       ჩვენი მისიაა ხელი შევუწყოთ თანამშრომლობას დიოსა და არქიტექტურულ საზოგადოებას შორის, მივაწოდოთ წევრებს ექსკლუზიური ინფორმაცია ინოვაციებისა და პროდუქტების შესახებ.
                     </p>
 
-                    <div className="bg-white/40 backdrop-blur-sm rounded-xl p-6 mt-6">
-                      <p className="font-bold text-xl mb-4 text-gray-900">აქტიური წევრების შესაძლებლობები:</p>
+                    <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-6 mt-6">
+                      <p className="font-bold text-xl mb-4 text-white">აქტიური წევრების შესაძლებლობები:</p>
                       <ul className="space-y-3">
                         <li className="flex items-start">
-                          <span className="text-yellow-700 font-bold mr-2">✓</span>
+                          <span className="text-blue-400 font-bold mr-2 text-xl">✓</span>
                           <span>დამატებითი ბენეფიტები დიოს პროდუქტებზე</span>
                         </li>
                         <li className="flex items-start">
-                          <span className="text-yellow-700 font-bold mr-2">✓</span>
+                          <span className="text-blue-400 font-bold mr-2 text-xl">✓</span>
                           <span>ვიზიტები ევროპის პარტნიორ კომპანიებში</span>
                         </li>
                         <li className="flex items-start">
-                          <span className="text-yellow-700 font-bold mr-2">✓</span>
+                          <span className="text-blue-400 font-bold mr-2 text-xl">✓</span>
                           <span>მასტერკლასები მსოფლიო არქიტექტორებთან</span>
                         </li>
                         <li className="flex items-start">
-                          <span className="text-yellow-700 font-bold mr-2">✓</span>
+                          <span className="text-blue-400 font-bold mr-2 text-xl">✓</span>
                           <span>ქსელის შექმნა ინდუსტრიის ლიდერებთან</span>
                         </li>
                         <li className="flex items-start">
-                          <span className="text-yellow-700 font-bold mr-2">✓</span>
+                          <span className="text-blue-400 font-bold mr-2 text-xl">✓</span>
                           <span>ადრეული წვდომა ახალ ინოვაციებზე</span>
                         </li>
                       </ul>
