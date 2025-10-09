@@ -131,13 +131,14 @@ export default function Home() {
 
           {/* --- BOTTOM NAVIGATION AREA --- */}
           <div className="relative">
-            {/* Desktop Menu */}
-            <nav className="hidden sm:flex bg-black/50 backdrop-blur-sm w-full py-4 justify-center space-x-6 md:space-x-8 text-base font-semibold">
+            {/* Desktop Menu - FIXED */}
+            <nav className="hidden sm:flex bg-black/50 backdrop-blur-sm w-full py-4 justify-center space-x-6 md:space-x-8 text-base font-semibold sticky top-0 z-50">
               {t[lang].menu.map((m, i) => (
                 <a
                   key={i}
                   href={`#${[
                     "about",
+                    "architects-club",
                     "partners",
                     "venue",
                     "agenda",
@@ -267,54 +268,83 @@ export default function Home() {
         </section>
       </div>
 
-      {/* ABOUT */}
+      {/* ABOUT - Inspired by SHARE Georgia Design */}
       <section
         id="about"
-        className="max-w-6xl mx-auto py-16 sm:py-20 grid md:grid-cols-2 gap-8 px-4"
+        className="max-w-7xl mx-auto py-20 sm:py-28 px-4"
       >
-        <div className="flex flex-col justify-center">
-          <h3 className="text-2xl sm:text-3xl font-semibold text-blue-700 mb-4">
-            {lang === "en" ? "Design in Motion" : "დიზაინი მოძრაობაში"}
-          </h3>
-          <h4 className="text-xl font-semibold text-gray-700 mb-3">
-            {lang === "en" ? "Architectural Innovation in Action" : "არქიტექტურული ინოვაცია მოქმედებაში"}
-          </h4>
-          <p className="mb-4">
-            {lang === "en" 
-              ? "Join us for an inspiring half-day event where architecture meets technology, aesthetics meets performance, and ideas move into action."
-              : "შემოგვიერთდით ინსპირირებულ ნახევარდღიან ღონისძიებას, სადაც არქიტექტურა ხვდება ტექნოლოგიას, ესთეტიკა - შესრულებას და იდეები გადადიან მოქმედებაში."}
-          </p>
-          <p className="text-gray-600">
-            {lang === "en" 
-              ? "Open to architects, designers, engineers & industry professionals."
-              : "ღია არქიტექტორებისთვის, დიზაინერებისთვის, ინჟინრებისთვის და ინდუსტრიის პროფესიონალებისთვის."}
-          </p>
-        </div>
-        <div className="flex justify-center items-center">
-          <img
-            src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&h=800"
-            alt="Architecture Event Poster"
-            className="rounded-lg shadow-lg max-w-sm w-full h-auto object-cover"
-          />
+        <div className="grid md:grid-cols-5 gap-12 items-center">
+          {/* Left - Portrait Poster */}
+          <div className="md:col-span-2">
+            <div className="relative">
+              <img
+                src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&h=900"
+                alt="Design in Motion Poster"
+                className="w-full rounded-2xl shadow-2xl"
+              />
+            </div>
+          </div>
+
+          {/* Right - Content */}
+          <div className="md:col-span-3 space-y-6">
+            <div>
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-4">
+                {lang === "en" 
+                  ? "Connecting Architecture, Engineering, and Design Leaders" 
+                  : "არქიტექტურის, ინჟინერიის და დიზაინის ლიდერების დაკავშირება"}
+              </h2>
+            </div>
+
+            <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
+              <p>
+                {lang === "en"
+                  ? "We are excited to announce Design in Motion 2025, an inspiring half-day event where architecture meets technology, aesthetics meets performance, and ideas move into action."
+                  : "ჩვენ გვიხარია გაცნობოთ Design in Motion 2025, ინსპირირებული ნახევარდღიანი ღონისძიება, სადაც არქიტექტურა ხვდება ტექნოლოგიას, ესთეტიკა - შესრულებას და იდეები გადადიან მოქმედებაში."}
+              </p>
+              
+              <p>
+                {lang === "en"
+                  ? "Following the success of previous editions, this year's forum continues to connect architecture, engineering, and construction professionals through an inspiring program of keynotes, case studies, and networking opportunities."
+                  : "წინა წლების წარმატების შემდეგ, წელს ფორუმი აგრძელებს არქიტექტურის, ინჟინერიის და მშენებლობის პროფესიონალების დაკავშირებას საინტერესო პროგრამით, რომელიც მოიცავს კონფერენციებს, შემთხვევის შესწავლებს და ქსელის შექმნის შესაძლებლობებს."}
+              </p>
+
+              <p className="font-semibold text-xl text-blue-700">
+                {lang === "en"
+                  ? "Join us at Marriott Hotel Tbilisi and experience a day of inspiration, professional connection, and forward-thinking design."
+                  : "შემოგვიერთდით მარიოტ ჰოტელში თბილისში და განიცადეთ ინსპირაციის, პროფესიული კავშირისა და პროგრესული დიზაინის დღე."}
+              </p>
+
+              <div className="pt-4">
+                <p className="text-gray-600">
+                  {lang === "en"
+                    ? "Open to architects, designers, engineers & industry professionals."
+                    : "ღია არქიტექტორებისთვის, დიზაინერებისთვის, ინჟინრებისთვის და ინდუსტრიის პროფესიონალებისთვის."}
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* DIO'S ARCHITECTS CLUB */}
-      <section id="architects-club" className="bg-gray-50 py-16 sm:py-20">
-        <div className="max-w-6xl mx-auto px-4">
-          <h3 className="text-2xl sm:text-3xl font-semibold text-blue-700 mb-10 text-center">
-            {lang === "en" ? "DIO's Architects Club" : "დიოს არქიტექტორთა კლუბი"}
-          </h3>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Image Slider - Left Side */}
+      {/* DIO'S ARCHITECTS CLUB - Inspired by Yellow Ticket Section */}
+      <section id="architects-club" className="relative min-h-screen flex items-center py-20">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920"
+            alt="Architecture Background"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/95 via-yellow-400/90 to-transparent"></div>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 w-full">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Left - Image Slider */}
             <div>
-              <h4 className="text-xl font-semibold text-gray-700 mb-4 text-center">
-                {lang === "en" ? "Past Events" : "წარსული ღონისძიებები"}
-              </h4>
               <div className="relative">
                 {/* Main Image */}
-                <div className="relative h-96 rounded-lg overflow-hidden shadow-lg">
+                <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                   <img
                     src={clubImages[currentSlide]}
                     alt={`Past Event ${currentSlide + 1}`}
@@ -324,88 +354,137 @@ export default function Home() {
                   {/* Previous Button */}
                   <button
                     onClick={prevSlide}
-                    className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 rounded-full p-2 shadow-lg transition-all duration-200 hover:scale-110"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-3 shadow-xl transition-all duration-200 hover:scale-110"
                     aria-label="Previous image"
                   >
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M15 19l-7-7 7-7" />
                     </svg>
                   </button>
                   
                   {/* Next Button */}
                   <button
                     onClick={nextSlide}
-                    className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 rounded-full p-2 shadow-lg transition-all duration-200 hover:scale-110"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-3 shadow-xl transition-all duration-200 hover:scale-110"
                     aria-label="Next image"
                   >
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
                     </svg>
                   </button>
                   
                   {/* Slide Counter */}
-                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
+                  <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/70 text-white px-4 py-2 rounded-full text-sm font-semibold">
                     {currentSlide + 1} / {clubImages.length}
                   </div>
                 </div>
                 
                 {/* Dot Indicators */}
-                <div className="flex justify-center gap-2 mt-4">
+                <div className="flex justify-center gap-3 mt-6">
                   {clubImages.map((_, index) => (
                     <button
                       key={index}
                       onClick={() => setCurrentSlide(index)}
-                      className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                      className={`h-3 rounded-full transition-all duration-300 ${
                         index === currentSlide 
-                          ? 'bg-blue-700 w-8' 
-                          : 'bg-gray-300 hover:bg-gray-400'
+                          ? 'bg-gray-900 w-12' 
+                          : 'bg-gray-400 w-3 hover:bg-gray-600'
                       }`}
                       aria-label={`Go to slide ${index + 1}`}
                     />
                   ))}
                 </div>
+
+                {/* Title Below Slider */}
+                <h4 className="text-center mt-6 text-2xl font-bold text-gray-900">
+                  {lang === "en" ? "Past Events" : "წარსული ღონისძიებები"}
+                </h4>
               </div>
             </div>
 
-            {/* History - Right Side */}
-            <div>
-              <h4 className="text-xl font-semibold text-gray-700 mb-4">
-                {lang === "en" ? "Our Story" : "ჩვენი ისტორია"}
-              </h4>
-              <div className="space-y-4 text-gray-700">
+            {/* Right - Content with Transparent Background */}
+            <div className="space-y-6">
+              <div>
+                <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">
+                  {lang === "en" ? "DIO's Architects Club" : "დიოს არქიტექტორთა კლუბი"}
+                </h2>
+                <h3 className="text-2xl font-semibold text-gray-800 mb-6">
+                  {lang === "en" ? "Join Our Community" : "შემოგვიერთდით"}
+                </h3>
+              </div>
+
+              <div className="space-y-4 text-gray-900 text-lg leading-relaxed">
                 {lang === "en" ? (
                   <>
-                    <p>
-                      The DIO Architects Club was founded on April 14, 2016, with a vision to unite leading architects, designers, and industry professionals around innovation in architecture and building systems.
+                    <p className="font-semibold">
+                      The DIO Architects Club was founded on April 14, 2016, with a vision to unite leading architects, designers, and industry professionals.
                     </p>
+                    
                     <p>
-                      Our mission is to foster collaboration between DIO and the architectural community, providing members with exclusive insights into cutting-edge products while gathering valuable feedback to shape the future of design.
+                      Our mission is to foster collaboration between DIO and the architectural community, providing members with exclusive insights into cutting-edge products and innovations.
                     </p>
-                    <p className="font-semibold">Active club members enjoy:</p>
-                    <ul className="list-disc list-inside space-y-2 ml-4">
-                      <li>Special benefits on DIO products for their projects</li>
-                      <li>Exclusive visits to partner facilities across Europe</li>
-                      <li>Access to masterclasses with world-renowned architects</li>
-                      <li>Networking opportunities with industry leaders</li>
-                      <li>Early access to new product launches and innovations</li>
-                    </ul>
+
+                    <div className="bg-white/40 backdrop-blur-sm rounded-xl p-6 mt-6">
+                      <p className="font-bold text-xl mb-4 text-gray-900">Active Members Enjoy:</p>
+                      <ul className="space-y-3">
+                        <li className="flex items-start">
+                          <span className="text-yellow-700 font-bold mr-2">✓</span>
+                          <span>Special benefits on DIO products</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-yellow-700 font-bold mr-2">✓</span>
+                          <span>Exclusive visits to European partner facilities</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-yellow-700 font-bold mr-2">✓</span>
+                          <span>Masterclasses with world-renowned architects</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-yellow-700 font-bold mr-2">✓</span>
+                          <span>Networking with industry leaders</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-yellow-700 font-bold mr-2">✓</span>
+                          <span>Early access to new innovations</span>
+                        </li>
+                      </ul>
+                    </div>
                   </>
                 ) : (
                   <>
-                    <p>
-                      დიოს არქიტექტორთა კლუბი ჩამოყალიბდა 2016 წლის 14 აპრილს.
+                    <p className="font-semibold">
+                      დიოს არქიტექტორთა კლუბი ჩამოყალიბდა 2016 წლის 14 აპრილს, წამყვანი არქიტექტორებისა და დიზაინერების გაერთიანების მიზნით.
                     </p>
+                    
                     <p>
-                      კლუბის მიზანია კომპანია დიოს ირგვლივ გავაერთიანოთ ყველა წამყვანი და აქტიური არქიტექტორი და დიზაინერი, რათა შევძლოთ ორმხრივი თანამშრომლობის ფარგლებში პირველებს მივაწოდოთ საჭირო ინფორმაცია ჩვენი ექსკლუზიური პროდუქტების შესახებ, მოვისმინოთ მათგან რჩევები და ერთად ვიმუშავოთ საინტერესო პროექტებზე.
+                      ჩვენი მისიაა ხელი შევუწყოთ თანამშრომლობას დიოსა და არქიტექტურულ საზოგადოებას შორის, მივაწოდოთ წევრებს ექსკლუზიური ინფორმაცია ინოვაციებისა და პროდუქტების შესახებ.
                     </p>
-                    <p className="font-semibold">აქტიური კლუბის წევრებს ექნებათ შესაძლებლობა:</p>
-                    <ul className="list-disc list-inside space-y-2 ml-4">
-                      <li>მიიღონ დამატებითი ბენეფიტები სხვადასხვა პროექტებში დიოს პროდუქტების გამოყენებით</li>
-                      <li>დიოს პარტნიორ კომპანიებს ესტუმრონ ევროპის სხვადასხვა ქვეყნებში</li>
-                      <li>დაესწრონ სპეციალურად მოწვეული მსოფლიო დონის არქიტექტორების მიერ ჩატარებულ შეხვედრებს</li>
-                      <li>დაუკავშირდნენ ინდუსტრიის ლიდერებს</li>
-                      <li>პირველებმა გაეცნონ ახალ პროდუქტებსა და ინოვაციებს</li>
-                    </ul>
+
+                    <div className="bg-white/40 backdrop-blur-sm rounded-xl p-6 mt-6">
+                      <p className="font-bold text-xl mb-4 text-gray-900">აქტიური წევრების შესაძლებლობები:</p>
+                      <ul className="space-y-3">
+                        <li className="flex items-start">
+                          <span className="text-yellow-700 font-bold mr-2">✓</span>
+                          <span>დამატებითი ბენეფიტები დიოს პროდუქტებზე</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-yellow-700 font-bold mr-2">✓</span>
+                          <span>ვიზიტები ევროპის პარტნიორ კომპანიებში</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-yellow-700 font-bold mr-2">✓</span>
+                          <span>მასტერკლასები მსოფლიო არქიტექტორებთან</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-yellow-700 font-bold mr-2">✓</span>
+                          <span>ქსელის შექმნა ინდუსტრიის ლიდერებთან</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-yellow-700 font-bold mr-2">✓</span>
+                          <span>ადრეული წვდომა ახალ ინოვაციებზე</span>
+                        </li>
+                      </ul>
+                    </div>
                   </>
                 )}
               </div>
