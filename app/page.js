@@ -122,152 +122,84 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Subtitle Bar (Bottom of Hero) */}
-          <div className="absolute bottom-14 w-full text-center px-4">
+          {/* Subtitle Bar - Right above menu */}
+          <div className="absolute bottom-0 w-full text-center px-4 pb-2">
             <p className="inline-block bg-[#21263A]/95 text-white text-sm sm:text-base md:text-lg max-w-3xl mx-auto px-6 py-2 rounded-md shadow-lg backdrop-blur-sm">
               {t[lang].subtitle}
             </p>
           </div>
         </section>
 
-        {/* FIXED NAVIGATION - Outside hero section for proper sticky behavior */}
-        <div className="sticky top-0 z-50">
-          {/* Desktop Menu */}
-          <nav className="hidden sm:flex bg-black/50 backdrop-blur-sm w-full py-4 justify-center space-x-6 md:space-x-8 text-base font-semibold text-white">
-            {t[lang].menu.map((m, i) => (
-              <a
-                key={i}
-                href={`#${[
-                  "about",
-                  "architects-club",
-                  "partners",
-                  "venue",
-                  "agenda",
-                  "registration",
-                ][i]}`}
-                className="hover:text-blue-300 transition"
-              >
-                {m}
-              </a>
-            ))}
-          </nav>
-
-          {/* Mobile Hamburger */}
-          <div className="sm:hidden flex justify-center bg-black/60 backdrop-blur-sm py-4">
-            <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="flex flex-col justify-center space-y-1 w-8 h-8"
-            >
-              <span
-                className={`block h-0.5 bg-white transform transition duration-300 ${
-                  menuOpen ? "rotate-45 translate-y-1.5" : ""
-                }`}
-              ></span>
-              <span
-                className={`block h-0.5 bg-white transition duration-300 ${
-                  menuOpen ? "opacity-0" : "opacity-100"
-                }`}
-              ></span>
-              <span
-                className={`block h-0.5 bg-white transform transition duration-300 ${
-                  menuOpen ? "-rotate-45 -translate-y-1.5" : ""
-                }`}
-              ></span>
-            </button>
-          </div>
-
-          {/* Mobile Dropdown */}
-          {menuOpen && (
-            <nav className="sm:hidden absolute top-full left-0 w-full bg-black/85 backdrop-blur-lg flex flex-col items-center py-4 space-y-3 text-lg font-medium z-10 text-white">
-              {t[lang].menu.map((m, i) => (
-                <a
-                  key={i}
-                  href={`#${[
-                    "about",
-                    "architects-club",
-                    "partners",
-                    "venue",
-                    "agenda",
-                    "registration",
-                  ][i]}`}
-                  className="hover:text-blue-300 transition"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {m}
-                </a>
-              ))}
-            </nav>
-          )}
-        </div>
-      </div>
-
-      {/* COUNTDOWN TIMER SECTION - 20% - DIGITAL CLOCK STYLE */}
-      <section className="bg-[#21263A] h-[20vh] flex items-center justify-center px-4">
-        <div className="w-full max-w-5xl text-center">
-          <h2 className="text-white text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-3 sm:mb-4">
-            {lang === "en" ? "Event Starts In" : "ღონისძიება იწყება"}
-          </h2>
-          
-          {/* Digital Clock Style Countdown */}
-          <div className="flex items-center justify-center gap-2 sm:gap-3 mb-2 sm:mb-3">
-            {/* Days */}
-            <div className="text-center">
-              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tabular-nums">
-                {String(timeLeft.days).padStart(2, '0')}
+        {/* COUNTDOWN TIMER - Part of hero, not separate */}
+        <section className="bg-[#21263A] py-6">
+          <div className="w-full max-w-5xl mx-auto px-4 text-center">
+            <h2 className="text-white text-sm sm:text-base md:text-lg font-bold mb-3">
+              {lang === "en" ? "Event Starts In" : "ღონისძიება იწყება"}
+            </h2>
+            
+            <div className="flex items-center justify-center gap-2 sm:gap-3 mb-2">
+              <div className="text-center">
+                <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tabular-nums">
+                  {String(timeLeft.days).padStart(2, '0')}
+                </div>
+                <div className="text-blue-200 text-[10px] sm:text-xs font-semibold uppercase tracking-wide mt-1">
+                  {lang === "en" ? "Days" : "დღე"}
+                </div>
               </div>
-              <div className="text-blue-200 text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-semibold uppercase tracking-wide mt-1">
-                {lang === "en" ? "Days" : "დღე"}
+              <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-white pb-4">:</div>
+              <div className="text-center">
+                <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tabular-nums">
+                  {String(timeLeft.hours).padStart(2, '0')}
+                </div>
+                <div className="text-blue-200 text-[10px] sm:text-xs font-semibold uppercase tracking-wide mt-1">
+                  {lang === "en" ? "Hours" : "საათი"}
+                </div>
+              </div>
+              <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-white pb-4">:</div>
+              <div className="text-center">
+                <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tabular-nums">
+                  {String(timeLeft.minutes).padStart(2, '0')}
+                </div>
+                <div className="text-blue-200 text-[10px] sm:text-xs font-semibold uppercase tracking-wide mt-1">
+                  {lang === "en" ? "Minutes" : "წუთი"}
+                </div>
+              </div>
+              <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-white pb-4">:</div>
+              <div className="text-center">
+                <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tabular-nums">
+                  {String(timeLeft.seconds).padStart(2, '0')}
+                </div>
+                <div className="text-blue-200 text-[10px] sm:text-xs font-semibold uppercase tracking-wide mt-1">
+                  {lang === "en" ? "Seconds" : "წამი"}
+                </div>
               </div>
             </div>
-
-            {/* Separator : */}
-            <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white pb-5">:</div>
-
-            {/* Hours */}
-            <div className="text-center">
-              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tabular-nums">
-                {String(timeLeft.hours).padStart(2, '0')}
-              </div>
-              <div className="text-blue-200 text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-semibold uppercase tracking-wide mt-1">
-                {lang === "en" ? "Hours" : "საათი"}
-              </div>
-            </div>
-
-            {/* Separator : */}
-            <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white pb-5">:</div>
-
-            {/* Minutes */}
-            <div className="text-center">
-              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tabular-nums">
-                {String(timeLeft.minutes).padStart(2, '0')}
-              </div>
-              <div className="text-blue-200 text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-semibold uppercase tracking-wide mt-1">
-                {lang === "en" ? "Minutes" : "წუთი"}
-              </div>
-            </div>
-
-            {/* Separator : */}
-            <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white pb-5">:</div>
-
-            {/* Seconds */}
-            <div className="text-center">
-              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tabular-nums">
-                {String(timeLeft.seconds).padStart(2, '0')}
-              </div>
-              <div className="text-blue-200 text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-semibold uppercase tracking-wide mt-1">
-                {lang === "en" ? "Seconds" : "წამი"}
-              </div>
-            </div>
-          </div>
-
-          {/* Event Details */}
-          <div className="text-center">
-            <p className="text-blue-100 text-[10px] sm:text-xs md:text-sm lg:text-base font-medium">
+            <p className="text-blue-100 text-xs sm:text-sm font-medium">
               📅 {t[lang].date} | 🏛️ {t[lang].place}
             </p>
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* NAVIGATION - Below countdown */}
+        <nav className="sticky top-0 z-50 bg-[#21263A] backdrop-blur-sm w-full py-3 flex justify-center space-x-6 md:space-x-8 text-sm font-semibold text-white border-t border-white/10">
+          {t[lang].menu.map((m, i) => (
+            <a
+              key={i}
+              href={`#${[
+                "about",
+                "architects-club",
+                "partners",
+                "venue",
+                "agenda",
+                "registration",
+              ][i]}`}
+              className="hover:text-blue-300 transition"
+            >
+              {m}
+            </a>
+          ))}
+        </nav>
+      </div>
 
       {/* ABOUT - Compact Height */}
       <section
