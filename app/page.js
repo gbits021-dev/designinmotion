@@ -272,7 +272,7 @@ export default function Home() {
         id="about"
         className="max-w-6xl mx-auto py-16 sm:py-20 grid md:grid-cols-2 gap-8 px-4"
       >
-        <div>
+        <div className="flex flex-col justify-center">
           <h3 className="text-2xl sm:text-3xl font-semibold text-blue-700 mb-4">
             {lang === "en" ? "Design in Motion" : "დიზაინი მოძრაობაში"}
           </h3>
@@ -290,11 +290,11 @@ export default function Home() {
               : "ღია არქიტექტორებისთვის, დიზაინერებისთვის, ინჟინრებისთვის და ინდუსტრიის პროფესიონალებისთვის."}
           </p>
         </div>
-        <div>
+        <div className="flex justify-center items-center">
           <img
-            src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800"
-            alt="Architecture Event"
-            className="rounded-lg shadow-lg w-full h-full object-cover"
+            src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&h=800"
+            alt="Architecture Event Poster"
+            className="rounded-lg shadow-lg max-w-sm w-full h-auto object-cover"
           />
         </div>
       </section>
@@ -307,32 +307,63 @@ export default function Home() {
           </h3>
           
           <div className="grid md:grid-cols-2 gap-8">
-            {/* Gallery - Left Side */}
+            {/* Image Slider - Left Side */}
             <div>
-              <h4 className="text-xl font-semibold text-gray-700 mb-4">
-                {lang === "en" ? "Past Events Gallery" : "წარსული ღონისძიებები"}
+              <h4 className="text-xl font-semibold text-gray-700 mb-4 text-center">
+                {lang === "en" ? "Past Events" : "წარსული ღონისძიებები"}
               </h4>
-              <div className="grid grid-cols-2 gap-4">
-                <img
-                  src="/club-event-1.jpg"
-                  alt="Architects Club Event 1"
-                  className="rounded-lg shadow-md w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
-                />
-                <img
-                  src="/club-event-2.jpg"
-                  alt="Architects Club Event 2"
-                  className="rounded-lg shadow-md w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
-                />
-                <img
-                  src="/club-event-3.jpg"
-                  alt="Architects Club Event 3"
-                  className="rounded-lg shadow-md w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
-                />
-                <img
-                  src="/club-event-4.jpg"
-                  alt="Architects Club Event 4"
-                  className="rounded-lg shadow-md w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
-                />
+              <div className="relative">
+                {/* Main Image */}
+                <div className="relative h-96 rounded-lg overflow-hidden shadow-lg">
+                  <img
+                    src={clubImages[currentSlide]}
+                    alt={`Past Event ${currentSlide + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                  
+                  {/* Previous Button */}
+                  <button
+                    onClick={prevSlide}
+                    className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 rounded-full p-2 shadow-lg transition-all duration-200 hover:scale-110"
+                    aria-label="Previous image"
+                  >
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </button>
+                  
+                  {/* Next Button */}
+                  <button
+                    onClick={nextSlide}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 rounded-full p-2 shadow-lg transition-all duration-200 hover:scale-110"
+                    aria-label="Next image"
+                  >
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                  
+                  {/* Slide Counter */}
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
+                    {currentSlide + 1} / {clubImages.length}
+                  </div>
+                </div>
+                
+                {/* Dot Indicators */}
+                <div className="flex justify-center gap-2 mt-4">
+                  {clubImages.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentSlide(index)}
+                      className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                        index === currentSlide 
+                          ? 'bg-blue-700 w-8' 
+                          : 'bg-gray-300 hover:bg-gray-400'
+                      }`}
+                      aria-label={`Go to slide ${index + 1}`}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
 
