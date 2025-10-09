@@ -326,14 +326,42 @@ export default function Home() {
         </div>
       </section>
 
-      {/* DIO'S ARCHITECTS CLUB - Classy Minimalist Design */}
-      <section id="architects-club" className="relative min-h-screen flex items-center py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
-        {/* Subtle Pattern Overlay */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0" style={{
-            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
-            backgroundSize: '40px 40px'
-          }}></div>
+      {/* DIO'S ARCHITECTS CLUB - Matching Countdown Color with Architectural Elements */}
+      <section id="architects-club" className="relative min-h-screen flex items-center py-20 bg-[#21263A] overflow-hidden">
+        {/* Architectural Drawing Elements - Left Side */}
+        <div className="absolute left-0 top-0 w-1/3 h-full opacity-10 pointer-events-none">
+          <svg viewBox="0 0 400 800" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            {/* Blueprint grid */}
+            <defs>
+              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="0.5"/>
+              </pattern>
+            </defs>
+            <rect width="400" height="800" fill="url(#grid)" />
+            
+            {/* Architectural lines and measurements */}
+            <line x1="50" y1="100" x2="350" y2="100" stroke="white" strokeWidth="2"/>
+            <line x1="50" y1="100" x2="50" y2="400" stroke="white" strokeWidth="2"/>
+            <line x1="350" y1="100" x2="350" y2="400" stroke="white" strokeWidth="2"/>
+            <line x1="50" y1="400" x2="350" y2="400" stroke="white" strokeWidth="2"/>
+            
+            {/* Diagonal construction lines */}
+            <line x1="50" y1="100" x2="350" y2="400" stroke="white" strokeWidth="1" strokeDasharray="5,5"/>
+            <line x1="350" y1="100" x2="50" y2="400" stroke="white" strokeWidth="1" strokeDasharray="5,5"/>
+            
+            {/* Dimension lines */}
+            <line x1="30" y1="100" x2="30" y2="400" stroke="white" strokeWidth="1"/>
+            <line x1="25" y1="100" x2="35" y2="100" stroke="white" strokeWidth="1"/>
+            <line x1="25" y1="400" x2="35" y2="400" stroke="white" strokeWidth="1"/>
+            
+            {/* Circle elements */}
+            <circle cx="200" cy="250" r="80" fill="none" stroke="white" strokeWidth="1.5"/>
+            <circle cx="200" cy="250" r="60" fill="none" stroke="white" strokeWidth="1"/>
+            
+            {/* Additional geometric shapes */}
+            <polygon points="100,500 150,450 200,500 150,550" fill="none" stroke="white" strokeWidth="1.5"/>
+            <rect x="250" y="500" width="80" height="80" fill="none" stroke="white" strokeWidth="1.5"/>
+          </svg>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 w-full">
@@ -341,8 +369,8 @@ export default function Home() {
             {/* Left - Image Slider with Sharp Edges */}
             <div>
               <div className="relative">
-                {/* Main Image - NO ROUNDED CORNERS */}
-                <div className="relative h-[500px] overflow-hidden shadow-2xl">
+                {/* Main Image - Sharp 90° Edges */}
+                <div className="relative h-[500px] overflow-hidden shadow-2xl border-2 border-white/10">
                   <img
                     src={clubImages[currentSlide]}
                     alt={`Past Event ${currentSlide + 1}`}
@@ -400,91 +428,95 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right - Content with White Text */}
-            <div className="space-y-6">
-              <div>
-                <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
-                  {lang === "en" ? "DIO's Architects Club" : "დიოს არქიტექტორთა კლუბი"}
-                </h2>
-                <h3 className="text-2xl font-semibold text-blue-300 mb-6">
-                  {lang === "en" ? "Join Our Community" : "შემოგვიერთდით"}
-                </h3>
-              </div>
+            {/* Right - Content in Separate Box */}
+            <div>
+              <div className="bg-white/5 backdrop-blur-sm border-2 border-white/10 p-8 shadow-2xl">
+                <div className="space-y-6">
+                  <div>
+                    <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-4">
+                      {lang === "en" ? "DIO's Architects Club" : "დიოს არქიტექტორთა კლუბი"}
+                    </h2>
+                    <h3 className="text-xl font-semibold text-blue-300 mb-6">
+                      {lang === "en" ? "Join Our Community" : "შემოგვიერთდით"}
+                    </h3>
+                  </div>
 
-              <div className="space-y-4 text-gray-100 text-lg leading-relaxed">
-                {lang === "en" ? (
-                  <>
-                    <p className="font-semibold text-white">
-                      The DIO Architects Club was founded on April 14, 2016, with a vision to unite leading architects, designers, and industry professionals.
-                    </p>
-                    
-                    <p>
-                      Our mission is to foster collaboration between DIO and the architectural community, providing members with exclusive insights into cutting-edge products and innovations.
-                    </p>
+                  <div className="space-y-4 text-gray-200 text-base leading-relaxed">
+                    {lang === "en" ? (
+                      <>
+                        <p className="font-semibold text-white">
+                          The DIO Architects Club was founded on April 14, 2016, with a vision to unite leading architects, designers, and industry professionals.
+                        </p>
+                        
+                        <p>
+                          Our mission is to foster collaboration between DIO and the architectural community, providing members with exclusive insights into cutting-edge products.
+                        </p>
 
-                    <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-6 mt-6">
-                      <p className="font-bold text-xl mb-4 text-white">Active Members Enjoy:</p>
-                      <ul className="space-y-3">
-                        <li className="flex items-start">
-                          <span className="text-blue-400 font-bold mr-2 text-xl">✓</span>
-                          <span>Special benefits on DIO products</span>
-                        </li>
-                        <li className="flex items-start">
-                          <span className="text-blue-400 font-bold mr-2 text-xl">✓</span>
-                          <span>Exclusive visits to European partner facilities</span>
-                        </li>
-                        <li className="flex items-start">
-                          <span className="text-blue-400 font-bold mr-2 text-xl">✓</span>
-                          <span>Masterclasses with world-renowned architects</span>
-                        </li>
-                        <li className="flex items-start">
-                          <span className="text-blue-400 font-bold mr-2 text-xl">✓</span>
-                          <span>Networking with industry leaders</span>
-                        </li>
-                        <li className="flex items-start">
-                          <span className="text-blue-400 font-bold mr-2 text-xl">✓</span>
-                          <span>Early access to new innovations</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <p className="font-semibold text-white">
-                      დიოს არქიტექტორთა კლუბი ჩამოყალიბდა 2016 წლის 14 აპრილს, წამყვანი არქიტექტორებისა და დიზაინერების გაერთიანების მიზნით.
-                    </p>
-                    
-                    <p>
-                      ჩვენი მისიაა ხელი შევუწყოთ თანამშრომლობას დიოსა და არქიტექტურულ საზოგადოებას შორის, მივაწოდოთ წევრებს ექსკლუზიური ინფორმაცია ინოვაციებისა და პროდუქტების შესახებ.
-                    </p>
+                        <div className="bg-white/5 border border-white/20 p-6 mt-6">
+                          <p className="font-bold text-lg mb-4 text-white">Active Members Enjoy:</p>
+                          <ul className="space-y-3 text-sm">
+                            <li className="flex items-start">
+                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
+                              <span>Special benefits on DIO products</span>
+                            </li>
+                            <li className="flex items-start">
+                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
+                              <span>Exclusive visits to European facilities</span>
+                            </li>
+                            <li className="flex items-start">
+                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
+                              <span>Masterclasses with renowned architects</span>
+                            </li>
+                            <li className="flex items-start">
+                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
+                              <span>Networking with industry leaders</span>
+                            </li>
+                            <li className="flex items-start">
+                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
+                              <span>Early access to innovations</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <p className="font-semibold text-white">
+                          დიოს არქიტექტორთა კლუბი ჩამოყალიბდა 2016 წლის 14 აპრილს, წამყვანი არქიტექტორებისა და დიზაინერების გაერთიანების მიზნით.
+                        </p>
+                        
+                        <p>
+                          ჩვენი მისიაა ხელი შევუწყოთ თანამშრომლობას დიოსა და არქიტექტურულ საზოგადოებას შორის, მივაწოდოთ წევრებს ექსკლუზიური ინფორმაცია.
+                        </p>
 
-                    <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-6 mt-6">
-                      <p className="font-bold text-xl mb-4 text-white">აქტიური წევრების შესაძლებლობები:</p>
-                      <ul className="space-y-3">
-                        <li className="flex items-start">
-                          <span className="text-blue-400 font-bold mr-2 text-xl">✓</span>
-                          <span>დამატებითი ბენეფიტები დიოს პროდუქტებზე</span>
-                        </li>
-                        <li className="flex items-start">
-                          <span className="text-blue-400 font-bold mr-2 text-xl">✓</span>
-                          <span>ვიზიტები ევროპის პარტნიორ კომპანიებში</span>
-                        </li>
-                        <li className="flex items-start">
-                          <span className="text-blue-400 font-bold mr-2 text-xl">✓</span>
-                          <span>მასტერკლასები მსოფლიო არქიტექტორებთან</span>
-                        </li>
-                        <li className="flex items-start">
-                          <span className="text-blue-400 font-bold mr-2 text-xl">✓</span>
-                          <span>ქსელის შექმნა ინდუსტრიის ლიდერებთან</span>
-                        </li>
-                        <li className="flex items-start">
-                          <span className="text-blue-400 font-bold mr-2 text-xl">✓</span>
-                          <span>ადრეული წვდომა ახალ ინოვაციებზე</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </>
-                )}
+                        <div className="bg-white/5 border border-white/20 p-6 mt-6">
+                          <p className="font-bold text-lg mb-4 text-white">აქტიური წევრების შესაძლებლობები:</p>
+                          <ul className="space-y-3 text-sm">
+                            <li className="flex items-start">
+                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
+                              <span>დამატებითი ბენეფიტები დიოს პროდუქტებზე</span>
+                            </li>
+                            <li className="flex items-start">
+                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
+                              <span>ვიზიტები ევროპის კომპანიებში</span>
+                            </li>
+                            <li className="flex items-start">
+                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
+                              <span>მასტერკლასები არქიტექტორებთან</span>
+                            </li>
+                            <li className="flex items-start">
+                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
+                              <span>ქსელის შექმნა ლიდერებთან</span>
+                            </li>
+                            <li className="flex items-start">
+                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
+                              <span>ადრეული წვდომა ინოვაციებზე</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </>
+                    )}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
