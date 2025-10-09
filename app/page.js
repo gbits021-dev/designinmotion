@@ -258,16 +258,112 @@ export default function Home() {
       >
         <div>
           <h3 className="text-2xl sm:text-3xl font-semibold text-blue-700 mb-4">
-            {t[lang].about}
+            {lang === "en" ? "Design in Motion" : "დიზაინი მოძრაობაში"}
           </h3>
-          <p>{t[lang].aboutText}</p>
+          <h4 className="text-xl font-semibold text-gray-700 mb-3">
+            {lang === "en" ? "Architectural Innovation in Action" : "არქიტექტურული ინოვაცია მოქმედებაში"}
+          </h4>
+          <p className="mb-4">
+            {lang === "en" 
+              ? "Join us for an inspiring half-day event where architecture meets technology, aesthetics meets performance, and ideas move into action."
+              : "შემოგვიერთდით ინსპირირებულ ნახევარდღიან ღონისძიებას, სადაც არქიტექტურა ხვდება ტექნოლოგიას, ესთეტიკა - შესრულებას და იდეები გადადიან მოქმედებაში."}
+          </p>
+          <p className="text-gray-600">
+            {lang === "en" 
+              ? "Open to architects, designers, engineers & industry professionals."
+              : "ღია არქიტექტორებისთვის, დიზაინერებისთვის, ინჟინრებისთვის და ინდუსტრიის პროფესიონალებისთვის."}
+          </p>
         </div>
         <div>
           <img
-            src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70"
-            alt="Architecture"
-            className="rounded-lg shadow-lg w-full"
+            src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800"
+            alt="Architecture Event"
+            className="rounded-lg shadow-lg w-full h-full object-cover"
           />
+        </div>
+      </section>
+
+      {/* DIO'S ARCHITECTS CLUB */}
+      <section id="architects-club" className="bg-gray-50 py-16 sm:py-20">
+        <div className="max-w-6xl mx-auto px-4">
+          <h3 className="text-2xl sm:text-3xl font-semibold text-blue-700 mb-10 text-center">
+            {lang === "en" ? "DIO's Architects Club" : "„დიო"-ს არქიტექტორთა კლუბი"}
+          </h3>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Gallery - Left Side */}
+            <div>
+              <h4 className="text-xl font-semibold text-gray-700 mb-4">
+                {lang === "en" ? "Past Events Gallery" : "წარსული ღონისძიებები"}
+              </h4>
+              <div className="grid grid-cols-2 gap-4">
+                <img
+                  src="/club-event-1.jpg"
+                  alt="Architects Club Event 1"
+                  className="rounded-lg shadow-md w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+                />
+                <img
+                  src="/club-event-2.jpg"
+                  alt="Architects Club Event 2"
+                  className="rounded-lg shadow-md w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+                />
+                <img
+                  src="/club-event-3.jpg"
+                  alt="Architects Club Event 3"
+                  className="rounded-lg shadow-md w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+                />
+                <img
+                  src="/club-event-4.jpg"
+                  alt="Architects Club Event 4"
+                  className="rounded-lg shadow-md w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            </div>
+
+            {/* History - Right Side */}
+            <div>
+              <h4 className="text-xl font-semibold text-gray-700 mb-4">
+                {lang === "en" ? "Our Story" : "ჩვენი ისტორია"}
+              </h4>
+              <div className="space-y-4 text-gray-700">
+                {lang === "en" ? (
+                  <>
+                    <p>
+                      The DIO Architects Club was founded on April 14, 2016, with a vision to unite leading architects, designers, and industry professionals around innovation in architecture and building systems.
+                    </p>
+                    <p>
+                      Our mission is to foster collaboration between DIO and the architectural community, providing members with exclusive insights into cutting-edge products while gathering valuable feedback to shape the future of design.
+                    </p>
+                    <p className="font-semibold">Active club members enjoy:</p>
+                    <ul className="list-disc list-inside space-y-2 ml-4">
+                      <li>Special benefits on DIO products for their projects</li>
+                      <li>Exclusive visits to partner facilities across Europe</li>
+                      <li>Access to masterclasses with world-renowned architects</li>
+                      <li>Networking opportunities with industry leaders</li>
+                      <li>Early access to new product launches and innovations</li>
+                    </ul>
+                  </>
+                ) : (
+                  <>
+                    <p>
+                      „დიო"-ს არქიტექტორთა კლუბი ჩამოყალიბდა 2016 წლის 14 აპრილს.
+                    </p>
+                    <p>
+                      კლუბის მიზანია კომპანია „დიო"-ს ირგვლივ გავაერთიანოთ ყველა წამყვანი და აქტიური არქიტექტორი და დიზაინერი, რათა შევძლოთ ორმხრივი თანამშრომლობის ფარგლებში პირველებს მივაწოდოთ საჭირო ინფორმაცია ჩვენი ექსკლუზიური პროდუქტების შესახებ, მოვისმინოთ მათგან რჩევები და ერთად ვიმუშავოთ საინტერესო პროექტებზე.
+                    </p>
+                    <p className="font-semibold">აქტიური კლუბის წევრებს ექნებათ შესაძლებლობა:</p>
+                    <ul className="list-disc list-inside space-y-2 ml-4">
+                      <li>მიიღონ დამატებითი ბენეფიტები სხვადასხვა პროექტებში „დიოს" პროდუქტების გამოყენებით</li>
+                      <li>„დიო"-ს პარტნიორ კომპანიებს ესტუმრონ ევროპის სხვადასხვა ქვეყნებში</li>
+                      <li>დაესწრონ სპეციალურად მოწვეული მსოფლიო დონის არქიტექტორების მიერ ჩატარებულ შეხვედრებს</li>
+                      <li>დაუკავშირდნენ ინდუსტრიის ლიდერებს</li>
+                      <li>პირველებმა გაეცნონ ახალ პროდუქტებსა და ინოვაციებს</li>
+                    </ul>
+                  </>
+                )}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
