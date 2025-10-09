@@ -6,6 +6,7 @@ import Image from "next/image";
 export default function Home() {
   const [lang, setLang] = useState("en");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -13,6 +14,21 @@ export default function Home() {
     seconds: 0,
   });
   const t = translations;
+
+  const clubImages = [
+    "/club-event-1.jpg",
+    "/club-event-2.jpg",
+    "/club-event-3.jpg",
+    "/club-event-4.jpg",
+  ];
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % clubImages.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + clubImages.length) % clubImages.length);
+  };
 
   // Countdown Timer Logic
   useEffect(() => {
