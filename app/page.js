@@ -128,11 +128,57 @@ export default function Home() {
               {t[lang].subtitle}
             </p>
           </div>
+        </section>
 
-          {/* --- BOTTOM NAVIGATION AREA --- */}
-          <div className="relative">
-            {/* Desktop Menu - FIXED */}
-            <nav className="hidden sm:flex bg-black/50 backdrop-blur-sm w-full py-4 justify-center space-x-6 md:space-x-8 text-base font-semibold sticky top-0 z-50">
+        {/* FIXED NAVIGATION - Outside hero section for proper sticky behavior */}
+        <div className="sticky top-0 z-50">
+          {/* Desktop Menu */}
+          <nav className="hidden sm:flex bg-black/50 backdrop-blur-sm w-full py-4 justify-center space-x-6 md:space-x-8 text-base font-semibold text-white">
+            {t[lang].menu.map((m, i) => (
+              <a
+                key={i}
+                href={`#${[
+                  "about",
+                  "architects-club",
+                  "partners",
+                  "venue",
+                  "agenda",
+                  "registration",
+                ][i]}`}
+                className="hover:text-blue-300 transition"
+              >
+                {m}
+              </a>
+            ))}
+          </nav>
+
+          {/* Mobile Hamburger */}
+          <div className="sm:hidden flex justify-center bg-black/60 backdrop-blur-sm py-4">
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="flex flex-col justify-center space-y-1 w-8 h-8"
+            >
+              <span
+                className={`block h-0.5 bg-white transform transition duration-300 ${
+                  menuOpen ? "rotate-45 translate-y-1.5" : ""
+                }`}
+              ></span>
+              <span
+                className={`block h-0.5 bg-white transition duration-300 ${
+                  menuOpen ? "opacity-0" : "opacity-100"
+                }`}
+              ></span>
+              <span
+                className={`block h-0.5 bg-white transform transition duration-300 ${
+                  menuOpen ? "-rotate-45 -translate-y-1.5" : ""
+                }`}
+              ></span>
+            </button>
+          </div>
+
+          {/* Mobile Dropdown */}
+          {menuOpen && (
+            <nav className="sm:hidden absolute top-full left-0 w-full bg-black/85 backdrop-blur-lg flex flex-col items-center py-4 space-y-3 text-lg font-medium z-10 text-white">
               {t[lang].menu.map((m, i) => (
                 <a
                   key={i}
@@ -145,128 +191,83 @@ export default function Home() {
                     "registration",
                   ][i]}`}
                   className="hover:text-blue-300 transition"
+                  onClick={() => setMenuOpen(false)}
                 >
                   {m}
                 </a>
               ))}
             </nav>
-
-            {/* Mobile Hamburger */}
-            <div className="sm:hidden flex justify-center bg-black/60 backdrop-blur-sm py-4">
-              <button
-                onClick={() => setMenuOpen(!menuOpen)}
-                className="flex flex-col justify-center space-y-1 w-8 h-8"
-              >
-                <span
-                  className={`block h-0.5 bg-white transform transition duration-300 ${
-                    menuOpen ? "rotate-45 translate-y-1.5" : ""
-                  }`}
-                ></span>
-                <span
-                  className={`block h-0.5 bg-white transition duration-300 ${
-                    menuOpen ? "opacity-0" : "opacity-100"
-                  }`}
-                ></span>
-                <span
-                  className={`block h-0.5 bg-white transform transition duration-300 ${
-                    menuOpen ? "-rotate-45 -translate-y-1.5" : ""
-                  }`}
-                ></span>
-              </button>
-            </div>
-
-            {/* Mobile Dropdown */}
-            {menuOpen && (
-              <nav className="sm:hidden absolute bottom-[60px] left-0 w-full bg-black/85 backdrop-blur-lg flex flex-col items-center py-4 space-y-3 text-lg font-medium z-10">
-                {t[lang].menu.map((m, i) => (
-                  <a
-                    key={i}
-                    href={`#${[
-                      "about",
-                      "partners",
-                      "venue",
-                      "agenda",
-                      "registration",
-                    ][i]}`}
-                    className="hover:text-blue-300 transition"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    {m}
-                  </a>
-                ))}
-              </nav>
-            )}
-          </div>
-        </section>
-
-        {/* COUNTDOWN TIMER SECTION - 20% - DIGITAL CLOCK STYLE */}
-        <section className="bg-[#21263A] h-[20%] flex items-center justify-center px-4">
-          <div className="w-full max-w-5xl text-center">
-            <h2 className="text-white text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-3 sm:mb-4">
-              {lang === "en" ? "Event Starts In" : "ღონისძიება იწყება"}
-            </h2>
-            
-            {/* Digital Clock Style Countdown */}
-            <div className="flex items-center justify-center gap-2 sm:gap-3 mb-2 sm:mb-3">
-              {/* Days */}
-              <div className="text-center">
-                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tabular-nums">
-                  {String(timeLeft.days).padStart(2, '0')}
-                </div>
-                <div className="text-blue-200 text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-semibold uppercase tracking-wide mt-1">
-                  {lang === "en" ? "Days" : "დღე"}
-                </div>
-              </div>
-
-              {/* Separator : */}
-              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white pb-5">:</div>
-
-              {/* Hours */}
-              <div className="text-center">
-                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tabular-nums">
-                  {String(timeLeft.hours).padStart(2, '0')}
-                </div>
-                <div className="text-blue-200 text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-semibold uppercase tracking-wide mt-1">
-                  {lang === "en" ? "Hours" : "საათი"}
-                </div>
-              </div>
-
-              {/* Separator : */}
-              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white pb-5">:</div>
-
-              {/* Minutes */}
-              <div className="text-center">
-                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tabular-nums">
-                  {String(timeLeft.minutes).padStart(2, '0')}
-                </div>
-                <div className="text-blue-200 text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-semibold uppercase tracking-wide mt-1">
-                  {lang === "en" ? "Minutes" : "წუთი"}
-                </div>
-              </div>
-
-              {/* Separator : */}
-              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white pb-5">:</div>
-
-              {/* Seconds */}
-              <div className="text-center">
-                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tabular-nums">
-                  {String(timeLeft.seconds).padStart(2, '0')}
-                </div>
-                <div className="text-blue-200 text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-semibold uppercase tracking-wide mt-1">
-                  {lang === "en" ? "Seconds" : "წამი"}
-                </div>
-              </div>
-            </div>
-
-            {/* Event Details */}
-            <div className="text-center">
-              <p className="text-blue-100 text-[10px] sm:text-xs md:text-sm lg:text-base font-medium">
-                📅 {t[lang].date} | 🏛️ {t[lang].place}
-              </p>
-            </div>
-          </div>
-        </section>
+          )}
+        </div>
       </div>
+
+      {/* COUNTDOWN TIMER SECTION - 20% - DIGITAL CLOCK STYLE */}
+      <section className="bg-[#21263A] h-[20vh] flex items-center justify-center px-4">
+        <div className="w-full max-w-5xl text-center">
+          <h2 className="text-white text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-3 sm:mb-4">
+            {lang === "en" ? "Event Starts In" : "ღონისძიება იწყება"}
+          </h2>
+          
+          {/* Digital Clock Style Countdown */}
+          <div className="flex items-center justify-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+            {/* Days */}
+            <div className="text-center">
+              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tabular-nums">
+                {String(timeLeft.days).padStart(2, '0')}
+              </div>
+              <div className="text-blue-200 text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-semibold uppercase tracking-wide mt-1">
+                {lang === "en" ? "Days" : "დღე"}
+              </div>
+            </div>
+
+            {/* Separator : */}
+            <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white pb-5">:</div>
+
+            {/* Hours */}
+            <div className="text-center">
+              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tabular-nums">
+                {String(timeLeft.hours).padStart(2, '0')}
+              </div>
+              <div className="text-blue-200 text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-semibold uppercase tracking-wide mt-1">
+                {lang === "en" ? "Hours" : "საათი"}
+              </div>
+            </div>
+
+            {/* Separator : */}
+            <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white pb-5">:</div>
+
+            {/* Minutes */}
+            <div className="text-center">
+              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tabular-nums">
+                {String(timeLeft.minutes).padStart(2, '0')}
+              </div>
+              <div className="text-blue-200 text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-semibold uppercase tracking-wide mt-1">
+                {lang === "en" ? "Minutes" : "წუთი"}
+              </div>
+            </div>
+
+            {/* Separator : */}
+            <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white pb-5">:</div>
+
+            {/* Seconds */}
+            <div className="text-center">
+              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tabular-nums">
+                {String(timeLeft.seconds).padStart(2, '0')}
+              </div>
+              <div className="text-blue-200 text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-semibold uppercase tracking-wide mt-1">
+                {lang === "en" ? "Seconds" : "წამი"}
+              </div>
+            </div>
+          </div>
+
+          {/* Event Details */}
+          <div className="text-center">
+            <p className="text-blue-100 text-[10px] sm:text-xs md:text-sm lg:text-base font-medium">
+              📅 {t[lang].date} | 🏛️ {t[lang].place}
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* ABOUT - Compact Height */}
       <section
@@ -331,34 +332,23 @@ export default function Home() {
         {/* Architectural Drawing Elements - Left Side */}
         <div className="absolute left-0 top-0 w-1/3 h-full opacity-10 pointer-events-none">
           <svg viewBox="0 0 400 800" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-            {/* Blueprint grid */}
             <defs>
               <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
                 <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="0.5"/>
               </pattern>
             </defs>
             <rect width="400" height="800" fill="url(#grid)" />
-            
-            {/* Architectural lines and measurements */}
             <line x1="50" y1="100" x2="350" y2="100" stroke="white" strokeWidth="2"/>
             <line x1="50" y1="100" x2="50" y2="400" stroke="white" strokeWidth="2"/>
             <line x1="350" y1="100" x2="350" y2="400" stroke="white" strokeWidth="2"/>
             <line x1="50" y1="400" x2="350" y2="400" stroke="white" strokeWidth="2"/>
-            
-            {/* Diagonal construction lines */}
             <line x1="50" y1="100" x2="350" y2="400" stroke="white" strokeWidth="1" strokeDasharray="5,5"/>
             <line x1="350" y1="100" x2="50" y2="400" stroke="white" strokeWidth="1" strokeDasharray="5,5"/>
-            
-            {/* Dimension lines */}
             <line x1="30" y1="100" x2="30" y2="400" stroke="white" strokeWidth="1"/>
             <line x1="25" y1="100" x2="35" y2="100" stroke="white" strokeWidth="1"/>
             <line x1="25" y1="400" x2="35" y2="400" stroke="white" strokeWidth="1"/>
-            
-            {/* Circle elements */}
             <circle cx="200" cy="250" r="80" fill="none" stroke="white" strokeWidth="1.5"/>
             <circle cx="200" cy="250" r="60" fill="none" stroke="white" strokeWidth="1"/>
-            
-            {/* Additional geometric shapes */}
             <polygon points="100,500 150,450 200,500 150,550" fill="none" stroke="white" strokeWidth="1.5"/>
             <rect x="250" y="500" width="80" height="80" fill="none" stroke="white" strokeWidth="1.5"/>
           </svg>
@@ -366,10 +356,9 @@ export default function Home() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-start">
-            {/* Left - Image Slider with Sharp Edges */}
+            {/* Left - Image Slider */}
             <div>
               <div className="relative">
-                {/* Main Image - Sharp 90° Edges */}
                 <div className="relative h-[450px] overflow-hidden shadow-2xl border-2 border-white/10">
                   <img
                     src={clubImages[currentSlide]}
@@ -377,7 +366,6 @@ export default function Home() {
                     className="w-full h-full object-cover"
                   />
                   
-                  {/* Previous Button */}
                   <button
                     onClick={prevSlide}
                     className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 p-3 shadow-xl transition-all duration-200 hover:scale-110"
@@ -388,7 +376,6 @@ export default function Home() {
                     </svg>
                   </button>
                   
-                  {/* Next Button */}
                   <button
                     onClick={nextSlide}
                     className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 p-3 shadow-xl transition-all duration-200 hover:scale-110"
@@ -399,13 +386,11 @@ export default function Home() {
                     </svg>
                   </button>
                   
-                  {/* Slide Counter */}
                   <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/70 text-white px-4 py-2 text-sm font-semibold">
                     {currentSlide + 1} / {clubImages.length}
                   </div>
                 </div>
                 
-                {/* Dot Indicators */}
                 <div className="flex justify-center gap-3 mt-6">
                   {clubImages.map((_, index) => (
                     <button
@@ -421,14 +406,13 @@ export default function Home() {
                   ))}
                 </div>
 
-                {/* Title Below Slider */}
                 <h4 className="text-center mt-6 text-2xl font-bold text-white">
                   {lang === "en" ? "Past Events" : "წარსული ღონისძიებები"}
                 </h4>
               </div>
             </div>
 
-            {/* Right - Content in Separate Box */}
+            {/* Right - Content in Box */}
             <div>
               <div className="bg-white/5 backdrop-blur-sm border-2 border-white/10 p-8 shadow-2xl h-full">
                 <div className="space-y-5">
@@ -491,78 +475,6 @@ export default function Home() {
                         <div className="bg-white/5 border border-white/20 p-5 mt-5">
                           <p className="font-bold text-base mb-3 text-white">აქტიური წევრების შესაძლებლობები:</p>
                           <ul className="space-y-2 text-sm">
-                            <li className="flex items-start">
-                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
-                              <span>დამატებითი ბენეფიტები დიოს პროდუქტებზე</span>
-                            </li>
-                            <li className="flex items-start">
-                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
-                              <span>ვიზიტები ევროპის კომპანიებში</span>
-                            </li>
-                            <li className="flex items-start">
-                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
-                              <span>მასტერკლასები არქიტექტორებთან</span>
-                            </li>
-                            <li className="flex items-start">
-                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
-                              <span>ქსელის შექმნა ლიდერებთან</span>
-                            </li>
-                            <li className="flex items-start">
-                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
-                              <span>ადრეული წვდომა ინოვაციებზე</span>
-                            </li>
-                          </ul>
-                        </div>
-                      </>
-                    )}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>ზიური ინფორმაცია.
-                        </p>
-
-                        <div className="bg-white/5 border border-white/20 p-5 mt-5">
-                          <p className="font-bold text-base mb-3 text-white">აქტიური წევრების შესაძლებლობები:</p>
-                          <ul className="space-y-2 text-sm">
-                            <li className="flex items-start">
-                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
-                              <span>დამატებითი ბენეფიტები დიოს პროდუქტებზე</span>
-                            </li>
-                            <li className="flex items-start">
-                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
-                              <span>ვიზიტები ევროპის კომპანიებში</span>
-                            </li>
-                            <li className="flex items-start">
-                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
-                              <span>მასტერკლასები არქიტექტორებთან</span>
-                            </li>
-                            <li className="flex items-start">
-                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
-                              <span>ქსელის შექმნა ლიდერებთან</span>
-                            </li>
-                            <li className="flex items-start">
-                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
-                              <span>ადრეული წვდომა ინოვაციებზე</span>
-                            </li>
-                          </ul>
-                        </div>
-                      </>
-                    )}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>ზიური ინფორმაცია.
-                        </p>
-
-                        <div className="bg-white/5 border border-white/20 p-6 mt-6">
-                          <p className="font-bold text-lg mb-4 text-white">აქტიური წევრების შესაძლებლობები:</p>
-                          <ul className="space-y-3 text-sm">
                             <li className="flex items-start">
                               <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
                               <span>დამატებითი ბენეფიტები დიოს პროდუქტებზე</span>
