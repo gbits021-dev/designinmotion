@@ -268,15 +268,15 @@ export default function Home() {
         </section>
       </div>
 
-      {/* ABOUT - Improved Poster Size */}
+      {/* ABOUT - Compact Height */}
       <section
         id="about"
-        className="max-w-7xl mx-auto py-20 sm:py-28 px-4"
+        className="max-w-7xl mx-auto py-16 px-4"
       >
         <div className="grid md:grid-cols-5 gap-12 items-stretch">
           {/* Left - Taller Portrait Poster */}
           <div className="md:col-span-2">
-            <div className="relative h-full min-h-[700px]">
+            <div className="relative h-full min-h-[600px]">
               <img
                 src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&h=1200"
                 alt="Design in Motion Poster"
@@ -326,8 +326,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* DIO'S ARCHITECTS CLUB - Matching Countdown Color with Architectural Elements */}
-      <section id="architects-club" className="relative min-h-screen flex items-center py-20 bg-[#21263A] overflow-hidden">
+      {/* DIO'S ARCHITECTS CLUB - Compact Height Matching Content */}
+      <section id="architects-club" className="relative bg-[#21263A] overflow-hidden py-16">
         {/* Architectural Drawing Elements - Left Side */}
         <div className="absolute left-0 top-0 w-1/3 h-full opacity-10 pointer-events-none">
           <svg viewBox="0 0 400 800" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -364,13 +364,13 @@ export default function Home() {
           </svg>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 w-full">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
             {/* Left - Image Slider with Sharp Edges */}
             <div>
               <div className="relative">
                 {/* Main Image - Sharp 90° Edges */}
-                <div className="relative h-[500px] overflow-hidden shadow-2xl border-2 border-white/10">
+                <div className="relative h-[450px] overflow-hidden shadow-2xl border-2 border-white/10">
                   <img
                     src={clubImages[currentSlide]}
                     alt={`Past Event ${currentSlide + 1}`}
@@ -430,13 +430,13 @@ export default function Home() {
 
             {/* Right - Content in Separate Box */}
             <div>
-              <div className="bg-white/5 backdrop-blur-sm border-2 border-white/10 p-8 shadow-2xl">
-                <div className="space-y-6">
+              <div className="bg-white/5 backdrop-blur-sm border-2 border-white/10 p-8 shadow-2xl h-full">
+                <div className="space-y-5">
                   <div>
-                    <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-4">
+                    <h2 className="text-3xl sm:text-4xl font-bold text-white leading-tight mb-3">
                       {lang === "en" ? "DIO's Architects Club" : "დიოს არქიტექტორთა კლუბი"}
                     </h2>
-                    <h3 className="text-xl font-semibold text-blue-300 mb-6">
+                    <h3 className="text-lg font-semibold text-blue-300 mb-5">
                       {lang === "en" ? "Join Our Community" : "შემოგვიერთდით"}
                     </h3>
                   </div>
@@ -452,9 +452,9 @@ export default function Home() {
                           Our mission is to foster collaboration between DIO and the architectural community, providing members with exclusive insights into cutting-edge products.
                         </p>
 
-                        <div className="bg-white/5 border border-white/20 p-6 mt-6">
-                          <p className="font-bold text-lg mb-4 text-white">Active Members Enjoy:</p>
-                          <ul className="space-y-3 text-sm">
+                        <div className="bg-white/5 border border-white/20 p-5 mt-5">
+                          <p className="font-bold text-base mb-3 text-white">Active Members Enjoy:</p>
+                          <ul className="space-y-2 text-sm">
                             <li className="flex items-start">
                               <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
                               <span>Special benefits on DIO products</span>
@@ -486,6 +486,78 @@ export default function Home() {
                         
                         <p>
                           ჩვენი მისიაა ხელი შევუწყოთ თანამშრომლობას დიოსა და არქიტექტურულ საზოგადოებას შორის, მივაწოდოთ წევრებს ექსკლუზიური ინფორმაცია.
+                        </p>
+
+                        <div className="bg-white/5 border border-white/20 p-5 mt-5">
+                          <p className="font-bold text-base mb-3 text-white">აქტიური წევრების შესაძლებლობები:</p>
+                          <ul className="space-y-2 text-sm">
+                            <li className="flex items-start">
+                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
+                              <span>დამატებითი ბენეფიტები დიოს პროდუქტებზე</span>
+                            </li>
+                            <li className="flex items-start">
+                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
+                              <span>ვიზიტები ევროპის კომპანიებში</span>
+                            </li>
+                            <li className="flex items-start">
+                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
+                              <span>მასტერკლასები არქიტექტორებთან</span>
+                            </li>
+                            <li className="flex items-start">
+                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
+                              <span>ქსელის შექმნა ლიდერებთან</span>
+                            </li>
+                            <li className="flex items-start">
+                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
+                              <span>ადრეული წვდომა ინოვაციებზე</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>ზიური ინფორმაცია.
+                        </p>
+
+                        <div className="bg-white/5 border border-white/20 p-5 mt-5">
+                          <p className="font-bold text-base mb-3 text-white">აქტიური წევრების შესაძლებლობები:</p>
+                          <ul className="space-y-2 text-sm">
+                            <li className="flex items-start">
+                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
+                              <span>დამატებითი ბენეფიტები დიოს პროდუქტებზე</span>
+                            </li>
+                            <li className="flex items-start">
+                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
+                              <span>ვიზიტები ევროპის კომპანიებში</span>
+                            </li>
+                            <li className="flex items-start">
+                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
+                              <span>მასტერკლასები არქიტექტორებთან</span>
+                            </li>
+                            <li className="flex items-start">
+                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
+                              <span>ქსელის შექმნა ლიდერებთან</span>
+                            </li>
+                            <li className="flex items-start">
+                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
+                              <span>ადრეული წვდომა ინოვაციებზე</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>ზიური ინფორმაცია.
                         </p>
 
                         <div className="bg-white/5 border border-white/20 p-6 mt-6">
