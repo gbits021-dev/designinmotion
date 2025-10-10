@@ -57,7 +57,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main id="top" className="text-gray-800">
+    <main id="top" className="text-gray-800 bg-white">
       {/* HERO + COUNTDOWN CONTAINER - 100vh total */}
       <div className="h-screen flex flex-col">
         {/* HERO SECTION - 80% */}
@@ -259,30 +259,31 @@ export default function Home() {
         </div>
       </section>
 
-      {/* DIO'S ARCHITECTS CLUB - Compact Height Matching Content */}
-      <section id="architects-club" className="relative bg-[#21263A] overflow-hidden py-16">
-        {/* Architectural Drawing Elements - Left Side */}
-        <div className="absolute left-0 top-0 w-1/3 h-full opacity-10 pointer-events-none">
-          <svg viewBox="0 0 400 800" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      {/* DIO'S ARCHITECTS CLUB - White background with architectural sketch */}
+      <section id="architects-club" className="relative bg-white overflow-hidden py-16">
+        {/* Architectural Sketch - Background */}
+        <div className="absolute inset-0 opacity-5 pointer-events-none">
+          <svg viewBox="0 0 1200 800" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="0.5"/>
+              <pattern id="gridWhite" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#21263A" strokeWidth="0.5"/>
               </pattern>
             </defs>
-            <rect width="400" height="800" fill="url(#grid)" />
-            <line x1="50" y1="100" x2="350" y2="100" stroke="white" strokeWidth="2"/>
-            <line x1="50" y1="100" x2="50" y2="400" stroke="white" strokeWidth="2"/>
-            <line x1="350" y1="100" x2="350" y2="400" stroke="white" strokeWidth="2"/>
-            <line x1="50" y1="400" x2="350" y2="400" stroke="white" strokeWidth="2"/>
-            <line x1="50" y1="100" x2="350" y2="400" stroke="white" strokeWidth="1" strokeDasharray="5,5"/>
-            <line x1="350" y1="100" x2="50" y2="400" stroke="white" strokeWidth="1" strokeDasharray="5,5"/>
-            <line x1="30" y1="100" x2="30" y2="400" stroke="white" strokeWidth="1"/>
-            <line x1="25" y1="100" x2="35" y2="100" stroke="white" strokeWidth="1"/>
-            <line x1="25" y1="400" x2="35" y2="400" stroke="white" strokeWidth="1"/>
-            <circle cx="200" cy="250" r="80" fill="none" stroke="white" strokeWidth="1.5"/>
-            <circle cx="200" cy="250" r="60" fill="none" stroke="white" strokeWidth="1"/>
-            <polygon points="100,500 150,450 200,500 150,550" fill="none" stroke="white" strokeWidth="1.5"/>
-            <rect x="250" y="500" width="80" height="80" fill="none" stroke="white" strokeWidth="1.5"/>
+            <rect width="1200" height="800" fill="url(#gridWhite)" />
+            <line x1="100" y1="150" x2="500" y2="150" stroke="#21263A" strokeWidth="2"/>
+            <line x1="100" y1="150" x2="100" y2="450" stroke="#21263A" strokeWidth="2"/>
+            <line x1="500" y1="150" x2="500" y2="450" stroke="#21263A" strokeWidth="2"/>
+            <line x1="100" y1="450" x2="500" y2="450" stroke="#21263A" strokeWidth="2"/>
+            <line x1="100" y1="150" x2="500" y2="450" stroke="#21263A" strokeWidth="1" strokeDasharray="5,5"/>
+            <line x1="500" y1="150" x2="100" y2="450" stroke="#21263A" strokeWidth="1" strokeDasharray="5,5"/>
+            <circle cx="300" cy="300" r="100" fill="none" stroke="#21263A" strokeWidth="1.5"/>
+            <circle cx="300" cy="300" r="80" fill="none" stroke="#21263A" strokeWidth="1"/>
+            <line x1="700" y1="200" x2="1100" y2="200" stroke="#21263A" strokeWidth="1.5"/>
+            <line x1="700" y1="200" x2="700" y2="600" stroke="#21263A" strokeWidth="1.5"/>
+            <line x1="1100" y1="200" x2="1100" y2="600" stroke="#21263A" strokeWidth="1.5"/>
+            <line x1="700" y1="600" x2="1100" y2="600" stroke="#21263A" strokeWidth="1.5"/>
+            <polygon points="200,600 250,550 300,600 250,650" fill="none" stroke="#21263A" strokeWidth="1.5"/>
+            <rect x="800" y="100" width="120" height="120" fill="none" stroke="#21263A" strokeWidth="1.5"/>
           </svg>
         </div>
 
@@ -338,7 +339,7 @@ export default function Home() {
                   ))}
                 </div>
 
-                <h4 className="text-center mt-6 text-2xl font-bold text-white">
+                <h4 className="text-center mt-6 text-2xl font-bold text-gray-900 bg-[#21263A] text-white px-4 py-2 inline-block">
                   {lang === "en" ? "Past Events" : "წარსული ღონისძიებები"}
                 </h4>
               </div>
@@ -346,21 +347,21 @@ export default function Home() {
 
             {/* Right - Content in Box */}
             <div>
-              <div className="bg-white/5 backdrop-blur-sm border-2 border-white/10 p-8 shadow-2xl h-full">
+              <div className="bg-gray-50 border-2 border-gray-200 p-8 shadow-xl h-full">
                 <div className="space-y-5">
                   <div>
-                    <h2 className="text-3xl sm:text-4xl font-bold text-white leading-tight mb-3">
+                    <h2 className="bg-[#21263A] text-white px-4 py-3 text-3xl sm:text-4xl font-bold leading-tight mb-3 inline-block">
                       {lang === "en" ? "DIO's Architects Club" : "დიოს არქიტექტორთა კლუბი"}
                     </h2>
-                    <h3 className="text-lg font-semibold text-blue-300 mb-5">
+                    <h3 className="text-lg font-semibold text-blue-700 mb-5 mt-3">
                       {lang === "en" ? "Join Our Community" : "შემოგვიერთდით"}
                     </h3>
                   </div>
 
-                  <div className="space-y-4 text-gray-200 text-base leading-relaxed">
+                  <div className="space-y-4 text-gray-700 text-base leading-relaxed">
                     {lang === "en" ? (
                       <>
-                        <p className="font-semibold text-white">
+                        <p className="font-semibold text-gray-900">
                           The DIO Architects Club was founded on April 14, 2016, with a vision to unite leading architects, designers, and industry professionals.
                         </p>
                         
@@ -368,27 +369,27 @@ export default function Home() {
                           Our mission is to foster collaboration between DIO and the architectural community, providing members with exclusive insights into cutting-edge products.
                         </p>
 
-                        <div className="bg-white/5 border border-white/20 p-5 mt-5">
-                          <p className="font-bold text-base mb-3 text-white">Active Members Enjoy:</p>
-                          <ul className="space-y-2 text-sm">
+                        <div className="bg-white border-2 border-gray-200 p-5 mt-5">
+                          <p className="bg-[#21263A] text-white px-3 py-2 font-bold text-base mb-3 inline-block">Active Members Enjoy:</p>
+                          <ul className="space-y-2 text-sm mt-3">
                             <li className="flex items-start">
-                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
+                              <span className="text-blue-700 font-bold mr-2 text-lg">✓</span>
                               <span>Special benefits on DIO products</span>
                             </li>
                             <li className="flex items-start">
-                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
+                              <span className="text-blue-700 font-bold mr-2 text-lg">✓</span>
                               <span>Exclusive visits to European facilities</span>
                             </li>
                             <li className="flex items-start">
-                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
+                              <span className="text-blue-700 font-bold mr-2 text-lg">✓</span>
                               <span>Masterclasses with renowned architects</span>
                             </li>
                             <li className="flex items-start">
-                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
+                              <span className="text-blue-700 font-bold mr-2 text-lg">✓</span>
                               <span>Networking with industry leaders</span>
                             </li>
                             <li className="flex items-start">
-                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
+                              <span className="text-blue-700 font-bold mr-2 text-lg">✓</span>
                               <span>Early access to innovations</span>
                             </li>
                           </ul>
@@ -396,7 +397,7 @@ export default function Home() {
                       </>
                     ) : (
                       <>
-                        <p className="font-semibold text-white">
+                        <p className="font-semibold text-gray-900">
                           დიოს არქიტექტორთა კლუბი ჩამოყალიბდა 2016 წლის 14 აპრილს, წამყვანი არქიტექტორებისა და დიზაინერების გაერთიანების მიზნით.
                         </p>
                         
@@ -404,27 +405,27 @@ export default function Home() {
                           ჩვენი მისიაა ხელი შევუწყოთ თანამშრომლობას დიოსა და არქიტექტურულ საზოგადოებას შორის, მივაწოდოთ წევრებს ექსკლუზიური ინფორმაცია.
                         </p>
 
-                        <div className="bg-white/5 border border-white/20 p-5 mt-5">
-                          <p className="font-bold text-base mb-3 text-white">აქტიური წევრების შესაძლებლობები:</p>
-                          <ul className="space-y-2 text-sm">
+                        <div className="bg-white border-2 border-gray-200 p-5 mt-5">
+                          <p className="bg-[#21263A] text-white px-3 py-2 font-bold text-base mb-3 inline-block">აქტიური წევრების შესაძლებლობები:</p>
+                          <ul className="space-y-2 text-sm mt-3">
                             <li className="flex items-start">
-                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
+                              <span className="text-blue-700 font-bold mr-2 text-lg">✓</span>
                               <span>დამატებითი ბენეფიტები დიოს პროდუქტებზე</span>
                             </li>
                             <li className="flex items-start">
-                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
+                              <span className="text-blue-700 font-bold mr-2 text-lg">✓</span>
                               <span>ვიზიტები ევროპის კომპანიებში</span>
                             </li>
                             <li className="flex items-start">
-                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
+                              <span className="text-blue-700 font-bold mr-2 text-lg">✓</span>
                               <span>მასტერკლასები არქიტექტორებთან</span>
                             </li>
                             <li className="flex items-start">
-                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
+                              <span className="text-blue-700 font-bold mr-2 text-lg">✓</span>
                               <span>ქსელის შექმნა ლიდერებთან</span>
                             </li>
                             <li className="flex items-start">
-                              <span className="text-blue-400 font-bold mr-2 text-lg">✓</span>
+                              <span className="text-blue-700 font-bold mr-2 text-lg">✓</span>
                               <span>ადრეული წვდომა ინოვაციებზე</span>
                             </li>
                           </ul>
