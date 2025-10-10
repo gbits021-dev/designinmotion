@@ -308,20 +308,63 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Gallery - 3 Photos in a Row */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {clubImages.slice(0, 3).map((img, index) => (
-              <div 
-                key={index}
-                className="relative h-64 overflow-hidden rounded-lg shadow-lg"
+          {/* Gallery Slideshow - 3 Photos Visible */}
+          <div className="relative">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {[0, 1, 2].map((offset) => {
+                const index = (currentSlide + offset) % clubImages.length;
+                return (
+                  <div 
+                    key={offset}
+                    className="relative h-64 overflow-hidden rounded-lg shadow-lg"
+                  >
+                    <img
+                      src={clubImages[index]}
+                      alt={`Event ${index + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                );
+              })}
+            </div>
+            
+            {/* Slideshow Controls */}
+            <div className="flex items-center justify-center gap-4 mt-6">
+              <button
+                onClick={prevSlide}
+                className="bg-[#21263A] hover:bg-[#2d3449] text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
+                aria-label="Previous images"
               >
-                <img
-                  src={img}
-                  alt={`Event ${index + 1}`}
-                  className="w-full h-full object-cover"
-                />
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              
+              <div className="flex gap-2">
+                {clubImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentSlide(index)}
+                    className={`h-2 rounded-full transition-all duration-300 ${
+                      index === currentSlide 
+                        ? 'bg-[#21263A] w-8' 
+                        : 'bg-gray-300 w-2 hover:bg-gray-400'
+                    }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
               </div>
-            ))}
+              
+              <button
+                onClick={nextSlide}
+                className="bg-[#21263A] hover:bg-[#2d3449] text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
+                aria-label="Next images"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </section>
