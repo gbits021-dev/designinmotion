@@ -130,7 +130,7 @@ export default function Home() {
           </div>
 
           {/* NAVIGATION MENU - Bottom of Hero, LARGE */}
-          <nav className="absolute bottom-0 w-full bg-black/60 backdrop-blur-sm py-5 flex justify-center space-x-8 md:space-x-12 lg:space-x-16 text-lg md:text-xl font-semibold text-blue-200 border-t border-white/10 sticky top-0 z-50">
+          <nav className="absolute bottom-0 w-full bg-[#21263A]/95 backdrop-blur-sm py-5 flex justify-center space-x-8 md:space-x-12 lg:space-x-16 text-lg md:text-xl font-semibold text-white border-t border-white/10 sticky top-0 z-50">
             {t[lang].menu.map((m, i) => (
               <a
                 key={i}
@@ -142,7 +142,7 @@ export default function Home() {
                   "agenda",
                   "registration",
                 ][i]}`}
-                className="text-blue-200 hover:text-blue-100 transition"
+                className="hover:text-blue-300 transition"
               >
                 {m}
               </a>
