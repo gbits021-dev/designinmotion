@@ -29,7 +29,7 @@ const content = {
   },
   "hero": {
     "bannerImageDesktop": "/1760622574012-1920x800.jpg",
-    "bannerImageMobile": "/1760602270128-Asset-6.png",
+    "bannerImageMobile": "/1760623518686-Asset-6.png",
     "logoKa": "/dio-logo-ka.svg",
     "logoEn": "/dio-logo-en.svg",
     "title": {
