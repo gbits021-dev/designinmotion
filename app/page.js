@@ -85,7 +85,7 @@ export default function Home() {
               alt="Design in Motion Banner Desktop"
               fill
               priority
-              quality={90}
+              unoptimized
               sizes="100vw"
               className="hidden md:block"
               style={{
@@ -99,7 +99,7 @@ export default function Home() {
               alt="Design in Motion Banner Mobile"
               fill
               priority
-              quality={90}
+              unoptimized
               sizes="100vw"
               className="block md:hidden"
               style={{
