@@ -75,17 +75,14 @@ export default function Home() {
       {/* HERO + COUNTDOWN CONTAINER - 100vh total */}
       <div className="h-screen flex flex-col">
         {/* HERO SECTION - 80% */}
-        <section className="relative h-[80%] flex flex-col justify-between text-white overflow-hidden">
-          {/* Banner Images - Responsive using background-image */}
-          <div 
-            className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat hidden md:block"
-            style={{backgroundImage: `url(${content.hero.bannerImageDesktop})`}}
-          />
-          <div 
-            className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat block md:hidden"
-            style={{backgroundImage: `url(${content.hero.bannerImageMobile})`}}
-          />
-          <div className="absolute inset-0 bg-black/25" />
+        <section className="relative h-[80%] flex flex-col justify-between text-white overflow-hidden" style={{
+          backgroundImage: `url(${content.hero.bannerImageDesktop})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}>
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-black/25 pointer-events-none" />
 
           {/* Top Row: Title + Flags */}
           <div className="flex justify-between items-start px-4 pt-4 sm:px-8 sm:pt-6">
