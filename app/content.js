@@ -223,7 +223,7 @@ const content = {
   "about": {
     "posterImage": "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&h=1200",
     "headline": {
-      "en": "Connecting Architecture, Engineering, and Design Leaders",
+      "en": "Connecting Architecture, Engineering, and Design Leaders ss",
       "ka": "არქიტექტურის, ინჟინერიის და დიზაინის ლიდერების დაკავშირება"
     },
     "paragraphs": [
