@@ -4,7 +4,7 @@ import translations from "./translations";
 import content from "./content";
 
 export default function Home() {
-  const [lang, setLang] = useState("en");
+  const [lang, setLang] = useState("ka");
   const [menuOpen, setMenuOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [showFloatingButton, setShowFloatingButton] = useState(false);
@@ -98,10 +98,37 @@ export default function Home() {
           {/* Dark overlay */}
           <div className="absolute inset-0 bg-black/25 pointer-events-none" />
 
-          {/* Top Row: Title + Flags */}
-          <div className="flex justify-between items-start px-4 pt-4 sm:px-8 sm:pt-6">
-            {/* Title + Logo */}
-            <div className="bg-[#21263A]/90 px-5 py-3 rounded-md shadow-md flex items-center space-x-3">
+          {/* Flags - Top Right */}
+          <div className="absolute top-4 right-4 sm:top-6 sm:right-8 flex items-center space-x-3 z-10">
+            <button
+              onClick={() => setLang("ka")}
+              className={`transition transform hover:scale-105 ${
+                lang === "ka" ? "opacity-100" : "opacity-60"
+              }`}
+            >
+              <img
+                src="https://flagcdn.com/w20/ge.png"
+                alt="Georgian"
+                className="w-6 h-4 sm:w-8 sm:h-5 rounded-sm border border-white/40"
+              />
+            </button>
+            <button
+              onClick={() => setLang("en")}
+              className={`transition transform hover:scale-105 ${
+                lang === "en" ? "opacity-100" : "opacity-60"
+              }`}
+            >
+              <img
+                src="https://flagcdn.com/w20/gb.png"
+                alt="English"
+                className="w-6 h-4 sm:w-8 sm:h-5 rounded-sm border border-white/40"
+              />
+            </button>
+          </div>
+
+          {/* Title Bar - Moved to subtitle position */}
+          <div className="absolute bottom-24 sm:bottom-20 w-full text-center px-4 z-10">
+            <div className="inline-flex items-center space-x-3 bg-[#21263A]/95 px-6 py-3 rounded-md shadow-lg backdrop-blur-sm">
               <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-wide text-white">
                 {content.hero.title[lang]}
               </h1>
@@ -111,41 +138,6 @@ export default function Home() {
                 className="h-10 sm:h-12 md:h-14 object-contain"
               />
             </div>
-
-            {/* Flags */}
-            <div className="flex items-center space-x-3 mt-2 sm:mt-0">
-              <button
-                onClick={() => setLang("ka")}
-                className={`transition transform hover:scale-105 ${
-                  lang === "ka" ? "opacity-100" : "opacity-60"
-                }`}
-              >
-                <img
-                  src="https://flagcdn.com/w20/ge.png"
-                  alt="Georgian"
-                  className="w-6 h-4 sm:w-8 sm:h-5 rounded-sm border border-white/40"
-                />
-              </button>
-              <button
-                onClick={() => setLang("en")}
-                className={`transition transform hover:scale-105 ${
-                  lang === "en" ? "opacity-100" : "opacity-60"
-                }`}
-              >
-                <img
-                  src="https://flagcdn.com/w20/gb.png"
-                  alt="English"
-                  className="w-6 h-4 sm:w-8 sm:h-5 rounded-sm border border-white/40"
-                />
-              </button>
-            </div>
-          </div>
-
-          {/* Subtitle Bar */}
-          <div className="absolute bottom-24 sm:bottom-20 w-full text-center px-4">
-            <p className="inline-block bg-[#21263A]/95 text-white text-sm sm:text-base md:text-lg max-w-3xl mx-auto px-6 py-2 rounded-md shadow-lg backdrop-blur-sm">
-              {content.hero.subtitle[lang]}
-            </p>
           </div>
 
           {/* NAVIGATION MENU - Bottom of Hero, LARGE */}
