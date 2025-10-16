@@ -28,7 +28,7 @@ const content = {
     "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2977.4926763019713!2d44.80099097649392!3d41.69453997126108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40440cd7de7e0a07%3A0x48e82e1c1a0b5935!2sTbilisi%20Marriott%20Hotel!5e0!3m2!1sen!2sge!4v1696000000000!5m2!1sen!2sge"
   },
   "hero": {
-    "bannerImageDesktop": "/1760602258424-1920x800.jpg",
+    "bannerImageDesktop": "/1760618872467-სკრინი-საიტი-ფორტუნა-ოფერი.png",
     "bannerImageMobile": "/1760602270128-Asset-6.png",
     "logoKa": "/dio-logo-ka.svg",
     "logoEn": "/dio-logo-en.svg",
