@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import translations from "./translations";
 import content from "./content";
-import Image from "next/image";
 
 export default function Home() {
   const [lang, setLang] = useState("en");
@@ -80,32 +79,16 @@ export default function Home() {
           {/* Banner Images - Responsive */}
           <div className="absolute inset-0 -z-10">
             {/* Desktop Banner */}
-            <Image
+            <img
               src={content.hero.bannerImageDesktop}
               alt="Design in Motion Banner Desktop"
-              fill
-              priority
-              unoptimized
-              sizes="100vw"
-              className="hidden md:block"
-              style={{
-                objectFit: "cover",
-                objectPosition: "center top",
-              }}
+              className="hidden md:block absolute inset-0 w-full h-full object-cover object-center"
             />
             {/* Mobile Banner */}
-            <Image
+            <img
               src={content.hero.bannerImageMobile}
               alt="Design in Motion Banner Mobile"
-              fill
-              priority
-              unoptimized
-              sizes="100vw"
-              className="block md:hidden"
-              style={{
-                objectFit: "cover",
-                objectPosition: "center top",
-              }}
+              className="block md:hidden absolute inset-0 w-full h-full object-cover object-center"
             />
             <div className="absolute inset-0 bg-black/25" />
           </div>
