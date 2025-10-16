@@ -76,22 +76,16 @@ export default function Home() {
       <div className="h-screen flex flex-col">
         {/* HERO SECTION - 80% */}
         <section className="relative h-[80%] flex flex-col justify-between text-white overflow-hidden">
-          {/* Banner Images - Responsive */}
-          <div className="absolute inset-0 -z-10">
-            {/* Desktop Banner */}
-            <img
-              src={content.hero.bannerImageDesktop}
-              alt="Design in Motion Banner Desktop"
-              className="hidden md:block absolute inset-0 w-full h-full object-cover object-center"
-            />
-            {/* Mobile Banner */}
-            <img
-              src={content.hero.bannerImageMobile}
-              alt="Design in Motion Banner Mobile"
-              className="block md:hidden absolute inset-0 w-full h-full object-cover object-center"
-            />
-            <div className="absolute inset-0 bg-black/25" />
-          </div>
+          {/* Banner Images - Responsive using background-image */}
+          <div 
+            className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat hidden md:block"
+            style={{backgroundImage: `url('${content.hero.bannerImageDesktop}')`}}
+          />
+          <div 
+            className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat block md:hidden"
+            style={{backgroundImage: `url('${content.hero.bannerImageMobile}')`}}
+          />
+          <div className="absolute inset-0 bg-black/25" />
 
           {/* Top Row: Title + Flags */}
           <div className="flex justify-between items-start px-4 pt-4 sm:px-8 sm:pt-6">
