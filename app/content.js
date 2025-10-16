@@ -88,7 +88,7 @@ const content = {
         "en": "John Smith",
         "ka": "ჯონ სმიტი"
       },
-      "image": "/speaker-1.jpg",
+      "image": "/1760620984036-1.png",
       "topic": {
         "en": "Sustainable Architecture",
         "ka": "მდგრადი არქიტექტურა"
