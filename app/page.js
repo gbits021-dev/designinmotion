@@ -79,11 +79,11 @@ export default function Home() {
           {/* Banner Images - Responsive using background-image */}
           <div 
             className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat hidden md:block"
-            style={{backgroundImage: `url('${content.hero.bannerImageDesktop}')`}}
+            style={{backgroundImage: `url(${content.hero.bannerImageDesktop})`}}
           />
           <div 
             className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat block md:hidden"
-            style={{backgroundImage: `url('${content.hero.bannerImageMobile}')`}}
+            style={{backgroundImage: `url(${content.hero.bannerImageMobile})`}}
           />
           <div className="absolute inset-0 bg-black/25" />
 
