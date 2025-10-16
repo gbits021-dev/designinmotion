@@ -126,8 +126,8 @@ export default function Home() {
             </button>
           </div>
 
-          {/* Title Bar - Moved to subtitle position */}
-          <div className="absolute bottom-24 sm:bottom-20 w-full text-center px-4 z-10">
+          {/* Title Bar - At top of hero bottom section */}
+          <div className="absolute bottom-16 sm:bottom-[4.5rem] w-full text-center px-4 z-10">
             <div className="inline-flex items-center space-x-3 bg-[#21263A]/95 px-6 py-3 rounded-md shadow-lg backdrop-blur-sm">
               <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-wide text-white">
                 {content.hero.title[lang]}
@@ -140,8 +140,8 @@ export default function Home() {
             </div>
           </div>
 
-          {/* NAVIGATION MENU - Bottom of Hero, LARGE */}
-          <nav className="absolute bottom-0 w-full bg-[#21263A]/95 backdrop-blur-sm py-5 flex justify-center space-x-8 md:space-x-12 lg:space-x-16 text-lg md:text-xl font-semibold text-white border-t border-white/10 sticky top-0 z-50">
+          {/* NAVIGATION MENU - Below title at bottom of Hero */}
+          <nav className="absolute bottom-0 w-full bg-[#21263A]/95 backdrop-blur-sm py-5 flex justify-center space-x-8 md:space-x-12 lg:space-x-16 text-lg md:text-xl font-semibold text-white border-t border-white/10 z-50">
             {t[lang].menu.map((m, i) => (
               <a
                 key={i}
