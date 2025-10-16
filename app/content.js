@@ -37,7 +37,7 @@ const content = {
       "ka": "არქიტექტურა და ტექნოლოგია - ინოვაცია • ენერგოეფექტურობა • მდგრადობა"
     },
     "subtitle": {
-      "en": "Where Innovation Shapes Sustainable Design",
+      "en": "Where Innovation Shapes Sustainable Design aaaaaaaaaaaa",
       "ka": "სადაც ინოვაცია აყალიბებს მდგრად დიზაინს"
     }
   },
@@ -223,7 +223,7 @@ const content = {
   "about": {
     "posterImage": "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&h=1200",
     "headline": {
-      "en": "Connecting Architecture, Engineering, and Design Leaders ssssss",
+      "en": "Connecting Architecture, Engineering, and Design Leaders ss",
       "ka": "არქიტექტურის, ინჟინერიის და დიზაინის ლიდერების დაკავშირება"
     },
     "paragraphs": [
