@@ -75,12 +75,26 @@ export default function Home() {
       {/* HERO + COUNTDOWN CONTAINER - 100vh total */}
       <div className="h-screen flex flex-col">
         {/* HERO SECTION - 80% */}
-        <section className="relative h-[80%] flex flex-col justify-between text-white overflow-hidden" style={{
-          backgroundImage: `url(${content.hero.bannerImageDesktop})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}>
+        <section 
+          className="relative h-[80%] flex flex-col justify-between text-white overflow-hidden hero-banner"
+          style={{
+            '--desktop-bg': `url(${content.hero.bannerImageDesktop})`,
+            '--mobile-bg': `url(${content.hero.bannerImageMobile})`
+          }}
+        >
+          <style jsx>{`
+            .hero-banner {
+              background-image: var(--mobile-bg);
+              background-size: cover;
+              background-position: center;
+              background-repeat: no-repeat;
+            }
+            @media (min-width: 768px) {
+              .hero-banner {
+                background-image: var(--desktop-bg);
+              }
+            }
+          `}</style>
           {/* Dark overlay */}
           <div className="absolute inset-0 bg-black/25 pointer-events-none" />
 
