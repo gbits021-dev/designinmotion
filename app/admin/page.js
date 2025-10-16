@@ -50,25 +50,30 @@ export default function AdminPanel() {
     }
   };
 
-  const handleSave = () => {
-    // In a real implementation, this would save to a database or API
-    // For now, we'll show instructions for manual update
-    const contentString = `// Content Configuration File
-// Edit this file to update event details, dates, partners, and more
+  const handleSave = async () => {
+    setMessage("Saving changes to GitHub...");
 
-const content = ${JSON.stringify(editedContent, null, 2)};
+    try {
+      const response = await fetch('/api/save-content', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ content: editedContent }),
+      });
 
-export default content;`;
+      const data = await response.json();
 
-    // Create a blob and download
-    const blob = new Blob([contentString], { type: "text/javascript" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "content.js";
-    a.click();
-
-    setMessage("Content exported! Replace app/content.js with the downloaded file.");
+      if (data.success) {
+        setMessage("✅ " + data.message);
+      } else {
+        setMessage("❌ Error: " + (data.error || 'Failed to save'));
+        console.error('Save error:', data);
+      }
+    } catch (error) {
+      setMessage("❌ Error saving to GitHub: " + error.message);
+      console.error('Save error:', error);
+    }
   };
 
   const updateNestedValue = (path, value) => {
@@ -133,7 +138,7 @@ export default content;`;
               onClick={handleSave}
               className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-medium transition-colors duration-200"
             >
-              Export Changes
+              💾 Save to GitHub
             </button>
             <a
               href="/"
