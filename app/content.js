@@ -15,54 +15,60 @@ const content = {
         "url": "/fonts/1760688223093-bpg-arial-caps-webfont.woff2",
         "filename": "1760688223093-bpg-arial-caps-webfont.woff2",
         "format": "woff2"
+      },
+      {
+        "name": "caps new",
+        "url": "/fonts/1760688966054-bpg-le-studio-02-caps-webfont.woff2",
+        "filename": "1760688966054-bpg-le-studio-02-caps-webfont.woff2",
+        "format": "woff2"
       }
     ],
     "sectionFonts": {
       "hero": {
         "ka": {
-          "family": "font 2",
+          "family": "caps new",
           "isCustom": true
         }
       },
       "about": {
         "ka": {
-          "family": "font 2",
+          "family": "caps new",
           "isCustom": true
         }
       },
       "architectsClub": {
         "ka": {
-          "family": "font 2",
+          "family": "caps new",
           "isCustom": true
         }
       },
       "partners": {
         "ka": {
-          "family": "font 2",
+          "family": "caps new",
           "isCustom": true
         }
       },
       "speakers": {
         "ka": {
-          "family": "font 2",
+          "family": "caps new",
           "isCustom": true
         }
       },
       "venue": {
         "ka": {
-          "family": "font 2",
+          "family": "caps new",
           "isCustom": true
         }
       },
       "agenda": {
         "ka": {
-          "family": "font 2",
+          "family": "caps new",
           "isCustom": true
         }
       },
       "registration": {
         "ka": {
-          "family": "font 2",
+          "family": "caps new",
           "isCustom": true
         }
       }
