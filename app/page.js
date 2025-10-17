@@ -105,8 +105,6 @@ export default function Home() {
               }
             }
           `}</style>
-          {/* Dark overlay */}
-          <div className="absolute inset-0 bg-black/25 pointer-events-none" />
 
           {/* Flags - Top Right */}
           <div className="absolute top-4 right-4 sm:top-6 sm:right-8 flex items-center space-x-3 z-10">
