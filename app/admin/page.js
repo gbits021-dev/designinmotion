@@ -834,14 +834,26 @@ export default function AdminPanel() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Club Logo Path</label>
-                <input
-                  type="text"
-                  value={editedContent.architectsClub.logo}
-                  onChange={(e) => updateNestedValue("architectsClub.logo", e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-                  placeholder="/architect.jpg"
-                />
+                <label className="block text-sm font-medium text-gray-700 mb-2">Club Logo</label>
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    value={editedContent.architectsClub.logo}
+                    onChange={(e) => updateNestedValue("architectsClub.logo", e.target.value)}
+                    className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                    placeholder="/architect.jpg"
+                  />
+                  <label className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg cursor-pointer flex items-center whitespace-nowrap">
+                    {uploading ? "Uploading..." : "📤 Upload"}
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onChange={(e) => handleImageUpload(e.target.files[0], "architectsClub.logo")}
+                      className="hidden"
+                      disabled={uploading}
+                    />
+                  </label>
+                </div>
               </div>
 
               <div className="grid md:grid-cols-2 gap-4">
