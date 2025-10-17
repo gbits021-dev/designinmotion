@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Poppins, Noto_Sans_Georgian } from "next/font/google";
+import content from "./content";
 
 const englishFont = Poppins({
   subsets: ["latin"],
@@ -12,6 +13,33 @@ const georgianFont = Noto_Sans_Georgian({
   weight: ["400", "600"],
   variable: "--font-georgian",
 });
+
+// Generate @font-face CSS for custom fonts
+function generateFontFaceCSS() {
+  if (!content.fonts?.uploadedFonts || content.fonts.uploadedFonts.length === 0) {
+    return '';
+  }
+
+  return content.fonts.uploadedFonts.map(font => {
+    const formatMap = {
+      'woff2': 'woff2',
+      'woff': 'woff',
+      'ttf': 'truetype',
+      'otf': 'opentype',
+      'eot': 'embedded-opentype'
+    };
+
+    return `
+      @font-face {
+        font-family: '${font.name}';
+        src: url('${font.url}') format('${formatMap[font.format] || font.format}');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+    `;
+  }).join('\n');
+}
 
 export const metadata = {
   title: "Design in Motion 2025 | DIO Architects Event",
@@ -53,8 +81,15 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const customFontCSS = generateFontFaceCSS();
+
   return (
     <html lang="en">
+      <head>
+        {customFontCSS && (
+          <style dangerouslySetInnerHTML={{ __html: customFontCSS }} />
+        )}
+      </head>
       <body
         className={`${englishFont.variable} ${georgianFont.variable} font-sans bg-white text-gray-800`}
       >

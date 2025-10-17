@@ -19,6 +19,16 @@ export default function Home() {
   });
   const t = translations;
 
+  // Helper function to get font family for a section
+  const getSectionFont = (sectionName) => {
+    const fontConfig = content.fonts?.sectionFonts?.[sectionName]?.[lang];
+    if (fontConfig && fontConfig.family) {
+      return fontConfig.family;
+    }
+    // Fallback to default fonts
+    return lang === "en" ? "Poppins" : "Noto Sans Georgian";
+  };
+
   // Smooth scroll behavior
   useEffect(() => {
     document.documentElement.style.scrollBehavior = 'smooth';
@@ -129,7 +139,7 @@ export default function Home() {
           {/* Title Bar - At top of hero bottom section */}
           <div className="absolute bottom-16 sm:bottom-[4.5rem] w-full text-center px-4 z-10">
             <div className="inline-flex items-center space-x-3 bg-[#21263A]/95 px-6 py-3 rounded-md shadow-lg backdrop-blur-sm">
-              <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-wide text-white">
+              <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-wide text-white" style={{ fontFamily: getSectionFont('hero') }}>
                 {content.hero.title[lang]}
               </h1>
               <img
@@ -231,7 +241,7 @@ export default function Home() {
           </div>
 
           {/* Right - Content */}
-          <div className="md:col-span-3 space-y-6 flex flex-col justify-center">
+          <div className="md:col-span-3 space-y-6 flex flex-col justify-center" style={{ fontFamily: getSectionFont('about') }}>
             <div>
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-4">
                 {content.about.headline[lang]}
@@ -261,7 +271,7 @@ export default function Home() {
 
       {/* DIO'S ARCHITECTS CLUB */}
       {content.sectionVisibility?.architectsClub !== false && (
-      <section id="architects-club" className="bg-white py-16">
+      <section id="architects-club" className="bg-white py-16" style={{ fontFamily: getSectionFont('architectsClub') }}>
         <div className="max-w-7xl mx-auto px-4">
           {/* Header with Logo */}
           <div className="flex items-center justify-between mb-12">
@@ -353,7 +363,7 @@ export default function Home() {
 
       {/* PARTNERS */}
       {content.sectionVisibility?.partners !== false && (
-      <section id="partners" className="bg-gray-50 py-16 sm:py-20">
+      <section id="partners" className="bg-gray-50 py-16 sm:py-20" style={{ fontFamily: getSectionFont('partners') }}>
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h3 className="text-2xl sm:text-3xl font-semibold text-blue-700 mb-10">
             {t[lang].partners}
@@ -424,7 +434,7 @@ export default function Home() {
 
       {/* SPEAKERS */}
       {content.sectionVisibility?.speakers !== false && (
-      <section id="speakers" className="bg-white py-16 sm:py-20">
+      <section id="speakers" className="bg-white py-16 sm:py-20" style={{ fontFamily: getSectionFont('speakers') }}>
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#21263A] mb-4">
@@ -597,7 +607,7 @@ export default function Home() {
 
       {/* VENUE */}
       {content.sectionVisibility?.venue !== false && (
-      <section id="venue" className="bg-white py-16 sm:py-20">
+      <section id="venue" className="bg-white py-16 sm:py-20" style={{ fontFamily: getSectionFont('venue') }}>
         <div className="max-w-7xl mx-auto px-4">
           {/* Title */}
           <div className="text-center mb-12">
@@ -691,7 +701,7 @@ export default function Home() {
 
       {/* AGENDA */}
       {content.sectionVisibility?.agenda !== false && (
-      <section id="agenda" className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 via-gray-100 to-[#21263A]/5 relative overflow-hidden">
+      <section id="agenda" className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 via-gray-100 to-[#21263A]/5 relative overflow-hidden" style={{ fontFamily: getSectionFont('agenda') }}>
         {/* Background decorative elements */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-20 left-10 w-72 h-72 bg-[#21263A] rounded-full mix-blend-multiply filter blur-3xl animate-pulse-subtle"></div>
@@ -786,6 +796,7 @@ export default function Home() {
       <section
         id="registration"
         className="bg-gradient-to-br from-gray-50 via-gray-100 to-[#21263A]/5 py-16 sm:py-20 text-center relative overflow-hidden"
+        style={{ fontFamily: getSectionFont('registration') }}
       >
         {/* Background decorative elements */}
         <div className="absolute inset-0 opacity-5">

@@ -167,7 +167,7 @@ export default function AdminPanel() {
       {/* Tabs */}
       <div className="max-w-7xl mx-auto px-4 mt-6">
         <div className="flex space-x-2 border-b overflow-x-auto">
-          {["event", "hero", "visibility", "about", "architects-club", "gallery", "partners", "speakers", "agenda", "venue", "registration"].map((tab) => (
+          {["event", "hero", "visibility", "fonts", "about", "architects-club", "gallery", "partners", "speakers", "agenda", "venue", "registration"].map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
@@ -438,6 +438,271 @@ export default function AdminPanel() {
                   <div className="text-sm text-blue-800">
                     <p className="font-semibold mb-1">Note:</p>
                     <p>Hidden sections will not appear in the navigation menu or on the webpage. You can show/hide sections at any time without deleting their content.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Fonts Tab */}
+          {activeTab === "fonts" && (
+            <div className="space-y-6">
+              <h2 className="text-xl font-bold text-gray-800 mb-4">Custom Fonts Management</h2>
+
+              {/* Upload Font Section */}
+              <div className="border border-gray-300 rounded-lg p-6 bg-gray-50">
+                <h3 className="text-lg font-semibold text-gray-800 mb-4">Upload Custom Font</h3>
+                <p className="text-sm text-gray-600 mb-4">
+                  Upload font files (.ttf, .woff, .woff2, .otf) to use custom fonts on your website.
+                  After uploading, you can select the font for different sections below.
+                </p>
+
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Font Display Name</label>
+                    <input
+                      type="text"
+                      id="fontDisplayName"
+                      placeholder="e.g., My Custom Font"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Upload Font File</label>
+                    <label className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg cursor-pointer inline-flex items-center">
+                      {uploading ? "Uploading..." : "📤 Choose Font File"}
+                      <input
+                        type="file"
+                        accept=".ttf,.woff,.woff2,.otf,.eot"
+                        onChange={async (e) => {
+                          const file = e.target.files[0];
+                          const nameInput = document.getElementById('fontDisplayName');
+                          const fontName = nameInput.value.trim();
+
+                          if (!file) return;
+
+                          if (!fontName) {
+                            setMessage("❌ Please enter a font display name before uploading");
+                            return;
+                          }
+
+                          setUploading(true);
+                          const formData = new FormData();
+                          formData.append('file', file);
+
+                          try {
+                            const response = await fetch('/api/upload', {
+                              method: 'POST',
+                              body: formData,
+                            });
+
+                            const data = await response.json();
+
+                            if (data.success) {
+                              const newFont = {
+                                name: fontName,
+                                url: data.url,
+                                filename: data.filename,
+                                format: file.name.split('.').pop().toLowerCase()
+                              };
+
+                              const newFonts = editedContent.fonts?.uploadedFonts
+                                ? [...editedContent.fonts.uploadedFonts, newFont]
+                                : [newFont];
+
+                              setEditedContent({
+                                ...editedContent,
+                                fonts: {
+                                  ...editedContent.fonts,
+                                  uploadedFonts: newFonts
+                                }
+                              });
+
+                              setMessage(`✅ Font "${fontName}" uploaded successfully!`);
+                              nameInput.value = '';
+                            } else {
+                              setMessage(`❌ Upload failed: ${data.error}`);
+                            }
+                          } catch (error) {
+                            setMessage(`❌ Upload error: ${error.message}`);
+                          } finally {
+                            setUploading(false);
+                          }
+                        }}
+                        className="hidden"
+                        disabled={uploading}
+                      />
+                    </label>
+                    <p className="text-xs text-gray-500 mt-2">
+                      Supported formats: .ttf, .woff, .woff2, .otf, .eot
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Uploaded Fonts List */}
+              <div className="border border-gray-300 rounded-lg p-6">
+                <h3 className="text-lg font-semibold text-gray-800 mb-4">Uploaded Custom Fonts</h3>
+
+                {editedContent.fonts?.uploadedFonts && editedContent.fonts.uploadedFonts.length > 0 ? (
+                  <div className="space-y-3">
+                    {editedContent.fonts.uploadedFonts.map((font, index) => (
+                      <div key={index} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-200">
+                        <div className="flex items-center space-x-3">
+                          <div className="bg-blue-100 text-blue-700 px-3 py-1 rounded text-xs font-semibold">
+                            .{font.format}
+                          </div>
+                          <div>
+                            <div className="font-medium text-gray-800">{font.name}</div>
+                            <div className="text-xs text-gray-500">{font.url}</div>
+                          </div>
+                        </div>
+                        <button
+                          onClick={() => {
+                            const newFonts = editedContent.fonts.uploadedFonts.filter((_, i) => i !== index);
+                            setEditedContent({
+                              ...editedContent,
+                              fonts: {
+                                ...editedContent.fonts,
+                                uploadedFonts: newFonts
+                              }
+                            });
+                            setMessage(`Font "${font.name}" removed from list`);
+                          }}
+                          className="text-red-600 hover:text-red-800 hover:bg-red-50 p-2 rounded-lg transition-colors duration-200"
+                          title="Remove Font"
+                        >
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                          </svg>
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-gray-500 text-center py-8">No custom fonts uploaded yet. Upload a font above to get started.</p>
+                )}
+              </div>
+
+              {/* Section Font Selection */}
+              <div className="border border-gray-300 rounded-lg p-6">
+                <h3 className="text-lg font-semibold text-gray-800 mb-4">Assign Fonts to Sections</h3>
+                <p className="text-sm text-gray-600 mb-6">
+                  Select which font to use for each section, separately for English and Georgian versions.
+                </p>
+
+                <div className="space-y-6">
+                  {["hero", "about", "architectsClub", "partners", "speakers", "venue", "agenda", "registration"].map((section) => (
+                    <div key={section} className="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                      <h4 className="font-semibold text-gray-700 mb-3 capitalize">
+                        {section === "architectsClub" ? "Architects Club" : section}
+                      </h4>
+
+                      <div className="grid md:grid-cols-2 gap-4">
+                        {/* English Font Selection */}
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">English Font</label>
+                          <select
+                            value={editedContent.fonts?.sectionFonts?.[section]?.en?.family || "Poppins"}
+                            onChange={(e) => {
+                              const selectedValue = e.target.value;
+                              const isCustom = editedContent.fonts?.uploadedFonts?.some(f => f.name === selectedValue);
+
+                              setEditedContent({
+                                ...editedContent,
+                                fonts: {
+                                  ...editedContent.fonts,
+                                  sectionFonts: {
+                                    ...editedContent.fonts?.sectionFonts,
+                                    [section]: {
+                                      ...editedContent.fonts?.sectionFonts?.[section],
+                                      en: {
+                                        family: selectedValue,
+                                        isCustom: isCustom
+                                      }
+                                    }
+                                  }
+                                }
+                              });
+                            }}
+                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                          >
+                            <optgroup label="System Fonts">
+                              <option value="Poppins">Poppins (Default)</option>
+                              <option value="Arial">Arial</option>
+                              <option value="Helvetica">Helvetica</option>
+                              <option value="Georgia">Georgia</option>
+                              <option value="Times New Roman">Times New Roman</option>
+                            </optgroup>
+                            {editedContent.fonts?.uploadedFonts && editedContent.fonts.uploadedFonts.length > 0 && (
+                              <optgroup label="Custom Fonts">
+                                {editedContent.fonts.uploadedFonts.map((font, idx) => (
+                                  <option key={idx} value={font.name}>{font.name}</option>
+                                ))}
+                              </optgroup>
+                            )}
+                          </select>
+                        </div>
+
+                        {/* Georgian Font Selection */}
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">Georgian Font</label>
+                          <select
+                            value={editedContent.fonts?.sectionFonts?.[section]?.ka?.family || "Noto Sans Georgian"}
+                            onChange={(e) => {
+                              const selectedValue = e.target.value;
+                              const isCustom = editedContent.fonts?.uploadedFonts?.some(f => f.name === selectedValue);
+
+                              setEditedContent({
+                                ...editedContent,
+                                fonts: {
+                                  ...editedContent.fonts,
+                                  sectionFonts: {
+                                    ...editedContent.fonts?.sectionFonts,
+                                    [section]: {
+                                      ...editedContent.fonts?.sectionFonts?.[section],
+                                      ka: {
+                                        family: selectedValue,
+                                        isCustom: isCustom
+                                      }
+                                    }
+                                  }
+                                }
+                              });
+                            }}
+                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                          >
+                            <optgroup label="System Fonts">
+                              <option value="Noto Sans Georgian">Noto Sans Georgian (Default)</option>
+                              <option value="Arial">Arial</option>
+                              <option value="Helvetica">Helvetica</option>
+                              <option value="Georgia">Georgia</option>
+                              <option value="Times New Roman">Times New Roman</option>
+                            </optgroup>
+                            {editedContent.fonts?.uploadedFonts && editedContent.fonts.uploadedFonts.length > 0 && (
+                              <optgroup label="Custom Fonts">
+                                {editedContent.fonts.uploadedFonts.map((font, idx) => (
+                                  <option key={idx} value={font.name}>{font.name}</option>
+                                ))}
+                              </optgroup>
+                            )}
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                <div className="flex items-start">
+                  <svg className="w-5 h-5 text-blue-600 mt-0.5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <div className="text-sm text-blue-800">
+                    <p className="font-semibold mb-1">Important:</p>
+                    <p>After uploading fonts and assigning them to sections, click "Save to GitHub" at the top to apply changes to your live website.</p>
                   </div>
                 </div>
               </div>
