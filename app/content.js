@@ -72,7 +72,12 @@ const content = {
           "isCustom": true
         }
       },
-      "menu": {}
+      "menu": {
+        "ka": {
+          "family": "caps new",
+          "isCustom": true
+        }
+      }
     }
   },
   "sectionVisibility": {
