@@ -150,10 +150,10 @@ export default function Home() {
           </div>
 
           {/* NAVIGATION MENU - Below title at bottom of Hero */}
-          {/* Mobile - Hamburger Button */}
+          {/* Mobile - Hamburger Button - Centered */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden absolute bottom-0 right-4 z-50 bg-[#21263A] text-white p-3 rounded-lg mb-2"
+            className="md:hidden absolute bottom-0 left-1/2 transform -translate-x-1/2 z-50 bg-[#21263A]/95 backdrop-blur-sm text-white p-3 rounded-t-lg border-t border-l border-r border-white/10"
             aria-label="Toggle menu"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -167,7 +167,7 @@ export default function Home() {
 
           {/* Mobile - Dropdown Menu */}
           <div
-            className={`md:hidden absolute bottom-0 left-0 right-0 bg-[#21263A]/98 backdrop-blur-sm transition-all duration-300 ease-in-out overflow-hidden z-40 border-t border-white/10 ${
+            className={`md:hidden absolute bottom-0 left-0 right-0 bg-[#21263A]/95 backdrop-blur-sm transition-all duration-300 ease-in-out overflow-hidden z-40 border-t border-white/10 ${
               menuOpen ? 'max-h-96' : 'max-h-0'
             }`}
             style={{ fontFamily: getSectionFont('menu') }}
