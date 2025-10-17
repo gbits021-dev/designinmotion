@@ -28,54 +28,90 @@ const content = {
         "ka": {
           "family": "caps new",
           "isCustom": true
+        },
+        "en": {
+          "family": "Helvetica",
+          "isCustom": false
         }
       },
       "about": {
         "ka": {
           "family": "caps new",
           "isCustom": true
+        },
+        "en": {
+          "family": "Helvetica",
+          "isCustom": false
         }
       },
       "architectsClub": {
         "ka": {
           "family": "caps new",
           "isCustom": true
+        },
+        "en": {
+          "family": "Helvetica",
+          "isCustom": false
         }
       },
       "partners": {
         "ka": {
           "family": "caps new",
           "isCustom": true
+        },
+        "en": {
+          "family": "Helvetica",
+          "isCustom": false
         }
       },
       "speakers": {
         "ka": {
           "family": "caps new",
           "isCustom": true
+        },
+        "en": {
+          "family": "Helvetica",
+          "isCustom": false
         }
       },
       "venue": {
         "ka": {
           "family": "caps new",
           "isCustom": true
+        },
+        "en": {
+          "family": "Helvetica",
+          "isCustom": false
         }
       },
       "agenda": {
         "ka": {
           "family": "caps new",
           "isCustom": true
+        },
+        "en": {
+          "family": "Helvetica",
+          "isCustom": false
         }
       },
       "registration": {
         "ka": {
           "family": "caps new",
           "isCustom": true
+        },
+        "en": {
+          "family": "Helvetica",
+          "isCustom": false
         }
       },
       "menu": {
         "ka": {
           "family": "caps new",
           "isCustom": true
+        },
+        "en": {
+          "family": "Helvetica",
+          "isCustom": false
         }
       }
     }
