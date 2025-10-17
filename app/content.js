@@ -11,7 +11,56 @@ const content = {
         "format": "woff"
       }
     ],
-    "sectionFonts": {}
+    "sectionFonts": {
+      "hero": {
+        "ka": {
+          "family": "custom font",
+          "isCustom": true
+        }
+      },
+      "about": {
+        "ka": {
+          "family": "custom font",
+          "isCustom": true
+        }
+      },
+      "architectsClub": {
+        "ka": {
+          "family": "custom font",
+          "isCustom": true
+        }
+      },
+      "partners": {
+        "ka": {
+          "family": "custom font",
+          "isCustom": true
+        }
+      },
+      "speakers": {
+        "ka": {
+          "family": "custom font",
+          "isCustom": true
+        }
+      },
+      "venue": {
+        "ka": {
+          "family": "custom font",
+          "isCustom": true
+        }
+      },
+      "agenda": {
+        "ka": {
+          "family": "custom font",
+          "isCustom": true
+        }
+      },
+      "registration": {
+        "ka": {
+          "family": "custom font",
+          "isCustom": true
+        }
+      }
+    }
   },
   "sectionVisibility": {
     "about": true,
