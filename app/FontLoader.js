@@ -8,10 +8,15 @@ export default function FontLoader() {
     if (typeof window === 'undefined') return;
 
     // Check if fonts are already loaded
-    if (document.getElementById('custom-fonts-style')) return;
+    if (document.getElementById('custom-fonts-style')) {
+      console.log('✅ Custom fonts already loaded');
+      return;
+    }
 
     // Generate and inject font-face CSS
     if (content.fonts?.uploadedFonts && content.fonts.uploadedFonts.length > 0) {
+      console.log('📝 Loading custom fonts:', content.fonts.uploadedFonts);
+
       const formatMap = {
         'woff2': 'woff2',
         'woff': 'woff',
@@ -36,6 +41,10 @@ export default function FontLoader() {
       styleElement.id = 'custom-fonts-style';
       styleElement.innerHTML = fontFaceCSS;
       document.head.appendChild(styleElement);
+
+      console.log('✅ Custom fonts CSS injected:', fontFaceCSS);
+    } else {
+      console.log('⚠️ No custom fonts to load');
     }
   }, []);
 
