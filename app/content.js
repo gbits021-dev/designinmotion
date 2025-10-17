@@ -2,6 +2,10 @@
 // Edit this file to update event details, dates, partners, and more
 
 const content = {
+  "fonts": {
+    "uploadedFonts": [],
+    "sectionFonts": {}
+  },
   "sectionVisibility": {
     "about": true,
     "architectsClub": true,

@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Poppins, Noto_Sans_Georgian } from "next/font/google";
+import FontLoader from "./FontLoader";
 
 const englishFont = Poppins({
   subsets: ["latin"],
@@ -58,6 +59,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${englishFont.variable} ${georgianFont.variable} font-sans bg-white text-gray-800`}
       >
+        <FontLoader />
         {children}
       </body>
     </html>
