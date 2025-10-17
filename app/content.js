@@ -3,7 +3,14 @@
 
 const content = {
   "fonts": {
-    "uploadedFonts": [],
+    "uploadedFonts": [
+      {
+        "name": "custom font",
+        "url": "/fonts/1760688010911-bpg-arial-caps-webfont.woff",
+        "filename": "1760688010911-bpg-arial-caps-webfont.woff",
+        "format": "woff"
+      }
+    ],
     "sectionFonts": {}
   },
   "sectionVisibility": {
