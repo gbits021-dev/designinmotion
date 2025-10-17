@@ -28,15 +28,9 @@ export async function POST(request) {
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
 
-    // Determine file type and subfolder
-    const fileExtension = file.name.split('.').pop().toLowerCase();
-    const fontExtensions = ['ttf', 'woff', 'woff2', 'otf', 'eot'];
-    const isFontFile = fontExtensions.includes(fileExtension);
-
     // Create a clean filename
     const filename = `${Date.now()}-${file.name.replace(/\s/g, '-')}`;
-    const subfolder = isFontFile ? 'fonts' : '';
-    const FILE_PATH = subfolder ? `public/${subfolder}/${filename}` : `public/${filename}`;
+    const FILE_PATH = `public/${filename}`;
 
     // Encode to base64 for GitHub API
     const encodedContent = buffer.toString('base64');
@@ -60,7 +54,7 @@ export async function POST(request) {
 
     // Upload to GitHub
     const uploadPayload = {
-      message: `Upload ${isFontFile ? 'font' : 'image'}: ${filename}`,
+      message: `Upload image: ${filename}`,
       content: encodedContent,
       branch: BRANCH,
     };
@@ -96,10 +90,9 @@ export async function POST(request) {
     return NextResponse.json({
       success: true,
       filename: filename,
-      url: subfolder ? `/${subfolder}/${filename}` : `/${filename}`,
-      message: `${isFontFile ? 'Font' : 'Image'} uploaded to GitHub successfully! Vercel will redeploy automatically.`,
-      commit: result.commit,
-      fileType: isFontFile ? 'font' : 'image'
+      url: `/${filename}`,
+      message: 'Image uploaded to GitHub successfully! Vercel will redeploy automatically.',
+      commit: result.commit
     });
 
   } catch (error) {

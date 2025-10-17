@@ -60,6 +60,3 @@ html {
 .gradient-overlay {
   background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.3));
 }
-
-/* Custom Fonts - Applied dynamically via section props in page.js */
-/* Font families are loaded via @font-face in layout.js based on content.fonts configuration */

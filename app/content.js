@@ -2,43 +2,6 @@
 // Edit this file to update event details, dates, partners, and more
 
 const content = {
-  "fonts": {
-    "uploadedFonts": [],
-    "sectionFonts": {
-      "hero": {
-        "en": { "family": "Poppins", "isCustom": false },
-        "ka": { "family": "Noto Sans Georgian", "isCustom": false }
-      },
-      "about": {
-        "en": { "family": "Poppins", "isCustom": false },
-        "ka": { "family": "Noto Sans Georgian", "isCustom": false }
-      },
-      "architectsClub": {
-        "en": { "family": "Poppins", "isCustom": false },
-        "ka": { "family": "Noto Sans Georgian", "isCustom": false }
-      },
-      "partners": {
-        "en": { "family": "Poppins", "isCustom": false },
-        "ka": { "family": "Noto Sans Georgian", "isCustom": false }
-      },
-      "speakers": {
-        "en": { "family": "Poppins", "isCustom": false },
-        "ka": { "family": "Noto Sans Georgian", "isCustom": false }
-      },
-      "venue": {
-        "en": { "family": "Poppins", "isCustom": false },
-        "ka": { "family": "Noto Sans Georgian", "isCustom": false }
-      },
-      "agenda": {
-        "en": { "family": "Poppins", "isCustom": false },
-        "ka": { "family": "Noto Sans Georgian", "isCustom": false }
-      },
-      "registration": {
-        "en": { "family": "Poppins", "isCustom": false },
-        "ka": { "family": "Noto Sans Georgian", "isCustom": false }
-      }
-    }
-  },
   "sectionVisibility": {
     "about": true,
     "architectsClub": true,
