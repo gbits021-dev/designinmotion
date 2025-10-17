@@ -150,7 +150,51 @@ export default function Home() {
           </div>
 
           {/* NAVIGATION MENU - Below title at bottom of Hero */}
-          <nav className="absolute bottom-0 w-full bg-[#21263A]/95 backdrop-blur-sm py-5 flex justify-center space-x-8 md:space-x-12 lg:space-x-16 text-lg md:text-xl font-semibold text-white border-t border-white/10 z-50" style={{ fontFamily: getSectionFont('menu') }}>
+          {/* Mobile - Hamburger Button */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="md:hidden absolute bottom-0 right-4 z-50 bg-[#21263A] text-white p-3 rounded-lg mb-2"
+            aria-label="Toggle menu"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {menuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
+
+          {/* Mobile - Dropdown Menu */}
+          <div
+            className={`md:hidden absolute bottom-0 left-0 right-0 bg-[#21263A]/98 backdrop-blur-sm transition-all duration-300 ease-in-out overflow-hidden z-40 border-t border-white/10 ${
+              menuOpen ? 'max-h-96' : 'max-h-0'
+            }`}
+            style={{ fontFamily: getSectionFont('menu') }}
+          >
+            <nav className="flex flex-col py-2">
+              {t[lang].menu.map((m, i) => (
+                <a
+                  key={i}
+                  href={`#${[
+                    "about",
+                    "architects-club",
+                    "partners",
+                    "venue",
+                    "agenda",
+                    "registration",
+                  ][i]}`}
+                  onClick={() => setMenuOpen(false)}
+                  className="px-6 py-4 text-white text-lg font-semibold hover:bg-white/10 transition border-b border-white/5 last:border-b-0"
+                >
+                  {m}
+                </a>
+              ))}
+            </nav>
+          </div>
+
+          {/* Desktop - Horizontal Menu */}
+          <nav className="hidden md:flex absolute bottom-0 w-full bg-[#21263A]/95 backdrop-blur-sm py-5 justify-center space-x-8 md:space-x-12 lg:space-x-16 text-lg md:text-xl font-semibold text-white border-t border-white/10 z-50" style={{ fontFamily: getSectionFont('menu') }}>
             {t[lang].menu.map((m, i) => (
               <a
                 key={i}
