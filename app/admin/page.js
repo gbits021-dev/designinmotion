@@ -580,10 +580,10 @@ export default function AdminPanel() {
                 <h3 className="text-lg font-semibold text-gray-800 mb-4">Assign Fonts to Sections</h3>
 
                 <div className="space-y-4">
-                  {["hero", "about", "architectsClub", "partners", "speakers", "venue", "agenda", "registration"].map((section) => (
+                  {["menu", "hero", "about", "architectsClub", "partners", "speakers", "venue", "agenda", "registration"].map((section) => (
                     <div key={section} className="border border-gray-200 rounded-lg p-4 bg-gray-50">
                       <h4 className="font-semibold text-gray-700 mb-3 capitalize">
-                        {section === "architectsClub" ? "Architects Club" : section}
+                        {section === "architectsClub" ? "Architects Club" : section === "menu" ? "Header Menu" : section}
                       </h4>
 
                       <div className="grid md:grid-cols-2 gap-4">

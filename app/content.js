@@ -71,7 +71,8 @@ const content = {
           "family": "caps new",
           "isCustom": true
         }
-      }
+      },
+      "menu": {}
     }
   },
   "sectionVisibility": {
