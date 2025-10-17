@@ -11,6 +11,7 @@ export default function Home() {
   const [expandedPartner, setExpandedPartner] = useState(null);
   const [expandedSpeaker, setExpandedSpeaker] = useState(null);
   const [currentSpeaker, setCurrentSpeaker] = useState(0);
+  const [selectedVenueImage, setSelectedVenueImage] = useState(null);
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -727,12 +728,22 @@ export default function Home() {
                 </h5>
                 <div className="grid grid-cols-3 gap-3">
                   {content.venue.gallery.map((image, index) => (
-                    <div key={index} className="relative h-32 overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                    <div
+                      key={index}
+                      onClick={() => setSelectedVenueImage(index)}
+                      className="relative h-32 overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer"
+                    >
                       <img
                         src={image}
                         alt={`Venue ${index + 1}`}
                         className="w-full h-full object-cover"
                       />
+                      {/* Zoom icon overlay */}
+                      <div className="absolute inset-0 bg-black/0 hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+                        <svg className="w-8 h-8 text-white opacity-0 hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+                        </svg>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -893,6 +904,69 @@ export default function Home() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
           </svg>
         </a>
+      )}
+
+      {/* VENUE IMAGE MODAL */}
+      {selectedVenueImage !== null && (
+        <div
+          className="fixed inset-0 bg-black/90 z-[100] flex items-center justify-center p-4"
+          onClick={() => setSelectedVenueImage(null)}
+        >
+          {/* Close Button */}
+          <button
+            onClick={() => setSelectedVenueImage(null)}
+            className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-[101]"
+            aria-label="Close modal"
+          >
+            <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+
+          {/* Previous Button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setSelectedVenueImage((prev) => (prev - 1 + content.venue.gallery.length) % content.venue.gallery.length);
+            }}
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-[#21263A]/80 hover:bg-[#21263A] text-white p-4 rounded-full shadow-lg transition-all duration-200 hover:scale-110 z-[101]"
+            aria-label="Previous image"
+          >
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          {/* Image */}
+          <div
+            className="relative max-w-6xl max-h-[90vh] w-full h-full flex items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={content.venue.gallery[selectedVenueImage]}
+              alt={`Venue ${selectedVenueImage + 1}`}
+              className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+            />
+            {/* Image counter */}
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#21263A]/80 text-white px-4 py-2 rounded-full text-sm font-semibold">
+              {selectedVenueImage + 1} / {content.venue.gallery.length}
+            </div>
+          </div>
+
+          {/* Next Button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setSelectedVenueImage((prev) => (prev + 1) % content.venue.gallery.length);
+            }}
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-[#21263A]/80 hover:bg-[#21263A] text-white p-4 rounded-full shadow-lg transition-all duration-200 hover:scale-110 z-[101]"
+            aria-label="Next image"
+          >
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
       )}
     </main>
   );
