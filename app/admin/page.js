@@ -4,10 +4,44 @@ import content from "../content";
 
 const ADMIN_PASSWORD = "dio2025admin"; // Change this to your preferred password
 
+// Normalize speakers structure to ensure it has title and list
+const normalizeSpeakersStructure = (contentData) => {
+  if (Array.isArray(contentData.speakers)) {
+    // Old format: convert array to new object structure
+    return {
+      ...contentData,
+      speakers: {
+        title: {
+          en: "Speakers",
+          ka: "სპიკერები"
+        },
+        list: contentData.speakers.map(speaker => ({
+          ...speaker,
+          company: speaker.company || { en: "", ka: "" }
+        }))
+      }
+    };
+  } else if (contentData.speakers && !contentData.speakers.title) {
+    // Partial structure: add missing title
+    return {
+      ...contentData,
+      speakers: {
+        title: {
+          en: "Speakers",
+          ka: "სპიკერები"
+        },
+        list: contentData.speakers.list || []
+      }
+    };
+  }
+  // Already correct structure
+  return contentData;
+};
+
 export default function AdminPanel() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState("");
-  const [editedContent, setEditedContent] = useState(content);
+  const [editedContent, setEditedContent] = useState(() => normalizeSpeakersStructure(content));
   const [message, setMessage] = useState("");
   const [activeTab, setActiveTab] = useState("event");
   const [uploading, setUploading] = useState(false);
