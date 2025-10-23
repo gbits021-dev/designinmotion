@@ -1216,17 +1216,35 @@ export default function AdminPanel() {
                       }}
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg"
                     />
-                    <input
-                      type="text"
-                      placeholder="Logo Path (e.g., /logo.png)"
-                      value={partner.logo}
-                      onChange={(e) => {
-                        const newPartners = [...editedContent.partners];
-                        newPartners[index].logo = e.target.value;
-                        setEditedContent({ ...editedContent, partners: newPartners });
-                      }}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg"
-                    />
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">Partner Logo</label>
+                      <div className="flex gap-2">
+                        <input
+                          type="text"
+                          placeholder="Logo Path (e.g., /logo.png)"
+                          value={partner.logo}
+                          onChange={(e) => {
+                            const newPartners = [...editedContent.partners];
+                            newPartners[index].logo = e.target.value;
+                            setEditedContent({ ...editedContent, partners: newPartners });
+                          }}
+                          className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                        />
+                        <label className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg cursor-pointer flex items-center whitespace-nowrap">
+                          {uploading ? "Uploading..." : "📤 Upload"}
+                          <input
+                            type="file"
+                            accept="image/*"
+                            onChange={(e) => handleImageUpload(e.target.files[0], `partners.${index}.logo`)}
+                            className="hidden"
+                            disabled={uploading}
+                          />
+                        </label>
+                      </div>
+                      {partner.logo && (
+                        <img src={partner.logo} alt={partner.name} className="mt-2 h-16 object-contain" />
+                      )}
+                    </div>
                   </div>
                 </div>
               ))}
