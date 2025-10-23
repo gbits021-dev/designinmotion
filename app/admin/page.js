@@ -387,15 +387,50 @@ export default function AdminPanel() {
           {/* Menu Tab */}
           {activeTab === "menu" && (
             <div className="space-y-6">
-              <h2 className="text-xl font-bold text-gray-800 mb-4">Header Menu Items</h2>
-              <p className="text-sm text-gray-600 mb-4">
-                Edit the navigation menu items that appear in the header. There are 6 menu items corresponding to the main sections.
-              </p>
+              <div className="flex justify-between items-center mb-4">
+                <div>
+                  <h2 className="text-xl font-bold text-gray-800">Header Menu Items</h2>
+                  <p className="text-sm text-gray-600 mt-1">
+                    Add, edit, or remove navigation menu items that appear in the header.
+                  </p>
+                </div>
+                <button
+                  onClick={() => {
+                    setEditedContent({
+                      ...editedContent,
+                      menu: {
+                        en: [...editedContent.menu.en, "New Item"],
+                        ka: [...editedContent.menu.ka, "ახალი პუნქტი"]
+                      }
+                    });
+                  }}
+                  className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium flex items-center gap-2"
+                >
+                  <span>+</span> Add Menu Item
+                </button>
+              </div>
 
               <div className="grid md:grid-cols-2 gap-6">
                 {editedContent.menu.en.map((item, index) => (
                   <div key={index} className="border border-gray-200 rounded-lg p-4 bg-gray-50">
-                    <h3 className="font-semibold text-gray-700 mb-3">Menu Item {index + 1}</h3>
+                    <div className="flex justify-between items-center mb-3">
+                      <h3 className="font-semibold text-gray-700">Menu Item {index + 1}</h3>
+                      <button
+                        onClick={() => {
+                          const newMenuEn = [...editedContent.menu.en];
+                          const newMenuKa = [...editedContent.menu.ka];
+                          newMenuEn.splice(index, 1);
+                          newMenuKa.splice(index, 1);
+                          setEditedContent({
+                            ...editedContent,
+                            menu: { en: newMenuEn, ka: newMenuKa }
+                          });
+                        }}
+                        className="text-red-600 hover:text-red-800 text-sm font-medium"
+                      >
+                        🗑️ Remove
+                      </button>
+                    </div>
                     <div className="space-y-3">
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">English</label>
