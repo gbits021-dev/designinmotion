@@ -855,7 +855,21 @@ export default function AdminPanel() {
               </div>
 
               <div className="space-y-4">
-                <label className="block text-sm font-medium text-gray-700">Paragraphs</label>
+                <div className="flex justify-between items-center mb-2">
+                  <label className="block text-sm font-medium text-gray-700">Paragraphs</label>
+                  <button
+                    onClick={() => {
+                      const newParagraphs = [...editedContent.about.paragraphs, { en: "", ka: "", highlight: false }];
+                      setEditedContent({
+                        ...editedContent,
+                        about: { ...editedContent.about, paragraphs: newParagraphs }
+                      });
+                    }}
+                    className="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded text-sm flex items-center gap-1"
+                  >
+                    <span>+</span> Add Paragraph
+                  </button>
+                </div>
                 {editedContent.about.paragraphs.map((para, index) => (
                   <div key={index} className="border border-gray-200 rounded-lg p-4 bg-gray-50">
                     <div className="flex justify-between items-center mb-3">
@@ -877,6 +891,18 @@ export default function AdminPanel() {
                           />
                           Highlight
                         </label>
+                        <button
+                          onClick={() => {
+                            const newParagraphs = editedContent.about.paragraphs.filter((_, i) => i !== index);
+                            setEditedContent({
+                              ...editedContent,
+                              about: { ...editedContent.about, paragraphs: newParagraphs }
+                            });
+                          }}
+                          className="text-red-600 hover:text-red-800 text-sm font-medium"
+                        >
+                          🗑️ Remove
+                        </button>
                       </div>
                     </div>
                     <div className="grid md:grid-cols-2 gap-3">
@@ -1011,10 +1037,38 @@ export default function AdminPanel() {
               </div>
 
               <div className="space-y-4">
-                <label className="block text-sm font-medium text-gray-700">Paragraphs</label>
+                <div className="flex justify-between items-center mb-2">
+                  <label className="block text-sm font-medium text-gray-700">Paragraphs</label>
+                  <button
+                    onClick={() => {
+                      const newParagraphs = [...editedContent.architectsClub.paragraphs, { en: "", ka: "" }];
+                      setEditedContent({
+                        ...editedContent,
+                        architectsClub: { ...editedContent.architectsClub, paragraphs: newParagraphs }
+                      });
+                    }}
+                    className="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded text-sm flex items-center gap-1"
+                  >
+                    <span>+</span> Add Paragraph
+                  </button>
+                </div>
                 {editedContent.architectsClub.paragraphs.map((para, index) => (
                   <div key={index} className="border border-gray-200 rounded-lg p-4 bg-gray-50">
-                    <h4 className="font-semibold text-gray-700 mb-3">Paragraph {index + 1}</h4>
+                    <div className="flex justify-between items-center mb-3">
+                      <h4 className="font-semibold text-gray-700">Paragraph {index + 1}</h4>
+                      <button
+                        onClick={() => {
+                          const newParagraphs = editedContent.architectsClub.paragraphs.filter((_, i) => i !== index);
+                          setEditedContent({
+                            ...editedContent,
+                            architectsClub: { ...editedContent.architectsClub, paragraphs: newParagraphs }
+                          });
+                        }}
+                        className="text-red-600 hover:text-red-800 text-sm font-medium"
+                      >
+                        🗑️ Remove
+                      </button>
+                    </div>
                     <div className="grid md:grid-cols-2 gap-3">
                       <div>
                         <label className="block text-xs font-medium text-gray-600 mb-1">English</label>
