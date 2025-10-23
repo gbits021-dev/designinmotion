@@ -410,16 +410,19 @@ const content = {
     },
     "paragraphs": [
       {
-        "en": "Founded on April 14, 2016, the DIO Architects Club unites leading and active architects and designers around DIO’s vision of innovation and collaboration.\nThe club’s purpose is to create a platform for continuous exchange — providing members with early access to information about DIO’s exclusive products, encouraging professional dialogue, and collaborating on inspiring projects.\n\n",
-        "ka": "2016 წლის 14 აპრილს დაარსებული DIO არქიტექტორთა კლუბი აერთიანებს მოწინავე და აქტიურ არქიტექტორებსა და დიზაინერებს, რომლებიც იზიარებენ DIO-ს ინოვაციისა და თანამშრომლობის ხედვას.\n\nკლუბის მთავარი მიზანია შექმნას უწყვეტი პროფესიული ზრდისა და გამოცდილების გაცვლის პლატფორმა. ჩვენს წევრებს ვთავაზობთ:\n\n"
+        "en": "Founded on April 14, 2016, the DIO Architects Club unites leading and active architects and designers around DIO's vision of innovation and collaboration.\nThe club's purpose is to create a platform for continuous exchange — providing members with early access to information about DIO's exclusive products, encouraging professional dialogue, and collaborating on inspiring projects.\n\n",
+        "ka": "2016 წლის 14 აპრილს დაარსებული DIO არქიტექტორთა კლუბი აერთიანებს მოწინავე და აქტიურ არქიტექტორებსა და დიზაინერებს, რომლებიც იზიარებენ DIO-ს ინოვაციისა და თანამშრომლობის ხედვას.\n\nკლუბის მთავარი მიზანია შექმნას უწყვეტი პროფესიული ზრდისა და გამოცდილების გაცვლის პლატფორმა. ჩვენს წევრებს ვთავაზობთ:\n\n",
+        "highlight": false
       },
       {
-        "en": "Active club members enjoy special opportunities to:\n\nReceive additional benefits in projects featuring DIO products;\n\nParticipate in professional visits to DIO’s European partner companies;\n\nAttend masterclasses and meetings hosted by internationally renowned architects.",
-        "ka": "ექსკლუზიურ და ადრეულ ინფორმაციას DIO-ს უახლესი და უნიკალური პროდუქტების შესახებ.\n\nპროფესიულ დიალოგს და თანამშრომლობას ინსპირაციული პროექტების შექმნაში.\n\nკლუბის აქტიური წევრობა გაძლევთ განსაკუთრებულ პრივილეგიებს:\n\nდამატებითი სარგებელი და ბენეფიტები იმ პროექტებში, სადაც DIO-ს პროდუქცია გამოიყენება.\n\nპროფესიული ვიზიტები ევროპაში, DIO-ს პარტნიორ კომპანიებში.\n\nდასწრებას მასტერკლასებსა და შეხვედრებზე, რომლებსაც საერთაშორისო დონის ცნობილი არქიტექტორები მართავენ."
+        "en": "Active club members enjoy special opportunities to:\n\nReceive additional benefits in projects featuring DIO products;\n\nParticipate in professional visits to DIO's European partner companies;\n\nAttend masterclasses and meetings hosted by internationally renowned architects.",
+        "ka": "ექსკლუზიურ და ადრეულ ინფორმაციას DIO-ს უახლესი და უნიკალური პროდუქტების შესახებ.\n\nპროფესიულ დიალოგს და თანამშრომლობას ინსპირაციული პროექტების შექმნაში.\n\nკლუბის აქტიური წევრობა გაძლევთ განსაკუთრებულ პრივილეგიებს:\n\nდამატებითი სარგებელი და ბენეფიტები იმ პროექტებში, სადაც DIO-ს პროდუქცია გამოიყენება.\n\nპროფესიული ვიზიტები ევროპაში, DIO-ს პარტნიორ კომპანიებში.\n\nდასწრებას მასტერკლასებსა და შეხვედრებზე, რომლებსაც საერთაშორისო დონის ცნობილი არქიტექტორები მართავენ.",
+        "highlight": false
       },
       {
         "en": "",
-        "ka": ""
+        "ka": "",
+        "highlight": false
       }
     ]
   },

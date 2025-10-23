@@ -336,7 +336,7 @@ export default function Home() {
             </h3>
             <div className="space-y-4 text-gray-700 text-base leading-relaxed">
               {content.architectsClub.paragraphs.map((para, index) => (
-                <p key={index}>
+                <p key={index} className={para.highlight ? "font-semibold text-xl text-[#21263A]" : ""}>
                   {para[lang]}
                 </p>
               ))}

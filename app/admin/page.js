@@ -1041,7 +1041,7 @@ export default function AdminPanel() {
                   <label className="block text-sm font-medium text-gray-700">Paragraphs</label>
                   <button
                     onClick={() => {
-                      const newParagraphs = [...editedContent.architectsClub.paragraphs, { en: "", ka: "" }];
+                      const newParagraphs = [...editedContent.architectsClub.paragraphs, { en: "", ka: "", highlight: false }];
                       setEditedContent({
                         ...editedContent,
                         architectsClub: { ...editedContent.architectsClub, paragraphs: newParagraphs }
@@ -1056,18 +1056,36 @@ export default function AdminPanel() {
                   <div key={index} className="border border-gray-200 rounded-lg p-4 bg-gray-50">
                     <div className="flex justify-between items-center mb-3">
                       <h4 className="font-semibold text-gray-700">Paragraph {index + 1}</h4>
-                      <button
-                        onClick={() => {
-                          const newParagraphs = editedContent.architectsClub.paragraphs.filter((_, i) => i !== index);
-                          setEditedContent({
-                            ...editedContent,
-                            architectsClub: { ...editedContent.architectsClub, paragraphs: newParagraphs }
-                          });
-                        }}
-                        className="text-red-600 hover:text-red-800 text-sm font-medium"
-                      >
-                        🗑️ Remove
-                      </button>
+                      <div className="flex items-center space-x-2">
+                        <label className="flex items-center text-sm text-gray-600">
+                          <input
+                            type="checkbox"
+                            checked={para.highlight || false}
+                            onChange={(e) => {
+                              const newParagraphs = [...editedContent.architectsClub.paragraphs];
+                              newParagraphs[index].highlight = e.target.checked;
+                              setEditedContent({
+                                ...editedContent,
+                                architectsClub: { ...editedContent.architectsClub, paragraphs: newParagraphs }
+                              });
+                            }}
+                            className="mr-1"
+                          />
+                          Highlight
+                        </label>
+                        <button
+                          onClick={() => {
+                            const newParagraphs = editedContent.architectsClub.paragraphs.filter((_, i) => i !== index);
+                            setEditedContent({
+                              ...editedContent,
+                              architectsClub: { ...editedContent.architectsClub, paragraphs: newParagraphs }
+                            });
+                          }}
+                          className="text-red-600 hover:text-red-800 text-sm font-medium"
+                        >
+                          🗑️ Remove
+                        </button>
+                      </div>
                     </div>
                     <div className="grid md:grid-cols-2 gap-3">
                       <div>
