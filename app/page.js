@@ -296,7 +296,7 @@ export default function Home() {
               {content.about.paragraphs.map((para, index) => (
                 <p
                   key={index}
-                  className={para.highlight ? "font-semibold text-xl text-blue-700" : ""}
+                  className={para.highlight ? "font-semibold text-xl text-[#21263A]" : ""}
                 >
                   {para[lang]}
                 </p>
