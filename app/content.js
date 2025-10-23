@@ -147,12 +147,12 @@ const content = {
     "logoKa": "/dio-logo-ka.svg",
     "logoEn": "/dio-logo-en.svg",
     "title": {
-      "en": "Architecture Meets Technology - Innovation • Efficiency • Sustainability",
-      "ka": "ინოვაციური კარ-ფანრჯრის და საჩრდილობლის სისტემების როლი ენერგოეფექტურობაში"
+      "en": "EFFICIENT ARCHITECTURE",
+      "ka": "ენერგოეფექტური არქიტექტურა"
     },
     "subtitle": {
       "en": "Where Innovation Shapes Sustainable Design aaaaaaaaaaaa",
-      "ka": "სადაც ინოვაცია აყალიბებს მდგრად დიზაინს"
+      "ka": ""
     }
   },
   "partners": [
