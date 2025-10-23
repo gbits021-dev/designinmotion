@@ -489,7 +489,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#21263A] mb-4">
-              {lang === "en" ? "Speakers" : "სპიკერები"}
+              {content.speakers.title[lang]}
             </h3>
             <div className="w-24 h-1 bg-[#21263A] mx-auto rounded-full"></div>
           </div>
@@ -499,7 +499,7 @@ export default function Home() {
             <div className="flex items-center justify-center gap-4">
               {/* Left Arrow */}
               <button
-                onClick={() => setCurrentSpeaker((prev) => (prev - 1 + content.speakers.length) % content.speakers.length)}
+                onClick={() => setCurrentSpeaker((prev) => (prev - 1 + content.speakers.list.length) % content.speakers.list.length)}
                 className="bg-[#21263A] hover:bg-[#2d3449] text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 flex-shrink-0"
                 aria-label="Previous speaker"
               >
@@ -515,8 +515,8 @@ export default function Home() {
                   <div className="flex justify-center mb-6">
                     <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-[#21263A] shadow-xl">
                       <img
-                        src={content.speakers[currentSpeaker].image}
-                        alt={content.speakers[currentSpeaker].name[lang]}
+                        src={content.speakers.list[currentSpeaker].image}
+                        alt={content.speakers.list[currentSpeaker].name[lang]}
                         className="w-full h-full object-cover"
                       />
                     </div>
@@ -524,12 +524,19 @@ export default function Home() {
 
                   {/* Speaker Name */}
                   <h4 className="text-2xl font-bold text-[#21263A] text-center mb-2">
-                    {content.speakers[currentSpeaker].name[lang]}
+                    {content.speakers.list[currentSpeaker].name[lang]}
                   </h4>
+
+                  {/* Speaker Company */}
+                  {content.speakers.list[currentSpeaker].company[lang] && (
+                    <p className="text-gray-600 text-center mb-2 text-sm">
+                      {content.speakers.list[currentSpeaker].company[lang]}
+                    </p>
+                  )}
 
                   {/* Speaker Topic */}
                   <p className="text-blue-600 font-semibold text-center mb-4">
-                    {content.speakers[currentSpeaker].topic[lang]}
+                    {content.speakers.list[currentSpeaker].topic[lang]}
                   </p>
 
                   {/* View More Button */}
@@ -556,7 +563,7 @@ export default function Home() {
                   >
                     <div className="pt-4 border-t border-gray-300">
                       <p className="text-sm text-gray-700 leading-relaxed text-left">
-                        {content.speakers[currentSpeaker].bio[lang]}
+                        {content.speakers.list[currentSpeaker].bio[lang]}
                       </p>
                     </div>
                   </div>
@@ -565,7 +572,7 @@ export default function Home() {
 
               {/* Right Arrow */}
               <button
-                onClick={() => setCurrentSpeaker((prev) => (prev + 1) % content.speakers.length)}
+                onClick={() => setCurrentSpeaker((prev) => (prev + 1) % content.speakers.list.length)}
                 className="bg-[#21263A] hover:bg-[#2d3449] text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 flex-shrink-0"
                 aria-label="Next speaker"
               >
@@ -577,7 +584,7 @@ export default function Home() {
 
             {/* Speaker indicator dots */}
             <div className="flex justify-center gap-2 mt-6">
-              {content.speakers.map((_, index) => (
+              {content.speakers.list.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentSpeaker(index)}
@@ -595,7 +602,7 @@ export default function Home() {
           {/* Desktop: All speakers centered */}
           <div className="hidden md:block">
             <div className="flex justify-center gap-8 flex-wrap">
-              {content.speakers.map((speaker, index) => (
+              {content.speakers.list.map((speaker, index) => (
                 <div key={index} className="w-80">
                   <div className="bg-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
                     {/* Speaker Image - Circle */}
@@ -613,6 +620,13 @@ export default function Home() {
                     <h4 className="text-2xl font-bold text-[#21263A] text-center mb-2">
                       {speaker.name[lang]}
                     </h4>
+
+                    {/* Speaker Company */}
+                    {speaker.company[lang] && (
+                      <p className="text-gray-600 text-center mb-2 text-sm">
+                        {speaker.company[lang]}
+                      </p>
+                    )}
 
                     {/* Speaker Topic */}
                     <p className="text-blue-600 font-semibold text-center mb-4">

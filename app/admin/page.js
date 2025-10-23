@@ -1149,18 +1149,22 @@ export default function AdminPanel() {
           {activeTab === "speakers" && (
             <div className="space-y-6">
               <div className="flex justify-between items-center mb-4">
-                <h2 className="text-xl font-bold text-gray-800">Event Speakers</h2>
+                <h2 className="text-xl font-bold text-gray-800">Speakers Section</h2>
                 <button
                   onClick={() => {
                     const newSpeaker = {
                       name: { en: "New Speaker", ka: "ახალი სპიკერი" },
+                      company: { en: "", ka: "" },
                       image: "/speaker-new.jpg",
                       topic: { en: "Topic", ka: "თემა" },
                       bio: { en: "Biography...", ka: "ბიოგრაფია..." }
                     };
                     setEditedContent({
                       ...editedContent,
-                      speakers: [...editedContent.speakers, newSpeaker]
+                      speakers: {
+                        ...editedContent.speakers,
+                        list: [...editedContent.speakers.list, newSpeaker]
+                      }
                     });
                   }}
                   className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-colors duration-200 flex items-center space-x-2"
@@ -1172,18 +1176,48 @@ export default function AdminPanel() {
                 </button>
               </div>
 
+              {/* Section Title */}
+              <div className="border border-gray-200 rounded-lg p-4 bg-white">
+                <h3 className="font-semibold text-gray-700 mb-3">Section Title</h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">English</label>
+                    <input
+                      type="text"
+                      value={editedContent.speakers.title.en}
+                      onChange={(e) => updateNestedValue("speakers.title.en", e.target.value)}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                      placeholder="Speakers"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Georgian</label>
+                    <input
+                      type="text"
+                      value={editedContent.speakers.title.ka}
+                      onChange={(e) => updateNestedValue("speakers.title.ka", e.target.value)}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                      placeholder="სპიკერები"
+                    />
+                  </div>
+                </div>
+              </div>
+
               <p className="text-sm text-gray-600 mb-4">
                 Add speaker images to the <code className="bg-gray-100 px-2 py-1 rounded">public</code> folder first, then reference them here (e.g., /speaker-1.jpg)
               </p>
 
-              {editedContent.speakers && editedContent.speakers.map((speaker, index) => (
+              {editedContent.speakers.list && editedContent.speakers.list.map((speaker, index) => (
                 <div key={index} className="border border-gray-200 rounded-lg p-6 bg-gray-50">
                   <div className="flex justify-between items-start mb-4">
                     <h3 className="font-semibold text-gray-700 text-lg">Speaker {index + 1}</h3>
                     <button
                       onClick={() => {
-                        const newSpeakers = editedContent.speakers.filter((_, i) => i !== index);
-                        setEditedContent({ ...editedContent, speakers: newSpeakers });
+                        const newSpeakers = editedContent.speakers.list.filter((_, i) => i !== index);
+                        setEditedContent({
+                          ...editedContent,
+                          speakers: { ...editedContent.speakers, list: newSpeakers }
+                        });
                       }}
                       className="text-red-600 hover:text-red-800 hover:bg-red-50 p-2 rounded-lg transition-colors duration-200"
                       title="Delete Speaker"
@@ -1204,9 +1238,12 @@ export default function AdminPanel() {
                           placeholder="/speaker-1.jpg"
                           value={speaker.image}
                           onChange={(e) => {
-                            const newSpeakers = [...editedContent.speakers];
+                            const newSpeakers = [...editedContent.speakers.list];
                             newSpeakers[index].image = e.target.value;
-                            setEditedContent({ ...editedContent, speakers: newSpeakers });
+                            setEditedContent({
+                              ...editedContent,
+                              speakers: { ...editedContent.speakers, list: newSpeakers }
+                            });
                           }}
                           className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
                         />
@@ -1218,7 +1255,7 @@ export default function AdminPanel() {
                             onChange={async (e) => {
                               const file = e.target.files[0];
                               if (file) {
-                                await handleImageUpload(file, `speakers.${index}.image`);
+                                await handleImageUpload(file, `speakers.list.${index}.image`);
                               }
                             }}
                             className="hidden"
@@ -1238,9 +1275,12 @@ export default function AdminPanel() {
                           placeholder="John Smith"
                           value={speaker.name.en}
                           onChange={(e) => {
-                            const newSpeakers = [...editedContent.speakers];
+                            const newSpeakers = [...editedContent.speakers.list];
                             newSpeakers[index].name.en = e.target.value;
-                            setEditedContent({ ...editedContent, speakers: newSpeakers });
+                            setEditedContent({
+                              ...editedContent,
+                              speakers: { ...editedContent.speakers, list: newSpeakers }
+                            });
                           }}
                           className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
                         />
@@ -1252,9 +1292,50 @@ export default function AdminPanel() {
                           placeholder="ჯონ სმიტი"
                           value={speaker.name.ka}
                           onChange={(e) => {
-                            const newSpeakers = [...editedContent.speakers];
+                            const newSpeakers = [...editedContent.speakers.list];
                             newSpeakers[index].name.ka = e.target.value;
-                            setEditedContent({ ...editedContent, speakers: newSpeakers });
+                            setEditedContent({
+                              ...editedContent,
+                              speakers: { ...editedContent.speakers, list: newSpeakers }
+                            });
+                          }}
+                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Speaker Company */}
+                    <div className="grid md:grid-cols-2 gap-3">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Company (English)</label>
+                        <input
+                          type="text"
+                          placeholder="Company Name"
+                          value={speaker.company.en}
+                          onChange={(e) => {
+                            const newSpeakers = [...editedContent.speakers.list];
+                            newSpeakers[index].company.en = e.target.value;
+                            setEditedContent({
+                              ...editedContent,
+                              speakers: { ...editedContent.speakers, list: newSpeakers }
+                            });
+                          }}
+                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Company (Georgian)</label>
+                        <input
+                          type="text"
+                          placeholder="კომპანიის სახელი"
+                          value={speaker.company.ka}
+                          onChange={(e) => {
+                            const newSpeakers = [...editedContent.speakers.list];
+                            newSpeakers[index].company.ka = e.target.value;
+                            setEditedContent({
+                              ...editedContent,
+                              speakers: { ...editedContent.speakers, list: newSpeakers }
+                            });
                           }}
                           className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
                         />
@@ -1270,9 +1351,12 @@ export default function AdminPanel() {
                           placeholder="Sustainable Architecture"
                           value={speaker.topic.en}
                           onChange={(e) => {
-                            const newSpeakers = [...editedContent.speakers];
+                            const newSpeakers = [...editedContent.speakers.list];
                             newSpeakers[index].topic.en = e.target.value;
-                            setEditedContent({ ...editedContent, speakers: newSpeakers });
+                            setEditedContent({
+                              ...editedContent,
+                              speakers: { ...editedContent.speakers, list: newSpeakers }
+                            });
                           }}
                           className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
                         />
@@ -1284,9 +1368,12 @@ export default function AdminPanel() {
                           placeholder="მდგრადი არქიტექტურა"
                           value={speaker.topic.ka}
                           onChange={(e) => {
-                            const newSpeakers = [...editedContent.speakers];
+                            const newSpeakers = [...editedContent.speakers.list];
                             newSpeakers[index].topic.ka = e.target.value;
-                            setEditedContent({ ...editedContent, speakers: newSpeakers });
+                            setEditedContent({
+                              ...editedContent,
+                              speakers: { ...editedContent.speakers, list: newSpeakers }
+                            });
                           }}
                           className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
                         />
@@ -1301,9 +1388,12 @@ export default function AdminPanel() {
                           placeholder="Speaker biography and background..."
                           value={speaker.bio.en}
                           onChange={(e) => {
-                            const newSpeakers = [...editedContent.speakers];
+                            const newSpeakers = [...editedContent.speakers.list];
                             newSpeakers[index].bio.en = e.target.value;
-                            setEditedContent({ ...editedContent, speakers: newSpeakers });
+                            setEditedContent({
+                              ...editedContent,
+                              speakers: { ...editedContent.speakers, list: newSpeakers }
+                            });
                           }}
                           rows="5"
                           className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
@@ -1315,9 +1405,12 @@ export default function AdminPanel() {
                           placeholder="სპიკერის ბიოგრაფია და ბექგრაუნდი..."
                           value={speaker.bio.ka}
                           onChange={(e) => {
-                            const newSpeakers = [...editedContent.speakers];
+                            const newSpeakers = [...editedContent.speakers.list];
                             newSpeakers[index].bio.ka = e.target.value;
-                            setEditedContent({ ...editedContent, speakers: newSpeakers });
+                            setEditedContent({
+                              ...editedContent,
+                              speakers: { ...editedContent.speakers, list: newSpeakers }
+                            });
                           }}
                           rows="5"
                           className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
@@ -1328,7 +1421,7 @@ export default function AdminPanel() {
                 </div>
               ))}
 
-              {(!editedContent.speakers || editedContent.speakers.length === 0) && (
+              {(!editedContent.speakers.list || editedContent.speakers.list.length === 0) && (
                 <div className="text-center py-12 text-gray-500 border border-dashed border-gray-300 rounded-lg">
                   <p>No speakers yet. Click "Add Speaker" to add your first speaker.</p>
                 </div>
