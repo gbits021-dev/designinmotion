@@ -388,8 +388,8 @@ const content = {
         "highlight": false
       },
       {
-        "en": "📍 Marriott Hotel, Tbilisi\n🗓 20 November 2025",
-        "ka": "📍 სასტუმრო Marriott, თბილისი\n🗓 20 ნოემბერი, 2025",
+        "en": "📍 Marriott Hotel, Tbilisi\n 20 November 2025",
+        "ka": "📍 სასტუმრო Marriott, თბილისი\n20 ნოემბერი, 2025",
         "highlight": true
       }
     ],
