@@ -147,8 +147,8 @@ const content = {
     "logoKa": "/dio-logo-ka.svg",
     "logoEn": "/dio-logo-en.svg",
     "title": {
-      "en": "EFFICIENT ARCHITECTURE",
-      "ka": "ენერგოეფექტური არქიტექტურა"
+      "en": "2025 EFFICIENT ARCHITECTURE CONFERENCE",
+      "ka": "2025 ენერგოეფექტური არქიტექტურის კონფერენცია "
     },
     "subtitle": {
       "en": "Where Innovation Shapes Sustainable Design aaaaaaaaaaaa",
