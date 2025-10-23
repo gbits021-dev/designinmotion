@@ -373,8 +373,8 @@ const content = {
   "about": {
     "posterImage": "/1761210307721-Asset-6.png",
     "headline": {
-      "en": "Innovative Window and Shading Systems for Maximum Energy Efficiency",
-      "ka": "კარ-ფანჯრის და საჩრდილობლია ინოვაციური სისტემები მაქსიმალური ენერგოეფექტურობისთვის"
+      "en": "About The Event",
+      "ka": "ღონისძიების შესახებ"
     },
     "paragraphs": [
       {
