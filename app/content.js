@@ -403,7 +403,7 @@ const content = {
       "en": "DIO's Architects Club",
       "ka": "დიოს არქიტექტორების კლუბი"
     },
-    "logo": "/architect.jpg",
+    "logo": "/1761213925676-4-100.jpg",
     "sectionTitle": {
       "en": "About The Club",
       "ka": "კლუბის შესახებ"
