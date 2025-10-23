@@ -161,7 +161,7 @@ const content = {
   },
   "hero": {
     "bannerImageDesktop": "/1760694261951-2.jpg",
-    "bannerImageMobile": "/1761209031243-mobile.jpg",
+    "bannerImageMobile": "/1761209732896-mobile-2.jpg",
     "logoKa": "/dio-logo-ka.svg",
     "logoEn": "/dio-logo-en.svg",
     "title": {
