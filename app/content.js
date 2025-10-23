@@ -378,8 +378,8 @@ const content = {
     },
     "paragraphs": [
       {
-        "en": "EFFICIENT ARCHITECTURE\n\nInnovative Window and Shading Systems for Maximum Energy Efficiency",
-        "ka": "ენერგოეფექტური არქიტექტურა\n\nკარ-ფანჯრისა და მზის საჩრდილობლის  ინოვაციური სისტემები მაქსიმალური ენერგოეფექტურობისთვის",
+        "en": "EFFICIENT ARCHITECTURE Conference 2025 - Theme : \n\nInnovative Window and Shading Systems for Maximum Energy Efficiency",
+        "ka": "ენერგოეფექტური არქიტექტურის კონფერენცია 2025 - თემა :\n\nკარ-ფანჯრისა და მზის საჩრდილობლის  ინოვაციური სისტემები მაქსიმალური ენერგოეფექტურობისთვის",
         "highlight": true
       },
       {
