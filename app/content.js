@@ -401,25 +401,25 @@ const content = {
   "architectsClub": {
     "title": {
       "en": "DIO's Architects Club",
-      "ka": "დიოს არქიტექტორთა კლუბი"
+      "ka": "დიოს არქიტექტორების კლუბი"
     },
     "logo": "/architect.jpg",
     "sectionTitle": {
-      "en": "About the Event",
-      "ka": "ღონისძიების შესახებ"
+      "en": "About The Club",
+      "ka": "კლუბის შესახებ"
     },
     "paragraphs": [
       {
-        "en": "Design in Motion brings together architects, designers, and developers to explore innovation in architecture, sustainability, and design.",
-        "ka": "Design in Motion აერთიანებს არქიტექტორებს, დიზაინერებს და დეველოპერებს არქიტექტურის, მდგრადობის და დიზაინის ინოვაციების შესწავლის მიზნით."
+        "en": "Founded on April 14, 2016, the DIO Architects Club unites leading and active architects and designers around DIO’s vision of innovation and collaboration.\nThe club’s purpose is to create a platform for continuous exchange — providing members with early access to information about DIO’s exclusive products, encouraging professional dialogue, and collaborating on inspiring projects.\n\nActive club members enjoy special opportunities to:\n\nReceive additional benefits in projects featuring DIO products;\n\nParticipate in professional visits to DIO’s European partner companies;\n\nAttend masterclasses and meetings hosted by internationally renowned architects.",
+        "ka": "2016 წლის 14 აპრილს დაარსებული DIO არქიტექტორთა კლუბი აერთიანებს მოწინავე და აქტიურ არქიტექტორებსა და დიზაინერებს, რომლებიც იზიარებენ DIO-ს ინოვაციისა და თანამშრომლობის ხედვას.\n\nკლუბის მთავარი მიზანია შექმნას უწყვეტი პროფესიული ზრდისა და გამოცდილების გაცვლის პლატფორმა. ჩვენს წევრებს ვთავაზობთ:\n\nექსკლუზიურ და ადრეულ ინფორმაციას DIO-ს უახლესი და უნიკალური პროდუქტების შესახებ.\n\nპროფესიულ დიალოგს და თანამშრომლობას ინსპირაციული პროექტების შექმნაში.\n\nკლუბის აქტიური წევრობა გაძლევთ განსაკუთრებულ პრივილეგიებს:\n\nდამატებითი სარგებელი და ბენეფიტები იმ პროექტებში, სადაც DIO-ს პროდუქცია გამოიყენება.\n\nპროფესიული ვიზიტები ევროპაში, DIO-ს პარტნიორ კომპანიებში.\n\nდასწრება მასტერკლასებსა და შეხვედრებზე, რომლებსაც საერთაშორისო დონის ცნობილი არქიტექტორები მართავენ."
       },
       {
-        "en": "Attendees will gain professional inspiration, discover innovative products and real project examples, and connect with DIO and leading suppliers for future partnerships, consultations, and system-based solutions.",
-        "ka": "მონაწილეები მიიღებენ პროფესიულ ინსპირაციას, აღმოაჩენენ ინოვაციურ პროდუქტებს და რეალურ პროექტებს, დაიკავშირდებიან დიოსთან და წამყვან მომწოდებელთან."
+        "en": "",
+        "ka": ""
       },
       {
-        "en": "The event is organized within the framework of DIO's Architects Club, founded in 2016 to unite Georgia's leading architects and designers. The Club serves as a platform for collaboration, exchange of ideas, and professional growth — giving members exclusive access to product innovations, international industry visits, and events hosted by world-renowned architects.",
-        "ka": "ღონისძიება ორგანიზებულია დიოს არქიტექტორთა კლუბის ჩარჩოებში, რომელიც დაარსდა 2016 წელს საქართველოს წამყვანი არქიტექტორების და დიზაინერების გაერთიანების მიზნით."
+        "en": "",
+        "ka": ""
       }
     ]
   },
