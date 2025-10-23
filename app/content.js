@@ -214,71 +214,53 @@ const content = {
       }
     }
   ],
-  "speakers": {
-    "title": {
-      "en": "Speakers",
-      "ka": "სპიკერები"
-    },
-    "list": [
-      {
-        "name": {
-          "en": "John Smith",
-          "ka": "ჯონ სმიტი"
-        },
-        "company": {
-          "en": "",
-          "ka": ""
-        },
-        "image": "/1760620984036-1.png",
-        "topic": {
-          "en": "Sustainable Architecture",
-          "ka": "მდგრადი არქიტექტურა"
-        },
-        "bio": {
-          "en": "John Smith is a renowned architect with over 20 years of experience in sustainable design. He has led numerous award-winning projects across Europe and is a passionate advocate for green building practices.",
+  "speakers": [
+    {
+      "name": {
+        "en": "John Smith",
+        "ka": "ჯონ სმიტი"
+      },
+      "image": "/1760620984036-1.png",
+      "topic": {
+        "en": "Sustainable Architecture",
+        "ka": "მდგრადი არქიტექტურა"
+      },
+      "bio": {
+        "en": "John Smith is a renowned architect with over 20 years of experience in sustainable design. He has led numerous award-winning projects across Europe and is a passionate advocate for green building practices.",
         "ka": "ჯონ სმიტი არის ცნობილი არქიტექტორი 20 წელზე მეტი გამოცდილებით მდგრადი დიზაინის სფეროში. მან ხელმძღვანელობა გაუწია მრავალ ჯილდოსმადვილ პროექტს ევროპაში."
       }
+    },
+    {
+      "name": {
+        "en": "Maria Garcia",
+        "ka": "მარია გარსია"
       },
-      {
-        "name": {
-          "en": "Maria Garcia",
-          "ka": "მარია გარსია"
-        },
-        "company": {
-          "en": "",
-          "ka": ""
-        },
-        "image": "/speaker-2.jpg",
-        "topic": {
-          "en": "Innovation in Building Systems",
-          "ka": "ინოვაცია სამშენებლო სისტემებში"
-        },
-        "bio": {
-          "en": "Maria Garcia is an expert in innovative building technologies and energy-efficient systems. She consults for leading construction firms worldwide and frequently speaks at international conferences.",
-          "ka": "მარია გარსია არის ექსპერტი ინოვაციური სამშენებლო ტექნოლოგიებისა და ენერგოეფექტური სისტემების სფეროში. ის კონსულტაციას უწევს წამყვან სამშენებლო კომპანიებს."
-        }
+      "image": "/speaker-2.jpg",
+      "topic": {
+        "en": "Innovation in Building Systems",
+        "ka": "ინოვაცია სამშენებლო სისტემებში"
       },
-      {
-        "name": {
-          "en": "David Chen",
-          "ka": "დევიდ ჩენი"
-        },
-        "company": {
-          "en": "",
-          "ka": ""
-        },
-        "image": "/speaker-3.jpg",
-        "topic": {
-          "en": "Future of Urban Design",
-          "ka": "ურბანული დიზაინის მომავალი"
-        },
-        "bio": {
-          "en": "David Chen specializes in urban planning and smart city development. His innovative approaches have transformed cityscapes in Asia and earned him recognition as one of the top urban designers globally.",
-          "ka": "დევიდ ჩენი სპეციალიზირდება ურბანულ დაგეგმვასა და ჭკვიანი ქალაქების განვითარებაში. მისმა ინოვაციურმა მიდგომებმა გარდაქმნა ქალაქები აზიაში."
-        }
+      "bio": {
+        "en": "Maria Garcia is an expert in innovative building technologies and energy-efficient systems. She consults for leading construction firms worldwide and frequently speaks at international conferences.",
+        "ka": "მარია გარსია არის ექსპერტი ინოვაციური სამშენებლო ტექნოლოგიებისა და ენერგოეფექტური სისტემების სფეროში. ის კონსულტაციას უწევს წამყვან სამშენებლო კომპანიებს."
       }
-    ]
-  },
+    },
+    {
+      "name": {
+        "en": "David Chen",
+        "ka": "დევიდ ჩენი"
+      },
+      "image": "/speaker-3.jpg",
+      "topic": {
+        "en": "Future of Urban Design",
+        "ka": "ურბანული დიზაინის მომავალი"
+      },
+      "bio": {
+        "en": "David Chen specializes in urban planning and smart city development. His innovative approaches have transformed cityscapes in Asia and earned him recognition as one of the top urban designers globally.",
+        "ka": "დევიდ ჩენი სპეციალიზირდება ურბანულ დაგეგმვასა და ჭკვიანი ქალაქების განვითარებაში. მისმა ინოვაციურმა მიდგომებმა გარდაქმნა ქალაქები აზიაში."
+      }
+    }
+  ],
   "agenda": [
     {
       "time": "11:00 - 11:30",
@@ -371,25 +353,25 @@ const content = {
     "linkedin": "https://linkedin.com/company/yourcompany"
   },
   "about": {
-    "posterImage": "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&h=1200",
+    "posterImage": "/1761210307721-Asset-6.png",
     "headline": {
-      "en": "Connecting Architecture, Engineering, and Design Leaders ss",
-      "ka": "არქიტექტურის, ინჟინერიის და დიზაინის ლიდერების დაკავშირება"
+      "en": "EFFICIENT ARCHITECTURE  Innovative Window and Shading Systems for Maximum Energy Efficiency",
+      "ka": "ეფექტური არქიტექტურა  კარ-ფანჯრისა და საჩრდილობელი ინოვაციური სისტემები მაქსიმალური ენერგოეფექტურობისთვის"
     },
     "paragraphs": [
       {
-        "en": "We are excited to announce Design in Motion 2025, an inspiring half-day event where architecture meets technology, aesthetics meets performance, and ideas move into action.",
-        "ka": "ჩვენ გვიხარია გაცნობოთ Design in Motion 2025, ინსპირირებული ნახევარდღიანი ღონისძიება, სადაც არქიტექტურა ხვდება ტექნოლოგიას, ესთეტიკა - შესრულებას და იდეები გადადიან მოქმედებაში.",
+        "en": "A half-day professional conference connecting architects, engineers, and developers to explore how smart technologies and sustainable design are shaping modern architecture.\nLearn from international experts from Aluprof and Aluplast, along with other special guests, about the future of façades, shading systems, and energy efficiency.\nGain valuable insights, practical knowledge, and new professional connections.\n\n📍 Marriott Hotel, Tbilisi\n🗓 20 November 2025",
+        "ka": "ნახევარდღიანი პროფესიული კონფერენცია, რომელიც აერთიანებს არქიტექტორებს, ინჟინრებსა და დეველოპერებს, რათა ერთად განიხილონ, როგორ ცვლის ჭკვიანი ტექნოლოგიები და მდგრადი დიზაინი თანამედროვე არქიტექტურას.\nმოისმინეთ Aluprof-ისა და Aluplast-ის საერთაშორისო ექსპერტებისგან, ასევე მოწვეული სპეციალური სტუმრებისგან, რომლებიც ისაუბრებენ ფასადების, საჩრდილობის სისტემებისა და ენერგოეფექტურობის მომავალზე.\nმიიღეთ ღირებული ცოდნა, პრაქტიკული გამოცდილება და ახალი პროფესიული კავშირები.\n\n📍 სასტუმრო Marriott, თბილისი\n🗓 20 ნოემბერი, 2025",
         "highlight": false
       },
       {
-        "en": "Following the success of previous editions, this year's forum continues to connect architecture, engineering, and construction professionals through an inspiring program of keynotes, case studies, and networking opportunities.",
-        "ka": "წინა წლების წარმატების შემდეგ, წელს ფორუმი აგრძელებს არქიტექტურის, ინჟინერიის და მშენებლობის პროფესიონალების დაკავშირებას საინტერესო პროგრამით, რომელიც მოიცავს კონფერენციებს, შემთხვევის შესწავლებს და ქსელის შექმნის შესაძლებლობებს.",
+        "en": "",
+        "ka": "",
         "highlight": false
       },
       {
-        "en": "Join us at Marriott Hotel Tbilisi and experience a day of inspiration, professional connection, and forward-thinking design.",
-        "ka": "შემოგვიერთდით მარიოტ ჰოტელში თბილისში და განიცადეთ ინსპირაციის, პროფესიული კავშირისა და პროგრესული დიზაინის დღე.",
+        "en": "",
+        "ka": "",
         "highlight": true
       }
     ],
