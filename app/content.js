@@ -3,8 +3,22 @@
 
 const content = {
   "menu": {
-    "en": ["About", "Architects Club", "Partners", "Venue", "Agenda", "Registration"],
-    "ka": ["შესახებ", "არქიტექტორთა კლუბი", "პარტნიორები", "ადგილი", "დღის პროგრამა", "რეგისტრაცია"]
+    "en": [
+      "About",
+      "Dio Architects Club",
+      "Partners",
+      "Venue",
+      "Agenda",
+      "Registration"
+    ],
+    "ka": [
+      "ღონისძიების შესახებ",
+      "დიოს არქიტექტორთა კლუბი",
+      "პარტნიორები",
+      "ლოკაცია",
+      "დღის პროგრამა",
+      "რეგისტრაცია"
+    ]
   },
   "fonts": {
     "uploadedFonts": [
