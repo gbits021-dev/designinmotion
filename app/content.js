@@ -161,7 +161,7 @@ const content = {
   },
   "hero": {
     "bannerImageDesktop": "/1760694261951-2.jpg",
-    "bannerImageMobile": "/1760696637829-mobile.jpg",
+    "bannerImageMobile": "/1761209031243-mobile.jpg",
     "logoKa": "/dio-logo-ka.svg",
     "logoEn": "/dio-logo-en.svg",
     "title": {
@@ -214,71 +214,53 @@ const content = {
       }
     }
   ],
-  "speakers": {
-    "title": {
-      "en": "Speakers",
-      "ka": "სპიკერები"
-    },
-    "list": [
-      {
-        "name": {
-          "en": "John Smith",
-          "ka": "ჯონ სმიტი"
-        },
-        "company": {
-          "en": "",
-          "ka": ""
-        },
-        "image": "/1760620984036-1.png",
-        "topic": {
-          "en": "Sustainable Architecture",
-          "ka": "მდგრადი არქიტექტურა"
-        },
-        "bio": {
-          "en": "John Smith is a renowned architect with over 20 years of experience in sustainable design. He has led numerous award-winning projects across Europe and is a passionate advocate for green building practices.",
-          "ka": "ჯონ სმიტი არის ცნობილი არქიტექტორი 20 წელზე მეტი გამოცდილებით მდგრადი დიზაინის სფეროში. მან ხელმძღვანელობა გაუწია მრავალ ჯილდოსმადვილ პროექტს ევროპაში."
-        }
+  "speakers": [
+    {
+      "name": {
+        "en": "John Smith",
+        "ka": "ჯონ სმიტი"
       },
-      {
-        "name": {
-          "en": "Maria Garcia",
-          "ka": "მარია გარსია"
-        },
-        "company": {
-          "en": "",
-          "ka": ""
-        },
-        "image": "/speaker-2.jpg",
-        "topic": {
-          "en": "Innovation in Building Systems",
-          "ka": "ინოვაცია სამშენებლო სისტემებში"
-        },
-        "bio": {
-          "en": "Maria Garcia is an expert in innovative building technologies and energy-efficient systems. She consults for leading construction firms worldwide and frequently speaks at international conferences.",
-          "ka": "მარია გარსია არის ექსპერტი ინოვაციური სამშენებლო ტექნოლოგიებისა და ენერგოეფექტური სისტემების სფეროში. ის კონსულტაციას უწევს წამყვან სამშენებლო კომპანიებს."
-        }
+      "image": "/1760620984036-1.png",
+      "topic": {
+        "en": "Sustainable Architecture",
+        "ka": "მდგრადი არქიტექტურა"
       },
-      {
-        "name": {
-          "en": "David Chen",
-          "ka": "დევიდ ჩენი"
-        },
-        "company": {
-          "en": "",
-          "ka": ""
-        },
-        "image": "/speaker-3.jpg",
-        "topic": {
-          "en": "Future of Urban Design",
-          "ka": "ურბანული დიზაინის მომავალი"
-        },
-        "bio": {
-          "en": "David Chen specializes in urban planning and smart city development. His innovative approaches have transformed cityscapes in Asia and earned him recognition as one of the top urban designers globally.",
-          "ka": "დევიდ ჩენი სპეციალიზირდება ურბანულ დაგეგმვასა და ჭკვიანი ქალაქების განვითარებაში. მისმა ინოვაციურმა მიდგომებმა გარდაქმნა ქალაქები აზიაში."
-        }
+      "bio": {
+        "en": "John Smith is a renowned architect with over 20 years of experience in sustainable design. He has led numerous award-winning projects across Europe and is a passionate advocate for green building practices.",
+        "ka": "ჯონ სმიტი არის ცნობილი არქიტექტორი 20 წელზე მეტი გამოცდილებით მდგრადი დიზაინის სფეროში. მან ხელმძღვანელობა გაუწია მრავალ ჯილდოსმადვილ პროექტს ევროპაში."
       }
-    ]
-  },
+    },
+    {
+      "name": {
+        "en": "Maria Garcia",
+        "ka": "მარია გარსია"
+      },
+      "image": "/speaker-2.jpg",
+      "topic": {
+        "en": "Innovation in Building Systems",
+        "ka": "ინოვაცია სამშენებლო სისტემებში"
+      },
+      "bio": {
+        "en": "Maria Garcia is an expert in innovative building technologies and energy-efficient systems. She consults for leading construction firms worldwide and frequently speaks at international conferences.",
+        "ka": "მარია გარსია არის ექსპერტი ინოვაციური სამშენებლო ტექნოლოგიებისა და ენერგოეფექტური სისტემების სფეროში. ის კონსულტაციას უწევს წამყვან სამშენებლო კომპანიებს."
+      }
+    },
+    {
+      "name": {
+        "en": "David Chen",
+        "ka": "დევიდ ჩენი"
+      },
+      "image": "/speaker-3.jpg",
+      "topic": {
+        "en": "Future of Urban Design",
+        "ka": "ურბანული დიზაინის მომავალი"
+      },
+      "bio": {
+        "en": "David Chen specializes in urban planning and smart city development. His innovative approaches have transformed cityscapes in Asia and earned him recognition as one of the top urban designers globally.",
+        "ka": "დევიდ ჩენი სპეციალიზირდება ურბანულ დაგეგმვასა და ჭკვიანი ქალაქების განვითარებაში. მისმა ინოვაციურმა მიდგომებმა გარდაქმნა ქალაქები აზიაში."
+      }
+    }
+  ],
   "agenda": [
     {
       "time": "11:00 - 11:30",
