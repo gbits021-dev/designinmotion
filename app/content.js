@@ -2,6 +2,10 @@
 // Edit this file to update event details, dates, partners, and more
 
 const content = {
+  "menu": {
+    "en": ["About", "Architects Club", "Partners", "Venue", "Agenda", "Registration"],
+    "ka": ["შესახებ", "არქიტექტორთა კლუბი", "პარტნიორები", "ადგილი", "დღის პროგრამა", "რეგისტრაცია"]
+  },
   "fonts": {
     "uploadedFonts": [
       {

@@ -167,7 +167,7 @@ export default function AdminPanel() {
       {/* Tabs */}
       <div className="max-w-7xl mx-auto px-4 mt-6">
         <div className="flex space-x-2 border-b overflow-x-auto">
-          {["event", "hero", "visibility", "fonts", "about", "architects-club", "gallery", "partners", "speakers", "agenda", "venue", "registration"].map((tab) => (
+          {["event", "hero", "menu", "visibility", "fonts", "about", "architects-club", "gallery", "partners", "speakers", "agenda", "venue", "registration"].map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
@@ -380,6 +380,58 @@ export default function AdminPanel() {
                     placeholder="/dio-logo-en.svg"
                   />
                 </div>
+              </div>
+            </div>
+          )}
+
+          {/* Menu Tab */}
+          {activeTab === "menu" && (
+            <div className="space-y-6">
+              <h2 className="text-xl font-bold text-gray-800 mb-4">Header Menu Items</h2>
+              <p className="text-sm text-gray-600 mb-4">
+                Edit the navigation menu items that appear in the header. There are 6 menu items corresponding to the main sections.
+              </p>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                {editedContent.menu.en.map((item, index) => (
+                  <div key={index} className="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                    <h3 className="font-semibold text-gray-700 mb-3">Menu Item {index + 1}</h3>
+                    <div className="space-y-3">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">English</label>
+                        <input
+                          type="text"
+                          value={item}
+                          onChange={(e) => {
+                            const newMenu = [...editedContent.menu.en];
+                            newMenu[index] = e.target.value;
+                            setEditedContent({
+                              ...editedContent,
+                              menu: { ...editedContent.menu, en: newMenu }
+                            });
+                          }}
+                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Georgian</label>
+                        <input
+                          type="text"
+                          value={editedContent.menu.ka[index]}
+                          onChange={(e) => {
+                            const newMenu = [...editedContent.menu.ka];
+                            newMenu[index] = e.target.value;
+                            setEditedContent({
+                              ...editedContent,
+                              menu: { ...editedContent.menu, ka: newMenu }
+                            });
+                          }}
+                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           )}
@@ -711,14 +763,26 @@ export default function AdminPanel() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Cover Image URL</label>
-                <input
-                  type="text"
-                  value={editedContent.about.posterImage}
-                  onChange={(e) => updateNestedValue("about.posterImage", e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-                  placeholder="https://... or /image.jpg"
-                />
+                <label className="block text-sm font-medium text-gray-700 mb-2">Cover Image</label>
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    value={editedContent.about.posterImage}
+                    onChange={(e) => updateNestedValue("about.posterImage", e.target.value)}
+                    className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                    placeholder="https://... or /image.jpg"
+                  />
+                  <label className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg cursor-pointer flex items-center whitespace-nowrap">
+                    {uploading ? "Uploading..." : "📤 Upload"}
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onChange={(e) => handleImageUpload(e.target.files[0], "about.posterImage")}
+                      className="hidden"
+                      disabled={uploading}
+                    />
+                  </label>
+                </div>
               </div>
 
               <div className="space-y-4">

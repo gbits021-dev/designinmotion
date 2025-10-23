@@ -173,7 +173,7 @@ export default function Home() {
             style={{ fontFamily: getSectionFont('menu') }}
           >
             <nav className="flex flex-col py-2">
-              {t[lang].menu.map((m, i) => (
+              {content.menu[lang].map((m, i) => (
                 <a
                   key={i}
                   href={`#${[
@@ -195,7 +195,7 @@ export default function Home() {
 
           {/* Desktop - Horizontal Menu */}
           <nav className="hidden md:flex absolute bottom-0 w-full bg-[#21263A]/95 backdrop-blur-sm py-5 justify-center space-x-8 md:space-x-12 lg:space-x-16 text-lg md:text-xl font-semibold text-white border-t border-white/10 z-50" style={{ fontFamily: getSectionFont('menu') }}>
-            {t[lang].menu.map((m, i) => (
+            {content.menu[lang].map((m, i) => (
               <a
                 key={i}
                 href={`#${[
