@@ -176,7 +176,7 @@ const content = {
   "partners": [
     {
       "name": "DIO",
-      "logo": "/Asset 1.png",
+      "logo": "/1761288386578-1-(4).jpg",
       "link": "https://dio.ge",
       "description": {
         "en": "Leading supplier of premium building systems",
@@ -189,7 +189,7 @@ const content = {
     },
     {
       "name": "Aluplast",
-      "logo": "/Asset 7.png",
+      "logo": "/1761288399523-1-(6).jpg",
       "link": "https://aluplast.net",
       "description": {
         "en": "Innovative window and door systems",
@@ -202,7 +202,7 @@ const content = {
     },
     {
       "name": "Aluprof",
-      "logo": "/Asset 7.png",
+      "logo": "/1761288403947-1-(5).jpg",
       "link": "https://aluprof.eu",
       "description": {
         "en": "Aluminum architectural systems",
