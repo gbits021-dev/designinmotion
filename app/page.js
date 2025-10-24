@@ -440,7 +440,7 @@ export default function Home() {
                     <img
                       src={p.logo}
                       alt={p.name}
-                      className="max-h-full max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                      className="max-h-full max-w-full object-contain transition-all duration-300"
                     />
                   </div>
                   <h4 className="font-semibold text-lg mb-2 text-gray-800">{p.name}</h4>
