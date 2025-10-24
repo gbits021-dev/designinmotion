@@ -452,7 +452,7 @@ const content = {
       },
       {
         "en": "The club’s purpose is to create a platform for continuous exchange — providing members with early access to information about DIO’s exclusive products, encouraging professional dialogue, and collaborating on inspiring projects.",
-        "ka": "კლუბის მიზანია ორმხრივი თანამშრომლობა — კლუბის წევრებისთვის პირველებმა მივაწოდოთ ინფორმაცია „დიო“-ს ექსკლუზიური პროდუქტების შესახებ, მოვისმინოთ მათი მოსაზრებები და ერთად განვავითაროთ საინტერესო იდეები.",
+        "ka": "კლუბის მიზანია ორმხრივი თანამშრომლობა — კლუბის წევრებს პირველებს მივაწოდოთ ინფორმაცია „დიო“-ს ექსკლუზიური პროდუქტების შესახებ, მოვისმინოთ მათი მოსაზრებები და ერთად განვავითაროთ საინტერესო იდეები.",
         "highlight": false
       },
       {
