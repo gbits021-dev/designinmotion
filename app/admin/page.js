@@ -1973,6 +1973,33 @@ export default function AdminPanel() {
             <div className="space-y-6">
               <h2 className="text-xl font-bold text-gray-800 mb-4">Venue & Location</h2>
 
+              {/* Section Title */}
+              <div className="border border-gray-200 rounded-lg p-4 bg-blue-50 mb-6">
+                <h3 className="font-semibold text-gray-800 mb-4">Section Title</h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Title (English)</label>
+                    <input
+                      type="text"
+                      value={editedContent.venue?.title?.en || ""}
+                      onChange={(e) => updateNestedValue("venue.title.en", e.target.value)}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                      placeholder="Venue & Location"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Title (Georgian)</label>
+                    <input
+                      type="text"
+                      value={editedContent.venue?.title?.ka || ""}
+                      onChange={(e) => updateNestedValue("venue.title.ka", e.target.value)}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                      placeholder="ვენიუ და ლოკაცია"
+                    />
+                  </div>
+                </div>
+              </div>
+
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Venue Name (English)</label>
