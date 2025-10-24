@@ -160,10 +160,10 @@ const content = {
     "about": true,
     "architectsClub": true,
     "partners": true,
-    "speakers": true,
+    "speakers": false,
     "venue": true,
-    "agenda": true,
-    "registration": true
+    "agenda": false,
+    "registration": false
   },
   "event": {
     "date": "2025-11-20T11:00:00",
@@ -198,7 +198,7 @@ const content = {
   "partners": [
     {
       "name": "DIO",
-      "logo": "/Asset 1.png",
+      "logo": "/1761288386578-1-(4).jpg",
       "link": "https://dio.ge",
       "description": {
         "en": "Leading supplier of premium building systems",
@@ -211,7 +211,7 @@ const content = {
     },
     {
       "name": "Aluplast",
-      "logo": "/Asset 7.png",
+      "logo": "/1761288399523-1-(6).jpg",
       "link": "https://aluplast.net",
       "description": {
         "en": "Innovative window and door systems",
@@ -224,7 +224,7 @@ const content = {
     },
     {
       "name": "Aluprof",
-      "logo": "/Asset 7.png",
+      "logo": "/1761288403947-1-(5).jpg",
       "link": "https://aluprof.eu",
       "description": {
         "en": "Aluminum architectural systems",
@@ -432,18 +432,33 @@ const content = {
     },
     "paragraphs": [
       {
-        "en": "Founded on April 14, 2016, the DIO Architects Club unites leading and active architects and designers around DIO's vision of innovation and collaboration.\nThe club's purpose is to create a platform for continuous exchange — providing members with early access to information about DIO's exclusive products, encouraging professional dialogue, and collaborating on inspiring projects.\n\n",
-        "ka": "2016 წლის 14 აპრილს დაარსებული DIO არქიტექტორთა კლუბი აერთიანებს მოწინავე და აქტიურ არქიტექტორებსა და დიზაინერებს, რომლებიც იზიარებენ DIO-ს ინოვაციისა და თანამშრომლობის ხედვას.\n\nკლუბის მთავარი მიზანია შექმნას უწყვეტი პროფესიული ზრდისა და გამოცდილების გაცვლის პლატფორმა. ჩვენს წევრებს ვთავაზობთ:\n\n",
+        "en": "Founded on April 14, 2016, the DIO Architects Club unites leading and active architects and designers around DIO’s vision of innovation and collaboration.\n",
+        "ka": "დიო“-ს არქიტექტორთა კლუბი ჩამოყალიბდა 2016 წლის 14 აპრილს და აერთიანებს წამყვან არქიტექტორებსა და დიზაინერებს, რომლებიც მონაწილეობენ ინოვაციურ და თანამედროვე პროექტებში.",
         "highlight": false
       },
       {
-        "en": "Active club members enjoy special opportunities to:\n\nReceive additional benefits in projects featuring DIO products;\n\nParticipate in professional visits to DIO's European partner companies;\n\nAttend masterclasses and meetings hosted by internationally renowned architects.",
-        "ka": "ექსკლუზიურ და ადრეულ ინფორმაციას DIO-ს უახლესი და უნიკალური პროდუქტების შესახებ.\n\nპროფესიულ დიალოგს და თანამშრომლობას ინსპირაციული პროექტების შექმნაში.\n\nკლუბის აქტიური წევრობა გაძლევთ განსაკუთრებულ პრივილეგიებს:\n\nდამატებითი სარგებელი და ბენეფიტები იმ პროექტებში, სადაც DIO-ს პროდუქცია გამოიყენება.\n\nპროფესიული ვიზიტები ევროპაში, DIO-ს პარტნიორ კომპანიებში.\n\nდასწრებას მასტერკლასებსა და შეხვედრებზე, რომლებსაც საერთაშორისო დონის ცნობილი არქიტექტორები მართავენ.",
+        "en": "The club’s purpose is to create a platform for continuous exchange — providing members with early access to information about DIO’s exclusive products, encouraging professional dialogue, and collaborating on inspiring projects.",
+        "ka": "კლუბის მიზანია ორმხრივი თანამშრომლობა — კლუბის წევრებისთვის პირველებმა მივაწოდოთ ინფორმაცია „დიო“-ს ექსკლუზიური პროდუქტების შესახებ, მოვისმინოთ მათი მოსაზრებები და ერთად განვავითაროთ საინტერესო იდეები.",
         "highlight": false
       },
       {
-        "en": "",
-        "ka": "",
+        "en": "Active club members enjoy special opportunities to:",
+        "ka": "აქტიურ წევრებს შესაძლებლობა აქვთ:",
+        "highlight": true
+      },
+      {
+        "en": "Receive additional benefits in projects featuring DIO products;",
+        "ka": "მიიღონ დამატებითი ბენეფიტები „დიო“-ს პროდუქტების გამოყენებით",
+        "highlight": false
+      },
+      {
+        "en": "Participate in professional visits to DIO’s European partner companies;",
+        "ka": "მოინახულონ პარტნიორი კომპანიები ევროპაში;",
+        "highlight": false
+      },
+      {
+        "en": "Attend masterclasses and meetings hosted by internationally renowned architects.",
+        "ka": "დაესწრონ მსოფლიო დონის არქიტექტორების შეხვედრებსა და სემინარებს.",
         "highlight": false
       }
     ]
@@ -462,8 +477,8 @@ const content = {
       "ka": "შოთა რუსთაველის 13, თბილისი"
     },
     "description": {
-      "en": "Located in the heart of Tbilisi, the Marriott Hotel offers a premium venue with state-of-the-art facilities, perfect for professional events and networking.",
-      "ka": "თბილისის ცენტრში მდებარე მარიოტ ჰოტელი გთავაზობთ პრემიუმ ვენიუს თანამედროვე ობიექტებით, შესანიშნავია პროფესიული ღონისძიებებისა და ქსელის შექმნისთვის."
+      "en": "",
+      "ka": ""
     },
     "features": [
       {
@@ -480,9 +495,10 @@ const content = {
       }
     ],
     "gallery": [
-      "https://images.unsplash.com/photo-1519167758481-83f29da8c47a?w=800",
-      "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?w=800",
-      "https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?w=800"
+      "/1761289475840-mc-tbsmc-exterior-13762_Classic-Hor.jpg",
+      "/1761289496096-mc-tbsmc-lobby-28228_Classic-Hor.jpg",
+      "/1761289618058-tbsmc-ballroom-9020-hor-clsc.avif",
+      "/1761290531477-tbsmc-coffee-break-9024-hor-clsc.webp"
     ],
     "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2978.9947067163125!2d44.79570967607539!3d41.69904997126203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40440cdd726159b5%3A0x25e6f5d97e708212!2sTbilisi%20Marriott%20Hotel!5e0!3m2!1sen!2sge!4v1760362888294!5m2!1sen!2sge\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade",
     "googleMapsLink": "https://maps.app.goo.gl/r8ASCgPkpfp9MnEu7"
