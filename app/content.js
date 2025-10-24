@@ -32,13 +32,13 @@ const content = {
         "id": "agenda",
         "en": "Agenda",
         "ka": "დღის პროგრამა",
-        "visible": true
+        "visible": false
       },
       {
         "id": "registration",
         "en": "Registration",
         "ka": "რეგისტრაცია",
-        "visible": true
+        "visible": false
       }
     ]
   },
@@ -215,12 +215,12 @@ const content = {
       "logo": "/1761288386578-1-(4).jpg",
       "link": "https://dio.ge",
       "description": {
-        "en": "Leading supplier of premium building systems",
-        "ka": "პრემიუმ სამშენებლო სისტემების წამყვანი მომწოდებელი"
+        "en": "Leader company In Georgian Market since 1996",
+        "ka": "ლიდერი კომპანია საქართველოში 1996 წლიდან"
       },
       "detailedInfo": {
-        "en": "DIO is Georgia's leading supplier of premium building systems including windows, doors, facades, and architectural solutions. With over 15 years of experience, DIO partners with world-renowned manufacturers to bring innovative, energy-efficient, and aesthetically superior products to the Georgian market.",
-        "ka": "DIO არის საქართველოს წამყვანი პრემიუმ სამშენებლო სისტემების მომწოდებელი, მათ შორის ფანჯრები, კარები, ფასადები და არქიტექტურული გადაწყვეტები. 15 წელზე მეტი გამოცდილებით, DIO თანამშრომლობს მსოფლიოს მოწინავე მწარმოებლებთან."
+        "en": "Founded in 1996, DIO is Georgia’s leading manufacturer of premium architectural and construction systems — including windows and doors, façades, shading solutions, and other architectural innovations. For 30 years, DIO has maintained a leading position in the Georgian market, known for quality, reliability, and modern design.",
+        "ka": "DIO არის საქართველოს წამყვანი პრემიუმ სამშენებლო სისტემების მწარმოებელი მათ შორის კარ-ფანჯრები, ფასადები, საჩრდილობელი სისტემები და სხვა არქიტექტურული გადაწყვეტები. 30 წელია დიო მოწინავე პოზიციას ინარჩუნებს საქართველოს ბაზარზე"
       }
     },
     {
@@ -228,12 +228,12 @@ const content = {
       "logo": "/1761288399523-1-(6).jpg",
       "link": "https://aluplast.net",
       "description": {
-        "en": "Innovative window and door systems",
-        "ka": "ინოვაციური ფანჯრისა და კარის სისტემები"
+        "en": "Innovative PVC window and door systems",
+        "ka": "ინოვაციური მეტალოპასტმასის კარ-ფანჯრის სისტემები"
       },
       "detailedInfo": {
-        "en": "Aluplast is a leading European manufacturer of high-quality PVC window and door systems. Known for innovation and sustainability, Aluplast products combine superior thermal insulation, durability, and modern design. Their systems are certified to the highest European standards.",
-        "ka": "Aluplast არის წამყვანი ევროპული მწარმოებელი მაღალი ხარისხის PVC ფანჯრისა და კარის სისტემებისა. ცნობილი ინოვაციითა და მდგრადობით, Aluplast პროდუქცია აერთიანებს უმაღლეს თერმულ იზოლაციას."
+        "en": "Aluplast, established in Germany, is one of Europe’s foremost producers of uPVC window and door systems. The brand is recognized worldwide for its innovative profile technologies, energy efficiency, and durability. Aluplast systems combine modern aesthetics with exceptional thermal and acoustic insulation, setting new standards in residential and commercial construction.",
+        "ka": "Aluplast — გერმანული ბრენდია, რომელიც ევროპაში ერთ-ერთ წამყვან მწარმოებლად ითვლება მეტალოპლასტმასის კარ-ფანჯრების სისტემების მიმართულებით. ბრენდი ცნობილია თავისი ინოვაციური პროფილების ტექნოლოგიებით, ენერგოეფექტურობითა და გამძლეობით. Aluplast-ის სისტემები აერთიანებს თანამედროვე დიზაინს, თბო და ხმაურის იზოლაციის მაღალ ხარისხს, რაც ახალ სტანდარტებს ამყარებს როგორც საცხოვრებელ, ისე კომერციულ მშენებლობაში."
       }
     },
     {
@@ -241,12 +241,12 @@ const content = {
       "logo": "/1761288403947-1-(5).jpg",
       "link": "https://aluprof.eu",
       "description": {
-        "en": "Aluminum architectural systems",
-        "ka": "ალუმინის არქიტექტურული სისტემები"
+        "en": "Aluminum Innovative windows, architectural systems and shading systems",
+        "ka": "ალუმინის კარ-ფანჯრის და საჩრდილობლის ინოვაციური სისტემები"
       },
       "detailedInfo": {
-        "en": "Aluprof specializes in aluminum architectural systems for windows, doors, facades, and curtain walls. With cutting-edge technology and elegant designs, Aluprof solutions are chosen by architects worldwide for demanding commercial and residential projects.",
-        "ka": "Aluprof სპეციალიზირებულია ალუმინის არქიტექტურულ სისტემებში ფანჯრებისთვის, კარებისთვის, ფასადებისა და ფარდის კედლებისთვის. თანამედროვე ტექნოლოგიითა და ელეგანტური დიზაინით."
+        "en": "Aluprof, a Polish brand with decades of expertise, is a global leader in aluminum architectural systems. The company is also expanding its expertise into advanced shading solutions, offering premium sun protection systems that combine design, functionality, and energy efficiency. Aluprof continues to shape modern architecture through sustainable and high-performance technologies.",
+        "ka": "Aluprof — პოლონური ბრენდია მრავალწლიანი გამოცდილებით, რომელიც მსოფლიოში ალუმინის არქიტექტურული სისტემების ლიდერად ითვლება.  ბოლო წლებში Aluprof აქტიურად ავითარებს საჩრდილობელი სისტემების მიმართულებასაც, სთავაზობს პრემიუმ ხარისხის მზისგან დაცვის გადაწყვეტილებებს, რომლებიც აერთიანებს დიზაინს, ფუნქციურობასა და ენერგოეფექტურობას.\nAluprof აგრძელებს თანამედროვე არქიტექტურის ფორმირებას მდგრადი და მაღალტექნოლოგიური სისტემებით.."
       }
     }
   ],
@@ -452,7 +452,7 @@ const content = {
       },
       {
         "en": "The club’s purpose is to create a platform for continuous exchange — providing members with early access to information about DIO’s exclusive products, encouraging professional dialogue, and collaborating on inspiring projects.",
-        "ka": "კლუბის მიზანია ორმხრივი თანამშრომლობა — კლუბის წევრებისთვის პირველებმა მივაწოდოთ ინფორმაცია „დიო“-ს ექსკლუზიური პროდუქტების შესახებ, მოვისმინოთ მათი მოსაზრებები და ერთად განვავითაროთ საინტერესო იდეები.",
+        "ka": "კლუბის მიზანია ორმხრივი თანამშრომლობა — კლუბის წევრებს პირველებს მივაწოდოთ ინფორმაცია „დიო“-ს ექსკლუზიური პროდუქტების შესახებ, მოვისმინოთ მათი მოსაზრებები და ერთად განვავითაროთ საინტერესო იდეები.",
         "highlight": false
       },
       {
@@ -480,7 +480,7 @@ const content = {
   "venue": {
     "title": {
       "en": "Venue & Location",
-      "ka": "ვენიუ და ლოკაცია"
+      "ka": "ლოკაცია"
     },
     "name": {
       "en": "Tbilisi Marriott Hotel",
