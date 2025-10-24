@@ -153,9 +153,6 @@ export default function AdminPanel() {
               Login
             </button>
           </form>
-          <p className="text-sm text-gray-500 mt-4 text-center">
-            Default password: dio2025admin
-          </p>
         </div>
       </div>
     );
