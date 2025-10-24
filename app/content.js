@@ -3,21 +3,43 @@
 
 const content = {
   "menu": {
-    "en": [
-      "About",
-      "Dio Architects Club",
-      "Partners",
-      "Venue",
-      "Agenda",
-      "Registration"
-    ],
-    "ka": [
-      "ღონისძიების შესახებ",
-      "დიოს არქიტექტორების კლუბი",
-      "პარტნიორები",
-      "ლოკაცია",
-      "დღის პროგრამა",
-      "რეგისტრაცია"
+    "items": [
+      {
+        "id": "about",
+        "en": "About",
+        "ka": "ღონისძიების შესახებ",
+        "visible": true
+      },
+      {
+        "id": "architects-club",
+        "en": "Dio Architects Club",
+        "ka": "დიოს არქიტექტორების კლუბი",
+        "visible": true
+      },
+      {
+        "id": "partners",
+        "en": "Partners",
+        "ka": "პარტნიორები",
+        "visible": true
+      },
+      {
+        "id": "venue",
+        "en": "Venue",
+        "ka": "ლოკაცია",
+        "visible": true
+      },
+      {
+        "id": "agenda",
+        "en": "Agenda",
+        "ka": "დღის პროგრამა",
+        "visible": true
+      },
+      {
+        "id": "registration",
+        "en": "Registration",
+        "ka": "რეგისტრაცია",
+        "visible": true
+      }
     ]
   },
   "fonts": {

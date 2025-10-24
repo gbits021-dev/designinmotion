@@ -173,44 +173,56 @@ export default function Home() {
             style={{ fontFamily: getSectionFont('menu') }}
           >
             <nav className="flex flex-col py-2">
-              {content.menu[lang].map((m, i) => (
-                <a
-                  key={i}
-                  href={`#${[
-                    "about",
-                    "architects-club",
-                    "partners",
-                    "venue",
-                    "agenda",
-                    "registration",
-                  ][i]}`}
-                  onClick={() => setMenuOpen(false)}
-                  className="px-6 py-4 text-white text-lg font-semibold hover:bg-white/10 transition border-b border-white/5 last:border-b-0"
-                >
-                  {m}
-                </a>
-              ))}
-            </nav>
-          </div>
-
-          {/* Desktop - Horizontal Menu */}
-          <nav className="hidden md:flex absolute bottom-0 w-full bg-[#21263A]/95 backdrop-blur-sm py-5 justify-center space-x-8 md:space-x-12 lg:space-x-16 text-lg md:text-xl font-semibold text-white border-t border-white/10 z-50" style={{ fontFamily: getSectionFont('menu') }}>
-            {content.menu[lang].map((m, i) => (
-              <a
-                key={i}
-                href={`#${[
+              {(content.menu.items || content.menu[lang] || []).filter(item => 
+                typeof item === 'object' ? item.visible !== false : true
+              ).map((item, i) => {
+                const menuText = typeof item === 'object' ? item[lang] : item;
+                const menuId = typeof item === 'object' ? item.id : [
                   "about",
                   "architects-club",
                   "partners",
                   "venue",
                   "agenda",
                   "registration",
-                ][i]}`}
-                className="hover:text-blue-300 transition"
-              >
-                {m}
-              </a>
-            ))}
+                ][i];
+                return (
+                  <a
+                    key={i}
+                    href={`#${menuId}`}
+                    onClick={() => setMenuOpen(false)}
+                    className="px-6 py-4 text-white text-lg font-semibold hover:bg-white/10 transition border-b border-white/5 last:border-b-0"
+                  >
+                    {menuText}
+                  </a>
+                );
+              })}
+            </nav>
+          </div>
+
+          {/* Desktop - Horizontal Menu */}
+          <nav className="hidden md:flex absolute bottom-0 w-full bg-[#21263A]/95 backdrop-blur-sm py-5 justify-center space-x-8 md:space-x-12 lg:space-x-16 text-lg md:text-xl font-semibold text-white border-t border-white/10 z-50" style={{ fontFamily: getSectionFont('menu') }}>
+            {(content.menu.items || content.menu[lang] || []).filter(item => 
+              typeof item === 'object' ? item.visible !== false : true
+            ).map((item, i) => {
+              const menuText = typeof item === 'object' ? item[lang] : item;
+              const menuId = typeof item === 'object' ? item.id : [
+                "about",
+                "architects-club",
+                "partners",
+                "venue",
+                "agenda",
+                "registration",
+              ][i];
+              return (
+                <a
+                  key={i}
+                  href={`#${menuId}`}
+                  className="hover:text-blue-300 transition"
+                >
+                  {menuText}
+                </a>
+              );
+            })}
           </nav>
         </section>
 

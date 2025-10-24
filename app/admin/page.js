@@ -425,16 +425,22 @@ export default function AdminPanel() {
                 <div>
                   <h2 className="text-xl font-bold text-gray-800">Header Menu Items</h2>
                   <p className="text-sm text-gray-600 mt-1">
-                    Add, edit, or remove navigation menu items that appear in the header.
+                    Add, edit, or remove navigation menu items that appear in the header. Toggle visibility to show/hide items.
                   </p>
                 </div>
                 <button
                   onClick={() => {
+                    const menuItems = editedContent.menu.items || [];
+                    const newItem = {
+                      id: `item-${menuItems.length}`,
+                      en: "New Item",
+                      ka: "ახალი პუნქტი",
+                      visible: true
+                    };
                     setEditedContent({
                       ...editedContent,
                       menu: {
-                        en: [...editedContent.menu.en, "New Item"],
-                        ka: [...editedContent.menu.ka, "ახალი პუნქტი"]
+                        items: [...menuItems, newItem]
                       }
                     });
                   }}
@@ -445,19 +451,16 @@ export default function AdminPanel() {
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
-                {editedContent.menu.en.map((item, index) => (
+                {(editedContent.menu.items || []).map((item, index) => (
                   <div key={index} className="border border-gray-200 rounded-lg p-4 bg-gray-50">
                     <div className="flex justify-between items-center mb-3">
                       <h3 className="font-semibold text-gray-700">Menu Item {index + 1}</h3>
                       <button
                         onClick={() => {
-                          const newMenuEn = [...editedContent.menu.en];
-                          const newMenuKa = [...editedContent.menu.ka];
-                          newMenuEn.splice(index, 1);
-                          newMenuKa.splice(index, 1);
+                          const newItems = editedContent.menu.items.filter((_, i) => i !== index);
                           setEditedContent({
                             ...editedContent,
-                            menu: { en: newMenuEn, ka: newMenuKa }
+                            menu: { items: newItems }
                           });
                         }}
                         className="text-red-600 hover:text-red-800 text-sm font-medium"
@@ -467,16 +470,34 @@ export default function AdminPanel() {
                     </div>
                     <div className="space-y-3">
                       <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Menu ID</label>
+                        <input
+                          type="text"
+                          value={item.id}
+                          onChange={(e) => {
+                            const newItems = [...editedContent.menu.items];
+                            newItems[index].id = e.target.value;
+                            setEditedContent({
+                              ...editedContent,
+                              menu: { items: newItems }
+                            });
+                          }}
+                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                          placeholder="e.g., about, partners, venue"
+                        />
+                        <p className="text-xs text-gray-500 mt-1">Used for linking to sections (e.g., #about)</p>
+                      </div>
+                      <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">English</label>
                         <input
                           type="text"
-                          value={item}
+                          value={item.en}
                           onChange={(e) => {
-                            const newMenu = [...editedContent.menu.en];
-                            newMenu[index] = e.target.value;
+                            const newItems = [...editedContent.menu.items];
+                            newItems[index].en = e.target.value;
                             setEditedContent({
                               ...editedContent,
-                              menu: { ...editedContent.menu, en: newMenu }
+                              menu: { items: newItems }
                             });
                           }}
                           className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
@@ -486,22 +507,48 @@ export default function AdminPanel() {
                         <label className="block text-sm font-medium text-gray-700 mb-2">Georgian</label>
                         <input
                           type="text"
-                          value={editedContent.menu.ka[index]}
+                          value={item.ka}
                           onChange={(e) => {
-                            const newMenu = [...editedContent.menu.ka];
-                            newMenu[index] = e.target.value;
+                            const newItems = [...editedContent.menu.items];
+                            newItems[index].ka = e.target.value;
                             setEditedContent({
                               ...editedContent,
-                              menu: { ...editedContent.menu, ka: newMenu }
+                              menu: { items: newItems }
                             });
                           }}
                           className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
                         />
                       </div>
+                      <div className="pt-2 border-t border-gray-300">
+                        <label className="flex items-center cursor-pointer">
+                          <input
+                            type="checkbox"
+                            checked={item.visible !== false}
+                            onChange={(e) => {
+                              const newItems = [...editedContent.menu.items];
+                              newItems[index].visible = e.target.checked;
+                              setEditedContent({
+                                ...editedContent,
+                                menu: { items: newItems }
+                              });
+                            }}
+                            className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 mr-2"
+                          />
+                          <span className="text-sm font-medium text-gray-700">
+                            {item.visible !== false ? '✓ Visible in menu' : '✗ Hidden from menu'}
+                          </span>
+                        </label>
+                      </div>
                     </div>
                   </div>
                 ))}
               </div>
+
+              {(!editedContent.menu.items || editedContent.menu.items.length === 0) && (
+                <div className="text-center py-12 text-gray-500 border border-dashed border-gray-300 rounded-lg">
+                  <p>No menu items yet. Click "Add Menu Item" to create your first menu item.</p>
+                </div>
+              )}
             </div>
           )}
 
