@@ -537,7 +537,7 @@ const content = {
     },
     "name": {
       "en": "Tbilisi Marriott Hotel",
-      "ka": "თბილისი მარიოტ ჰოთელი"
+      "ka": "სასტუმრო თბილისი მერიოტი"
     },
     "address": {
       "en": "13 Shota Rustaveli Ave, Tbilisi",
