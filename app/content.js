@@ -138,7 +138,7 @@ const content = {
     "about": true,
     "architectsClub": true,
     "partners": true,
-    "speakers": true,
+    "speakers": false,
     "venue": true,
     "agenda": false,
     "registration": false
