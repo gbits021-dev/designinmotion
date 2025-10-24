@@ -455,8 +455,8 @@ const content = {
       "ka": "შოთა რუსთაველის 13, თბილისი"
     },
     "description": {
-      "en": "Located in the heart of Tbilisi, the Marriott Hotel offers a premium venue with state-of-the-art facilities, perfect for professional events and networking.",
-      "ka": "თბილისის ცენტრში მდებარე მარიოტ ჰოტელი გთავაზობთ პრემიუმ ვენიუს თანამედროვე ობიექტებით, შესანიშნავია პროფესიული ღონისძიებებისა და ქსელის შექმნისთვის."
+      "en": "",
+      "ka": ""
     },
     "features": [
       {
@@ -473,9 +473,9 @@ const content = {
       }
     ],
     "gallery": [
-      "https://images.unsplash.com/photo-1519167758481-83f29da8c47a?w=800",
-      "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?w=800",
-      "https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?w=800"
+      "/1761289475840-mc-tbsmc-exterior-13762_Classic-Hor.jpg",
+      "/1761289496096-mc-tbsmc-lobby-28228_Classic-Hor.jpg",
+      "/1761289618058-tbsmc-ballroom-9020-hor-clsc.avif"
     ],
     "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2978.9947067163125!2d44.79570967607539!3d41.69904997126203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40440cdd726159b5%3A0x25e6f5d97e708212!2sTbilisi%20Marriott%20Hotel!5e0!3m2!1sen!2sge!4v1760362888294!5m2!1sen!2sge\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade",
     "googleMapsLink": "https://maps.app.goo.gl/r8ASCgPkpfp9MnEu7"
