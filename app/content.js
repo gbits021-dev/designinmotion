@@ -317,7 +317,7 @@ const content = {
   },
   "agenda": [
     {
-      "time": "11:00 - 11:30",
+      "time": "10:15 - 11:00",
       "title": {
         "en": "Registration & Welcome Coffee",
         "ka": "რეგისტრაცია და მისასალმებელი ყავა"
@@ -328,66 +328,119 @@ const content = {
       }
     },
     {
-      "time": "11:30 - 12:00",
+      "time": "11:00 - 11:15",
       "title": {
         "en": "Opening Keynote",
         "ka": "გახსნის სიტყვა"
       },
       "speaker": {
-        "en": "Keynote Speaker Name",
-        "ka": "მთავარი სპიკერის სახელი"
+        "en": "",
+        "ka": ""
       },
       "description": {
-        "en": "Introduction to Design in Motion 2025",
-        "ka": "Design in Motion 2025-ის შესავალი"
+        "en": "Dio Architect Club Introduction",
+        "ka": "დიოს არქიტექტორების კლუბის წარდგენა"
       }
     },
     {
-      "time": "12:00 - 13:00",
+      "time": "11:15-11:30",
       "title": {
-        "en": "Innovation in Building Systems",
-        "ka": "ინოვაცია სამშენებლო სისტემებში"
+        "en": "Dio - 30 years of quality and innovation Dio",
+        "ka": "დიო - 30 წლიანი ხარისხი და ინოვაცია "
+      },
+      "description": {
+        "en": "",
+        "ka": ""
       },
       "speaker": {
-        "en": "Industry Expert",
-        "ka": "ინდუსტრიის ექსპერტი"
-      },
-      "description": {
-        "en": "Latest trends and technologies",
-        "ka": "უახლესი ტენდენციები და ტექნოლოგიები"
+        "en": "Head of Marketing",
+        "ka": "მარკეტინგის "
       }
     },
     {
-      "time": "13:00 - 14:00",
+      "time": "11:30-12:00",
       "title": {
-        "en": "Lunch & Networking",
-        "ka": "ლანჩი და ქსელის შექმნა"
+        "en": "Aluplast - Design meets Technology ",
+        "ka": "ალუპლასტი - დიზაინის და ტექნოლოგიის სინთეზი"
       },
       "description": {
-        "en": "Connect with fellow professionals",
-        "ka": "დაუკავშირდით კოლეგებს"
+        "en": "Introduction of new energy efficient systems from Aluplast for sustainable architecture",
+        "ka": "ალუპლასტი ახალი ენერგოეფექტური სისტემების წარდგენა მდგრადი არქიტექტურისთვის"
+      },
+      "speaker": {
+        "en": "Stanislaw Lisowski",
+        "ka": "სტანისლავ ლისოვსკი"
       }
     },
     {
-      "time": "14:00 - 15:30",
+      "time": "12:00-12:30",
       "title": {
-        "en": "Case Studies & Panel Discussion",
-        "ka": "შემთხვევის შესწავლა და პანელური დისკუსია"
-      },
-      "description": {
-        "en": "Real projects and expert insights",
-        "ka": "რეალური პროექტები და ექსპერტული შეხედულებები"
-      }
-    },
-    {
-      "time": "15:30 - 16:00",
-      "title": {
-        "en": "Closing Remarks & Q&A",
+        "en": "Aluprof - ",
         "ka": "დასკვნითი შენიშვნები და კითხვა-პასუხი"
       },
       "description": {
         "en": "Final thoughts and questions",
         "ka": "საბოლოო მოსაზრებები და კითხვები"
+      }
+    },
+    {
+      "time": "12:30-13:00",
+      "title": {
+        "en": "New Session",
+        "ka": "ახალი სესია"
+      },
+      "speaker": {
+        "en": "",
+        "ka": ""
+      },
+      "description": {
+        "en": "Description",
+        "ka": "აღწერა"
+      }
+    },
+    {
+      "time": "13:00-13:30",
+      "title": {
+        "en": "New Session",
+        "ka": "ახალი სესია"
+      },
+      "speaker": {
+        "en": "",
+        "ka": ""
+      },
+      "description": {
+        "en": "Description",
+        "ka": "აღწერა"
+      }
+    },
+    {
+      "time": "13:30-13:45",
+      "title": {
+        "en": "New Session",
+        "ka": "ახალი სესია"
+      },
+      "speaker": {
+        "en": "",
+        "ka": ""
+      },
+      "description": {
+        "en": "Description",
+        "ka": "აღწერა"
+      }
+    },
+    {
+      "time": "13:45 - 14:30",
+      "title": {
+        "en": "New Session",
+        "ka": "ახალი სესია"
+      },
+      "speaker": {
+        "en": "",
+        "ka": ""
+      },
+      "description": {
+        "en": "Description",
+        "ka": "აღწერა"
       }
     }
   ],
