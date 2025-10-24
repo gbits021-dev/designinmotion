@@ -229,7 +229,7 @@ const content = {
       "link": "https://aluplast.net",
       "description": {
         "en": "Innovative window and door systems",
-        "ka": "ინოვაციური ფანჯრისა და კარის სისტემები"
+        "ka": "ინოვაციური კარ-ფანჯრის სისტემები"
       },
       "detailedInfo": {
         "en": "Aluplast, established in Germany, is one of Europe’s foremost producers of uPVC window and door systems. The brand is recognized worldwide for its innovative profile technologies, energy efficiency, and durability. Aluplast systems combine modern aesthetics with exceptional thermal and acoustic insulation, setting new standards in residential and commercial construction.",
