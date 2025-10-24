@@ -32,13 +32,13 @@ const content = {
         "id": "agenda",
         "en": "Agenda",
         "ka": "დღის პროგრამა",
-        "visible": true
+        "visible": false
       },
       {
         "id": "registration",
         "en": "Registration",
         "ka": "რეგისტრაცია",
-        "visible": true
+        "visible": false
       }
     ]
   },
