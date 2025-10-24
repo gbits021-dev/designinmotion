@@ -480,7 +480,7 @@ const content = {
   "venue": {
     "title": {
       "en": "Venue & Location",
-      "ka": "ვენიუ და ლოკაცია"
+      "ka": "ლოკაცია"
     },
     "name": {
       "en": "Tbilisi Marriott Hotel",
