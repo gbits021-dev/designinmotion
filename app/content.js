@@ -198,11 +198,11 @@ const content = {
   "partnersUI": {
     "moreInfoButton": {
       "en": "More Info",
-      "ka": "მეტი ინფო"
+      "ka": "მეტის ნახვა"
     },
     "lessInfoButton": {
-      "en": "Less Info",
-      "ka": "ნაკლები"
+      "en": "",
+      "ka": ""
     },
     "visitSiteButton": {
       "en": "Visit Site",
@@ -496,22 +496,9 @@ const content = {
     },
     "galleryTitle": {
       "en": "Venue Photos",
-      "ka": "ვენიუს ფოტოები"
+      "ka": "ლოკაციის ფოტოები"
     },
-    "features": [
-      {
-        "en": "Premium Conference Facilities",
-        "ka": "პრემიუმ საკონფერენციო დარბაზი"
-      },
-      {
-        "en": "Central Location in Tbilisi",
-        "ka": "ცენტრალური მდებარეობა თბილისში"
-      },
-      {
-        "en": "Networking Areas & Refreshments",
-        "ka": "ქსელის შექმნის სივრცე და გამაგრილებელი"
-      }
-    ],
+    "features": [],
     "gallery": [
       "/1761289475840-mc-tbsmc-exterior-13762_Classic-Hor.jpg",
       "/1761289496096-mc-tbsmc-lobby-28228_Classic-Hor.jpg",
