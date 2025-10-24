@@ -140,8 +140,8 @@ const content = {
     "partners": true,
     "speakers": true,
     "venue": true,
-    "agenda": true,
-    "registration": true
+    "agenda": false,
+    "registration": false
   },
   "event": {
     "date": "2025-11-20T11:00:00",
