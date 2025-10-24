@@ -921,7 +921,7 @@ export default function Home() {
       </footer>
 
       {/* FLOATING REGISTRATION BUTTON */}
-      {showFloatingButton && (
+      {false && showFloatingButton && (
         <a
           href={content.registration.formUrl}
           target="_blank"
