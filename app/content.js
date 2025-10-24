@@ -195,6 +195,20 @@ const content = {
       "ka": ""
     }
   },
+  "partnersUI": {
+    "moreInfoButton": {
+      "en": "More Info",
+      "ka": "მეტი ინფო"
+    },
+    "lessInfoButton": {
+      "en": "Less Info",
+      "ka": "ნაკლები"
+    },
+    "visitSiteButton": {
+      "en": "Visit Site",
+      "ka": "ვებსაიტი"
+    }
+  },
   "partners": [
     {
       "name": "DIO",
@@ -479,6 +493,10 @@ const content = {
     "description": {
       "en": "",
       "ka": ""
+    },
+    "galleryTitle": {
+      "en": "Venue Photos",
+      "ka": "ვენიუს ფოტოები"
     },
     "features": [
       {

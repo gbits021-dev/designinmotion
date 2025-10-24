@@ -1255,6 +1255,70 @@ export default function AdminPanel() {
           {activeTab === "partners" && (
             <div className="space-y-6">
               <h2 className="text-xl font-bold text-gray-800 mb-4">Partners</h2>
+              
+              {/* Partner Button Texts */}
+              <div className="border border-gray-200 rounded-lg p-4 bg-blue-50 mb-6">
+                <h3 className="font-semibold text-gray-800 mb-4">Partner Button Texts</h3>
+                <div className="grid md:grid-cols-3 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">"More Info" Button</label>
+                    <div className="space-y-2">
+                      <input
+                        type="text"
+                        value={editedContent.partnersUI?.moreInfoButton?.en || ""}
+                        onChange={(e) => updateNestedValue("partnersUI.moreInfoButton.en", e.target.value)}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-sm"
+                        placeholder="More Info"
+                      />
+                      <input
+                        type="text"
+                        value={editedContent.partnersUI?.moreInfoButton?.ka || ""}
+                        onChange={(e) => updateNestedValue("partnersUI.moreInfoButton.ka", e.target.value)}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-sm"
+                        placeholder="მეტი ინფო"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">"Less Info" Button</label>
+                    <div className="space-y-2">
+                      <input
+                        type="text"
+                        value={editedContent.partnersUI?.lessInfoButton?.en || ""}
+                        onChange={(e) => updateNestedValue("partnersUI.lessInfoButton.en", e.target.value)}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-sm"
+                        placeholder="Less Info"
+                      />
+                      <input
+                        type="text"
+                        value={editedContent.partnersUI?.lessInfoButton?.ka || ""}
+                        onChange={(e) => updateNestedValue("partnersUI.lessInfoButton.ka", e.target.value)}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-sm"
+                        placeholder="ნაკლები"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">"Visit Site" Button</label>
+                    <div className="space-y-2">
+                      <input
+                        type="text"
+                        value={editedContent.partnersUI?.visitSiteButton?.en || ""}
+                        onChange={(e) => updateNestedValue("partnersUI.visitSiteButton.en", e.target.value)}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-sm"
+                        placeholder="Visit Site"
+                      />
+                      <input
+                        type="text"
+                        value={editedContent.partnersUI?.visitSiteButton?.ka || ""}
+                        onChange={(e) => updateNestedValue("partnersUI.visitSiteButton.ka", e.target.value)}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-sm"
+                        placeholder="ვებსაიტი"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
               {editedContent.partners.map((partner, index) => (
                 <div key={index} className="border border-gray-200 rounded-lg p-4">
                   <h3 className="font-semibold text-gray-700 mb-3">Partner {index + 1}</h3>
@@ -1839,6 +1903,29 @@ export default function AdminPanel() {
 
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Gallery Title (English)</label>
+                  <input
+                    type="text"
+                    value={editedContent.venue?.galleryTitle?.en || ""}
+                    onChange={(e) => updateNestedValue("venue.galleryTitle.en", e.target.value)}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                    placeholder="Venue Photos"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Gallery Title (Georgian)</label>
+                  <input
+                    type="text"
+                    value={editedContent.venue?.galleryTitle?.ka || ""}
+                    onChange={(e) => updateNestedValue("venue.galleryTitle.ka", e.target.value)}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                    placeholder="ვენიუს ფოტოები"
+                  />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Address (English)</label>
                   <input
                     type="text"
@@ -2001,6 +2088,80 @@ export default function AdminPanel() {
                     <p className="text-sm">No venue gallery images yet. Click "Add Image" to add venue photos.</p>
                   </div>
                 )}
+              </div>
+
+              {/* Venue Features */}
+              <div className="space-y-4">
+                <div className="flex justify-between items-center mb-2">
+                  <label className="block text-sm font-medium text-gray-700">Venue Features</label>
+                  <button
+                    onClick={() => {
+                      const newFeatures = editedContent.venue?.features ? [...editedContent.venue.features, { en: "", ka: "" }] : [{ en: "", ka: "" }];
+                      setEditedContent({
+                        ...editedContent,
+                        venue: { ...editedContent.venue, features: newFeatures }
+                      });
+                    }}
+                    className="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded text-sm flex items-center gap-1"
+                  >
+                    <span>+</span> Add Feature
+                  </button>
+                </div>
+                {editedContent.venue?.features?.map((feature, index) => (
+                  <div key={index} className="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                    <div className="flex justify-between items-center mb-3">
+                      <h4 className="font-semibold text-gray-700">Feature {index + 1}</h4>
+                      <button
+                        onClick={() => {
+                          const newFeatures = editedContent.venue.features.filter((_, i) => i !== index);
+                          setEditedContent({
+                            ...editedContent,
+                            venue: { ...editedContent.venue, features: newFeatures }
+                          });
+                        }}
+                        className="text-red-600 hover:text-red-800 text-sm font-medium"
+                      >
+                        🗑️ Remove
+                      </button>
+                    </div>
+                    <div className="grid md:grid-cols-2 gap-3">
+                      <div>
+                        <label className="block text-xs font-medium text-gray-600 mb-1">English</label>
+                        <input
+                          type="text"
+                          value={feature.en}
+                          onChange={(e) => {
+                            const newFeatures = [...editedContent.venue.features];
+                            newFeatures[index].en = e.target.value;
+                            setEditedContent({
+                              ...editedContent,
+                              venue: { ...editedContent.venue, features: newFeatures }
+                            });
+                          }}
+                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                          placeholder="Premium Conference Facilities"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-xs font-medium text-gray-600 mb-1">Georgian</label>
+                        <input
+                          type="text"
+                          value={feature.ka}
+                          onChange={(e) => {
+                            const newFeatures = [...editedContent.venue.features];
+                            newFeatures[index].ka = e.target.value;
+                            setEditedContent({
+                              ...editedContent,
+                              venue: { ...editedContent.venue, features: newFeatures }
+                            });
+                          }}
+                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                          placeholder="პრემიუმ საკონფერენციო დარბაზი"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
 
               {/* Venue Description */}

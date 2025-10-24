@@ -452,7 +452,7 @@ export default function Home() {
                       onClick={() => setExpandedPartner(expandedPartner === index ? null : index)}
                       className="w-full bg-[#21263A] hover:bg-[#2d3449] text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 flex items-center justify-center space-x-2"
                     >
-                      <span>{expandedPartner === index ? (lang === "en" ? "Less Info" : "ნაკლები") : (lang === "en" ? "More Info" : "მეტი ინფო")}</span>
+                      <span>{expandedPartner === index ? (content.partnersUI?.lessInfoButton?.[lang] || (lang === "en" ? "Less Info" : "ნაკლები")) : (content.partnersUI?.moreInfoButton?.[lang] || (lang === "en" ? "More Info" : "მეტი ინფო"))}</span>
                       <svg
                         className={`w-4 h-4 transition-transform duration-300 ${expandedPartner === index ? 'rotate-180' : ''}`}
                         fill="none"
@@ -468,7 +468,7 @@ export default function Home() {
                       rel="noopener noreferrer"
                       className="w-full bg-[#21263A] hover:bg-[#2d3449] text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 flex items-center justify-center space-x-2"
                     >
-                      <span>{lang === "en" ? "Visit Site" : "ვებსაიტი"}</span>
+                      <span>{content.partnersUI?.visitSiteButton?.[lang] || (lang === "en" ? "Visit Site" : "ვებსაიტი")}</span>
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
@@ -756,7 +756,7 @@ export default function Home() {
               {/* Venue Gallery */}
               <div className="pt-4">
                 <h5 className="text-xl font-bold text-[#21263A] mb-4">
-                  {lang === "en" ? "Venue Photos" : "ვენიუს ფოტოები"}
+                  {content.venue.galleryTitle?.[lang] || (lang === "en" ? "Venue Photos" : "ვენიუს ფოტოები")}
                 </h5>
                 <div className="grid grid-cols-3 gap-3">
                   {content.venue.gallery.map((image, index) => (
