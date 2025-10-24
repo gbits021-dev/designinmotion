@@ -475,7 +475,8 @@ const content = {
     "gallery": [
       "/1761289475840-mc-tbsmc-exterior-13762_Classic-Hor.jpg",
       "/1761289496096-mc-tbsmc-lobby-28228_Classic-Hor.jpg",
-      "/1761289618058-tbsmc-ballroom-9020-hor-clsc.avif"
+      "/1761289618058-tbsmc-ballroom-9020-hor-clsc.avif",
+      "/1761290531477-tbsmc-coffee-break-9024-hor-clsc.webp"
     ],
     "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2978.9947067163125!2d44.79570967607539!3d41.69904997126203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40440cdd726159b5%3A0x25e6f5d97e708212!2sTbilisi%20Marriott%20Hotel!5e0!3m2!1sen!2sge!4v1760362888294!5m2!1sen!2sge\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade",
     "googleMapsLink": "https://maps.app.goo.gl/r8ASCgPkpfp9MnEu7"
