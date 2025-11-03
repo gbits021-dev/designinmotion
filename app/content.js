@@ -160,7 +160,7 @@ const content = {
     "about": true,
     "architectsClub": true,
     "partners": true,
-    "speakers": false,
+    "speakers": true,
     "venue": true,
     "agenda": false,
     "registration": false
@@ -265,7 +265,7 @@ const content = {
           "en": "",
           "ka": ""
         },
-        "image": "/1760620984036-1.png",
+        "image": "/1762176308613-2233.jpg",
         "topic": {
           "en": "Sustainable Architecture",
           "ka": "მდგრადი არქიტექტურა"
