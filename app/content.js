@@ -282,12 +282,12 @@ const content = {
         },
         "company": {
           "en": "Aluprof",
-          "ka": "ალუპროფი"
+          "ka": "როგორ შევქმნათ უკეთესი არქიტექტურა ალუპროფთან ერთად"
         },
         "image": "/1762259547603-Unknown-2.jpg",
         "topic": {
           "en": "Let’s build a better architecture with Aluprof",
-          "ka": "როგორ შევქმნათ უკეთესი არქიტექტურა ალუპროფთან ერთად"
+          "ka": "ინოვაცია სამშენებლო სისტემებში"
         },
         "bio": {
           "en": "Head of Sales Dept. – Aluprof Ukraine",
@@ -306,7 +306,7 @@ const content = {
         "image": "/1762259757497-Unknown-4.jpg",
         "topic": {
           "en": "Energeto Neo – Design Meets Technology",
-          "ka": "ენერგეტო ნეო: სადაც დიზაინი ერწყმის ტექნოლოგიას"
+          "ka": "ენერგეტო ნეო: როდესაც დიზაინი ერწყმის ტექნოლოგიას"
         },
         "bio": {
           "en": "Export Director – Aluplast",
