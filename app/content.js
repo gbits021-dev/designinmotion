@@ -39,6 +39,12 @@ const content = {
         "en": "Registration",
         "ka": "რეგისტრაცია",
         "visible": false
+      },
+      {
+        "id": "Speakers",
+        "en": "Invited Speakers",
+        "ka": "მოწვეული სპიკერები",
+        "visible": true
       }
     ]
   },
