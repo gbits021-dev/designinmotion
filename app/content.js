@@ -271,7 +271,7 @@ const content = {
           "ka": "როგორ შევქმნათ უკეთესი არქიტექტურა ალუპროფთან ერთად"
         },
         "bio": {
-          "en": "Business Development Manager - Aluprof \nAndriy Tsyganok \nHead of Sales Dept. – Aluprof Ukraine",
+          "en": "Business Development Manager - Aluprof \n",
           "ka": "ბიზნესის განვითარების მენეჯერი - \"ალუპროფი\" \n გაყიდვების დეპარტამენტის ხელმძღვანელი – \"ალუპროფ\" უკრაინა\n"
         }
       },
