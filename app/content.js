@@ -316,7 +316,7 @@ const content = {
       {
         "name": {
           "en": "George Abulashvili Director",
-          "ka": "გიორგი აბულაშვილი დირექტორი"
+          "ka": "გიორგი აბულაშვილი "
         },
         "company": {
           "en": "Energy Efficiency Center Georgia",
