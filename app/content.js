@@ -252,8 +252,8 @@ const content = {
   ],
   "speakers": {
     "title": {
-      "en": "Speakers",
-      "ka": "სპიკერები"
+      "en": " Invited Speakers",
+      "ka": "მოწვეული სპიკერები"
     },
     "list": [
       {
