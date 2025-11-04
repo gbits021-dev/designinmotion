@@ -160,7 +160,7 @@ const content = {
     "about": true,
     "architectsClub": true,
     "partners": true,
-    "speakers": false,
+    "speakers": true,
     "venue": true,
     "agenda": false,
     "registration": false
@@ -258,59 +258,78 @@ const content = {
     "list": [
       {
         "name": {
-          "en": "John Smith",
-          "ka": "ჯონ სმიტი"
+          "en": "Sabina Gustof ",
+          "ka": "საბინა გუსტოფი"
         },
         "company": {
-          "en": "",
-          "ka": ""
+          "en": "Aluprof",
+          "ka": "ალუპროფი"
         },
         "image": "/1762176308613-2233.jpg",
         "topic": {
-          "en": "Sustainable Architecture",
-          "ka": "მდგრადი არქიტექტურა"
+          "en": "Let’s build a better architecture with Aluprof",
+          "ka": "როგორ შევქმნათ უკეთესი არქიტექტურა ალუპროფთან ერთად"
         },
         "bio": {
-          "en": "John Smith is a renowned architect with over 20 years of experience in sustainable design. He has led numerous award-winning projects across Europe and is a passionate advocate for green building practices.",
-          "ka": "ჯონ სმიტი არის ცნობილი არქიტექტორი 20 წელზე მეტი გამოცდილებით მდგრადი დიზაინის სფეროში. მან ხელმძღვანელობა გაუწია მრავალ ჯილდოსმადვილ პროექტს ევროპაში."
+          "en": "Business Development Manager - Aluprof \nAndriy Tsyganok \nHead of Sales Dept. – Aluprof Ukraine",
+          "ka": "ბიზნესის განვითარების მენეჯერი - \"ალუპროფი\" \n გაყიდვების დეპარტამენტის ხელმძღვანელი – \"ალუპროფ\" უკრაინა\n"
         }
       },
       {
         "name": {
-          "en": "Maria Garcia",
-          "ka": "მარია გარსია"
+          "en": "Andriy Tsyganok ",
+          "ka": "ანდრეი ციგანოკი"
         },
         "company": {
-          "en": "",
-          "ka": ""
+          "en": "Aluprof",
+          "ka": "როგორ შევქმნათ უკეთესი არქიტექტურა ალუპროფთან ერთად"
         },
-        "image": "/speaker-2.jpg",
+        "image": "/1762259547603-Unknown-2.jpg",
         "topic": {
-          "en": "Innovation in Building Systems",
+          "en": "Let’s build a better architecture with Aluprof",
           "ka": "ინოვაცია სამშენებლო სისტემებში"
         },
         "bio": {
-          "en": "Maria Garcia is an expert in innovative building technologies and energy-efficient systems. She consults for leading construction firms worldwide and frequently speaks at international conferences.",
-          "ka": "მარია გარსია არის ექსპერტი ინოვაციური სამშენებლო ტექნოლოგიებისა და ენერგოეფექტური სისტემების სფეროში. ის კონსულტაციას უწევს წამყვან სამშენებლო კომპანიებს."
+          "en": "Head of Sales Dept. – Aluprof Ukraine",
+          "ka": "გაყიდვების დეპარტამენტის ხელმძღვანელი – \"ალუპროფ\" უკრაინა"
         }
       },
       {
         "name": {
-          "en": "David Chen",
-          "ka": "დევიდ ჩენი"
+          "en": "Stanislaw Lisowski ",
+          "ka": "სტანისლავ ლისოვსკი"
         },
         "company": {
-          "en": "",
-          "ka": ""
+          "en": "Aluplast",
+          "ka": "ალუპლასტი"
         },
-        "image": "/speaker-3.jpg",
+        "image": "/1762259757497-Unknown-4.jpg",
         "topic": {
-          "en": "Future of Urban Design",
-          "ka": "ურბანული დიზაინის მომავალი"
+          "en": "Energeto Neo – Design Meets Technology",
+          "ka": "ენერგეტო ნეო: სადაც დიზაინი ერწყმის ტექნოლოგიას"
         },
         "bio": {
-          "en": "David Chen specializes in urban planning and smart city development. His innovative approaches have transformed cityscapes in Asia and earned him recognition as one of the top urban designers globally.",
-          "ka": "დევიდ ჩენი სპეციალიზირდება ურბანულ დაგეგმვასა და ჭკვიანი ქალაქების განვითარებაში. მისმა ინოვაციურმა მიდგომებმა გარდაქმნა ქალაქები აზიაში."
+          "en": "Export Director – Aluplast",
+          "ka": "ექსპორტის დირექტორი- \"ალუპლასტი\""
+        }
+      },
+      {
+        "name": {
+          "en": "George Abulashvili Director",
+          "ka": "გიორგი აბულაშვილი დირექტორი"
+        },
+        "company": {
+          "en": "Energy Efficiency Center Georgia",
+          "ka": "“საქართველოს ენერგოეფექტურობის ცენტრი”"
+        },
+        "image": "/1762259860464-Unknown-5.jpg",
+        "topic": {
+          "en": "The Role of Architecture in Energy Efficiency",
+          "ka": "არქიტექტურის როლი ენერგოეფექტიანობაში"
+        },
+        "bio": {
+          "en": "Director -  Energy Efficiency Center Georgia",
+          "ka": "დირექტორი -  “საქართველოს ენერგოეფექტურობის ცენტრი”"
         }
       }
     ]
