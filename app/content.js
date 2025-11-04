@@ -282,12 +282,12 @@ const content = {
         },
         "company": {
           "en": "Aluprof",
-          "ka": "როგორ შევქმნათ უკეთესი არქიტექტურა ალუპროფთან ერთად"
+          "ka": "ალუპროფი"
         },
         "image": "/1762259547603-Unknown-2.jpg",
         "topic": {
           "en": "Let’s build a better architecture with Aluprof",
-          "ka": "ინოვაცია სამშენებლო სისტემებში"
+          "ka": "როგორ შევქმნათ უკეთესი არქიტექტურა ალუპროფთან ერთად"
         },
         "bio": {
           "en": "Head of Sales Dept. – Aluprof Ukraine",
