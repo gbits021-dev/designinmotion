@@ -350,7 +350,7 @@ const content = {
       "time": "11:00 - 11:15",
       "title": {
         "en": "Opening Remarks and Welcome Speech",
-        "ka": "გახსნა და მისასალმებელი სიტყვა"
+        "ka": "ღონისძიების გახსნა და მისასალმებელი სიტყვა"
       },
       "speaker": {
         "en": "",
@@ -368,8 +368,8 @@ const content = {
         "ka": "დიო - 30 წლიანი ხარისხი და ინოვაცია "
       },
       "description": {
-        "en": "",
-        "ka": ""
+        "en": "The company's 30-year journey and new challenges",
+        "ka": "კოპმანიის გავლილი 30 წლიანი გზა და ახალი გამოწვევები"
       },
       "speaker": {
         "en": "",
