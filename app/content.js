@@ -226,7 +226,7 @@ const content = {
     {
       "name": "Aluplast",
       "logo": "/1761288399523-1-(6).jpg",
-      "link": "https://aluplast.net",
+      "link": "www.aluplast.net",
       "description": {
         "en": "Innovative PVC window and door systems",
         "ka": "ინოვაციური მეტალოპასტმასის კარ-ფანჯრის სისტემები"
