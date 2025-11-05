@@ -38,7 +38,7 @@ const content = {
         "id": "registration",
         "en": "Registration",
         "ka": "რეგისტრაცია",
-        "visible": false
+        "visible": true
       }
     ]
   },
