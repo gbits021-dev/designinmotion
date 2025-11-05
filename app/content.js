@@ -169,7 +169,7 @@ const content = {
     "date": "2025-11-20T10:00",
     "dateDisplay": {
       "en": "20 November 2025, 10:00 – 15:00",
-      "ka": "20 ნოემბერი 2025, 11:00 – 16:00"
+      "ka": "20 ნოემბერი 2025, 10:00 – 15:00"
     },
     "venue": {
       "en": "Tbilisi Marriott Hotel",
