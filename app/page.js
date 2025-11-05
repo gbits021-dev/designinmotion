@@ -200,7 +200,7 @@ export default function Home() {
           </div>
 
           {/* Desktop - Horizontal Menu */}
-          <nav className="hidden md:flex absolute bottom-0 w-full bg-[#21263A]/95 backdrop-blur-sm py-5 justify-center space-x-8 md:space-x-12 lg:space-x-16 text-lg md:text-xl font-semibold text-white border-t border-white/10 z-50" style={{ fontFamily: getSectionFont('menu') }}>
+          <nav className="hidden md:flex absolute bottom-0 w-full bg-[#21263A]/95 backdrop-blur-sm py-5 justify-center space-x-4 md:space-x-6 lg:space-x-10 xl:space-x-16 text-base md:text-lg lg:text-xl font-semibold text-white border-t border-white/10 z-50 overflow-x-auto" style={{ fontFamily: getSectionFont('menu') }}>
             {(content.menu.items || content.menu[lang] || []).filter(item => 
               typeof item === 'object' ? item.visible !== false : true
             ).map((item, i) => {
@@ -613,9 +613,9 @@ export default function Home() {
 
           {/* Desktop: All speakers centered */}
           <div className="hidden md:block">
-            <div className="flex justify-center gap-8 flex-wrap">
+            <div className="flex justify-center gap-8 overflow-x-auto pb-4">
               {content.speakers.list.map((speaker, index) => (
-                <div key={index} className="w-80">
+                <div key={index} className="w-80 flex-shrink-0">
                   <div className="bg-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
                     {/* Speaker Image - Circle */}
                     <div className="flex justify-center mb-6">
