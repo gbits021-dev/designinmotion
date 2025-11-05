@@ -421,7 +421,7 @@ const content = {
       "time": "13:15-13:40",
       "title": {
         "en": "The Role of Architecture in Energy Efficiency",
-        "ka": "არქიტექტურის როლი ენერგოეფექტიანობაში"
+        "ka": "არქიტექტურის როლი ენერგოეფექტურობაში"
       },
       "speaker": {
         "en": "George Abulashvili",
