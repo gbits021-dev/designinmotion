@@ -32,7 +32,7 @@ const content = {
         "id": "agenda",
         "en": "Agenda",
         "ka": "დღის პროგრამა",
-        "visible": false
+        "visible": true
       },
       {
         "id": "registration",
