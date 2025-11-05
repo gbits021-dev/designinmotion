@@ -163,7 +163,7 @@ const content = {
     "speakers": true,
     "venue": true,
     "agenda": true,
-    "registration": false
+    "registration": true
   },
   "event": {
     "date": "2025-11-20T11:00:00",
@@ -470,7 +470,7 @@ const content = {
     "/club-event-4.jpg"
   ],
   "registration": {
-    "formUrl": "https://docs.google.com/forms/d/your_form_id_here",
+    "formUrl": "https://docs.google.com/forms/d/e/1FAIpQLSdWMQszSZIYOi0Ro7hSByIlwb7RnZwgaj-c7OI28LJAsA8lbg/viewform",
     "isFree": true
   },
   "social": {
