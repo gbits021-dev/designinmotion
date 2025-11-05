@@ -336,21 +336,21 @@ const content = {
   },
   "agenda": [
     {
-      "time": "10:15 - 11:00",
+      "time": "10:00 - 11:00",
       "title": {
         "en": "Registration & Welcome Coffee",
         "ka": "რეგისტრაცია და მისასალმებელი ყავა"
       },
       "description": {
-        "en": "Networking and registration",
-        "ka": "ქსელის შექმნა და რეგისტრაცია"
+        "en": "Greeting & Networking",
+        "ka": "მისალმება და ნეთვორქინგი"
       }
     },
     {
       "time": "11:00 - 11:15",
       "title": {
-        "en": "Opening Keynote",
-        "ka": "გახსნის სიტყვა"
+        "en": "Opening Remarks and Welcome Speech",
+        "ka": "გახსნა და მისასალმებელი სიტყვა"
       },
       "speaker": {
         "en": "",
@@ -362,7 +362,7 @@ const content = {
       }
     },
     {
-      "time": "11:15-11:30",
+      "time": "11:15-11:35",
       "title": {
         "en": "Dio - 30 years of quality and innovation Dio",
         "ka": "დიო - 30 წლიანი ხარისხი და ინოვაცია "
@@ -372,94 +372,94 @@ const content = {
         "ka": ""
       },
       "speaker": {
-        "en": "Head of Marketing",
-        "ka": "მარკეტინგის "
+        "en": "",
+        "ka": ""
       }
     },
     {
-      "time": "11:30-12:00",
+      "time": "11:35-12:25",
       "title": {
-        "en": "Aluplast - Design meets Technology ",
-        "ka": "ალუპლასტი - დიზაინის და ტექნოლოგიის სინთეზი"
+        "en": "Let’s build a better architecture with Aluprof",
+        "ka": "შევქმნათ უკეთესი არქიტექტურა ალუპროფთან ერთად"
       },
       "description": {
-        "en": "Introduction of new energy efficient systems from Aluplast for sustainable architecture",
-        "ka": "ალუპლასტი ახალი ენერგოეფექტური სისტემების წარდგენა მდგრადი არქიტექტურისთვის"
+        "en": "Sabina Gustof \nBusiness Development Manager - Aluprof & \nAndriy Tsyganok \nHead of Sales Dept. – Aluprof Ukraine",
+        "ka": "საბინა გუსტოფი\nბიზნესის განვითარების მენეჯერი - \"ალუპროფი\" \nანდრეი ციგანოკი    \nგაყიდვების დეპარტამენტის ხელმძღვანელი – \"ალუპროფ უკრაინა\""
       },
       "speaker": {
-        "en": "Stanislaw Lisowski",
-        "ka": "სტანისლავ ლისოვსკი"
+        "en": "Sabina Gustof & Andriy Tsyganok (Joint Presentation)",
+        "ka": "საბინა გუსტოფი & ანდრეი ციგანოკი (ერთობლივი პრეზენტაცია)"
       }
     },
     {
-      "time": "12:00-12:30",
+      "time": "12:25-12:45",
       "title": {
-        "en": "Aluprof - ",
-        "ka": "დასკვნითი შენიშვნები და კითხვა-პასუხი"
+        "en": "Coffee Break & Networking",
+        "ka": "ყავის შესვენება და ნეთვორქინგი"
       },
       "description": {
-        "en": "Final thoughts and questions",
-        "ka": "საბოლოო მოსაზრებები და კითხვები"
+        "en": "",
+        "ka": ""
       }
     },
     {
-      "time": "12:30-13:00",
+      "time": "12:45-13:15",
       "title": {
-        "en": "New Session",
-        "ka": "ახალი სესია"
+        "en": "Energeto Neo – Design Meets Technology ",
+        "ka": "ენერგეტო ნეო: სადაც დიზაინი ერწყმის ტექნოლოგიას"
+      },
+      "speaker": {
+        "en": "Stanislaw Lisowski  ",
+        "ka": "სტანისლავ ლისოვსკი "
+      },
+      "description": {
+        "en": "Stanislaw Lisowski\nExport Director – Aluplast",
+        "ka": "სტანისლავ ლისოვსკი\nექსპორტის დირექტორი- \"ალუპლასტი\""
+      }
+    },
+    {
+      "time": "13:15-13:40",
+      "title": {
+        "en": "The Role of Architecture in Energy Efficiency",
+        "ka": "არქიტექტურის როლი ენერგოეფექტიანობაში"
+      },
+      "speaker": {
+        "en": "George Abulashvili",
+        "ka": "გიორგი აბულაშვილი"
+      },
+      "description": {
+        "en": "George Abulashvili\nDirector -  Energy Efficiency Center Georgia",
+        "ka": "გიორგი აბულაშვილი\nდირექტორი -  “საქართველოს ენერგოეფექტურობის ცენტრი”"
+      }
+    },
+    {
+      "time": "13:40-14:00",
+      "title": {
+        "en": "Closing  Ceremony",
+        "ka": "დასკვნითი ნაწილი"
       },
       "speaker": {
         "en": "",
         "ka": ""
       },
       "description": {
-        "en": "Description",
-        "ka": "აღწერა"
+        "en": "",
+        "ka": ""
       }
     },
     {
-      "time": "13:00-13:30",
+      "time": "14:00-15:00",
       "title": {
-        "en": "New Session",
-        "ka": "ახალი სესია"
+        "en": "Business Lunch & Networking (End of Event)",
+        "ka": "ბიზნეს ლანჩი და ნეთვორქინგი"
       },
       "speaker": {
         "en": "",
         "ka": ""
       },
       "description": {
-        "en": "Description",
-        "ka": "აღწერა"
-      }
-    },
-    {
-      "time": "13:30-13:45",
-      "title": {
-        "en": "New Session",
-        "ka": "ახალი სესია"
-      },
-      "speaker": {
-        "en": "",
-        "ka": ""
-      },
-      "description": {
-        "en": "Description",
-        "ka": "აღწერა"
-      }
-    },
-    {
-      "time": "13:45 - 14:30",
-      "title": {
-        "en": "New Session",
-        "ka": "ახალი სესია"
-      },
-      "speaker": {
-        "en": "",
-        "ka": ""
-      },
-      "description": {
-        "en": "Description",
-        "ka": "აღწერა"
+        "en": "End of Event",
+        "ka": "ღონისძიების დასასრული"
       }
     }
   ],
