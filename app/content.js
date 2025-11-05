@@ -162,7 +162,7 @@ const content = {
     "partners": true,
     "speakers": true,
     "venue": true,
-    "agenda": false,
+    "agenda": true,
     "registration": false
   },
   "event": {
