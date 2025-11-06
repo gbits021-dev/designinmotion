@@ -137,14 +137,14 @@ export default function Home() {
 
           {/* Title Bar - At top of hero bottom section */}
           <div className="absolute bottom-16 sm:bottom-[4.5rem] w-full text-center px-4 z-10">
-            <div className="inline-flex items-center space-x-3 bg-[#21263A]/95 px-6 py-3 rounded-md shadow-lg backdrop-blur-sm">
-              <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-wide text-white" style={{ fontFamily: getSectionFont('hero') }}>
+            <div className="inline-flex items-center space-x-2 sm:space-x-3 bg-[#21263A]/95 px-3 sm:px-6 py-2 sm:py-3 rounded-md shadow-lg backdrop-blur-sm max-w-full">
+              <h1 className="text-sm sm:text-lg md:text-2xl lg:text-3xl font-bold tracking-wide text-white whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontFamily: getSectionFont('hero') }}>
                 {content.hero.title[lang]}
               </h1>
               <img
                 src={lang === "ka" ? content.hero.logoKa : content.hero.logoEn}
                 alt="DIO Logo"
-                className="h-10 sm:h-12 md:h-14 object-contain"
+                className="h-8 sm:h-10 md:h-12 lg:h-14 object-contain flex-shrink-0"
               />
             </div>
           </div>
@@ -200,7 +200,7 @@ export default function Home() {
           </div>
 
           {/* Desktop - Horizontal Menu */}
-          <nav className="hidden md:flex absolute bottom-0 w-full bg-[#21263A]/95 backdrop-blur-sm py-5 justify-center space-x-4 md:space-x-6 lg:space-x-10 xl:space-x-16 text-base md:text-lg lg:text-xl font-semibold text-white border-t border-white/10 z-50 overflow-x-auto" style={{ fontFamily: getSectionFont('menu') }}>
+          <nav className="hidden md:flex absolute bottom-0 w-full bg-[#21263A]/95 backdrop-blur-sm py-4 justify-center gap-3 md:gap-4 lg:gap-6 xl:gap-10 text-sm md:text-base lg:text-lg xl:text-xl font-semibold text-white border-t border-white/10 z-50 px-4 flex-wrap" style={{ fontFamily: getSectionFont('menu') }}>
             {(content.menu.items || content.menu[lang] || []).filter(item => 
               typeof item === 'object' ? item.visible !== false : true
             ).map((item, i) => {
