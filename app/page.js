@@ -271,7 +271,7 @@ export default function Home() {
               </div>
             </div>
             <p className="text-blue-100 text-sm sm:text-base font-medium">
-              📅 {t[lang].date} | 🏛️ {t[lang].place}
+              📅 {content.event.dateDisplay[lang]} | 🏛️ {content.event.venue[lang]}
             </p>
           </div>
         </section>
