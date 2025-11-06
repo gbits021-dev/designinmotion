@@ -277,6 +277,25 @@ export default function Home() {
         </section>
       </div>
 
+      {/* REGISTRATION BUTTON */}
+      {content.sectionVisibility?.registration !== false && (
+      <section className="bg-white py-12 text-center" style={{ fontFamily: getSectionFont('registration') }}>
+        <div className="max-w-3xl mx-auto px-4">
+          <a
+            href={content.registration.formUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center space-x-3 bg-[#21263A] text-white px-10 py-4 rounded-xl hover:bg-[#2d3449] transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl font-semibold text-lg"
+          >
+            <span>{t[lang].register}</span>
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+        </div>
+      </section>
+      )}
+
       {/* ABOUT - Compact Height */}
       {content.sectionVisibility?.about !== false && (
       <section
