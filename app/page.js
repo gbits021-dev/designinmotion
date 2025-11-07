@@ -135,8 +135,11 @@ export default function Home() {
             </button>
           </div>
 
-          {/* Title Bar - Centered */}
-          <div className="flex items-center justify-center h-full px-4">
+          {/* Spacer to push title to bottom */}
+          <div className="flex-1"></div>
+
+          {/* Title Bar - Bottom of hero */}
+          <div className="flex items-end justify-center pb-8 px-4">
             <div className="inline-flex items-center gap-2 sm:gap-3 bg-[#21263A]/95 px-3 sm:px-4 md:px-6 py-2 sm:py-3 rounded-md shadow-lg backdrop-blur-sm max-w-[95%] sm:max-w-[90%]">
               <h1 className="text-sm sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl font-bold tracking-wide text-white leading-tight" style={{ fontFamily: getSectionFont('hero') }}>
                 {content.hero.title[lang]}
