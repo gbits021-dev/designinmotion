@@ -83,11 +83,11 @@ export default function Home() {
 
   return (
     <main id="top" className="text-gray-800 bg-white">
-      {/* HERO + COUNTDOWN CONTAINER - 100vh total */}
+      {/* HERO + MENU + COUNTDOWN CONTAINER - 100vh total */}
       <div className="h-screen flex flex-col">
-        {/* HERO SECTION - 80% */}
-        <section 
-          className="relative h-[80%] flex flex-col justify-between text-white overflow-hidden hero-banner"
+        {/* HERO SECTION */}
+        <section
+          className="relative flex-1 flex flex-col justify-between text-white overflow-hidden hero-banner"
           style={{
             '--desktop-bg': `url(${content.hero.bannerImageDesktop})`,
             '--mobile-bg': `url(${content.hero.bannerImageMobile})`
@@ -135,25 +135,27 @@ export default function Home() {
             </button>
           </div>
 
-          {/* Title Bar - At top of hero bottom section */}
-          <div className="absolute bottom-20 md:bottom-16 lg:bottom-[4.5rem] w-full text-center px-4 z-10">
+          {/* Title Bar - Centered */}
+          <div className="flex items-center justify-center h-full px-4">
             <div className="inline-flex items-center gap-2 sm:gap-3 bg-[#21263A]/95 px-3 sm:px-4 md:px-6 py-2 sm:py-3 rounded-md shadow-lg backdrop-blur-sm max-w-[95%] sm:max-w-[90%]">
-              <h1 className="text-[10px] sm:text-sm md:text-lg lg:text-xl xl:text-2xl font-bold tracking-wide text-white leading-tight" style={{ fontFamily: getSectionFont('hero') }}>
+              <h1 className="text-sm sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl font-bold tracking-wide text-white leading-tight" style={{ fontFamily: getSectionFont('hero') }}>
                 {content.hero.title[lang]}
               </h1>
               <img
                 src={lang === "ka" ? content.hero.logoKa : content.hero.logoEn}
                 alt="DIO Logo"
-                className="h-6 sm:h-8 md:h-10 lg:h-12 xl:h-14 object-contain flex-shrink-0"
+                className="h-8 sm:h-10 md:h-12 lg:h-14 xl:h-16 object-contain flex-shrink-0"
               />
             </div>
           </div>
+        </section>
 
-          {/* NAVIGATION MENU - Below title at bottom of Hero */}
-          {/* Mobile - Hamburger Button - Centered */}
+        {/* NAVIGATION MENU - Separate section below hero */}
+        <section className="relative bg-[#21263A]/95 backdrop-blur-sm border-t border-white/10">
+          {/* Mobile - Hamburger Button */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden absolute bottom-0 left-1/2 transform -translate-x-1/2 z-50 bg-[#21263A]/95 backdrop-blur-sm text-white p-3 rounded-t-lg border-t border-l border-r border-white/10"
+            className="md:hidden w-full flex items-center justify-center text-white p-4"
             aria-label="Toggle menu"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -167,13 +169,13 @@ export default function Home() {
 
           {/* Mobile - Dropdown Menu */}
           <div
-            className={`md:hidden absolute bottom-0 left-0 right-0 bg-[#21263A]/95 backdrop-blur-sm transition-all duration-300 ease-in-out overflow-hidden z-40 border-t border-white/10 ${
+            className={`md:hidden bg-[#21263A]/95 backdrop-blur-sm transition-all duration-300 ease-in-out overflow-hidden ${
               menuOpen ? 'max-h-96' : 'max-h-0'
             }`}
             style={{ fontFamily: getSectionFont('menu') }}
           >
-            <nav className="flex flex-col py-2">
-              {(content.menu.items || content.menu[lang] || []).filter(item => 
+            <nav className="flex flex-col">
+              {(content.menu.items || content.menu[lang] || []).filter(item =>
                 typeof item === 'object' ? item.visible !== false : true
               ).map((item, i) => {
                 const menuText = typeof item === 'object' ? item[lang] : item;
@@ -200,8 +202,8 @@ export default function Home() {
           </div>
 
           {/* Desktop - Horizontal Menu */}
-          <nav className="hidden md:flex absolute bottom-0 w-full bg-[#21263A]/95 backdrop-blur-sm py-4 justify-center gap-3 md:gap-4 lg:gap-6 xl:gap-10 text-sm md:text-base lg:text-lg xl:text-xl font-semibold text-white border-t border-white/10 z-50 px-4 flex-wrap" style={{ fontFamily: getSectionFont('menu') }}>
-            {(content.menu.items || content.menu[lang] || []).filter(item => 
+          <nav className="hidden md:flex w-full py-4 justify-center gap-3 md:gap-4 lg:gap-6 xl:gap-10 text-sm md:text-base lg:text-lg xl:text-xl font-semibold text-white px-4 flex-wrap" style={{ fontFamily: getSectionFont('menu') }}>
+            {(content.menu.items || content.menu[lang] || []).filter(item =>
               typeof item === 'object' ? item.visible !== false : true
             ).map((item, i) => {
               const menuText = typeof item === 'object' ? item[lang] : item;
@@ -217,7 +219,7 @@ export default function Home() {
                 <a
                   key={i}
                   href={`#${menuId}`}
-                  className="hover:text-blue-300 transition"
+                  className="hover:text-blue-300 transition whitespace-nowrap"
                 >
                   {menuText}
                 </a>
