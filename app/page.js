@@ -136,15 +136,15 @@ export default function Home() {
           </div>
 
           {/* Title Bar - At top of hero bottom section */}
-          <div className="absolute bottom-16 sm:bottom-[4.5rem] w-full text-center px-4 z-10">
-            <div className="inline-flex items-center gap-2 sm:gap-3 bg-[#21263A]/95 px-3 sm:px-6 py-2 sm:py-3 rounded-md shadow-lg backdrop-blur-sm max-w-[95%] sm:max-w-[90%]">
-              <h1 className="text-xs sm:text-base md:text-xl lg:text-2xl xl:text-3xl font-bold tracking-wide text-white leading-tight" style={{ fontFamily: getSectionFont('hero') }}>
+          <div className="absolute bottom-20 md:bottom-16 lg:bottom-[4.5rem] w-full text-center px-4 z-10">
+            <div className="inline-flex items-center gap-2 sm:gap-3 bg-[#21263A]/95 px-3 sm:px-4 md:px-6 py-2 sm:py-3 rounded-md shadow-lg backdrop-blur-sm max-w-[95%] sm:max-w-[90%]">
+              <h1 className="text-[10px] sm:text-sm md:text-lg lg:text-xl xl:text-2xl font-bold tracking-wide text-white leading-tight" style={{ fontFamily: getSectionFont('hero') }}>
                 {content.hero.title[lang]}
               </h1>
               <img
                 src={lang === "ka" ? content.hero.logoKa : content.hero.logoEn}
                 alt="DIO Logo"
-                className="h-8 sm:h-10 md:h-12 lg:h-14 object-contain flex-shrink-0"
+                className="h-6 sm:h-8 md:h-10 lg:h-12 xl:h-14 object-contain flex-shrink-0"
               />
             </div>
           </div>
