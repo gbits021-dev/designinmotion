@@ -135,12 +135,12 @@ export default function Home() {
             </button>
           </div>
 
-          {/* Spacer to push title to bottom */}
-          <div className="flex-1"></div>
+        </section>
 
-          {/* Title Bar - Bottom of hero */}
-          <div className="flex items-end justify-center pb-8 px-4">
-            <div className="inline-flex items-center gap-2 sm:gap-3 bg-[#21263A]/95 px-3 sm:px-4 md:px-6 py-2 sm:py-3 rounded-md shadow-lg backdrop-blur-sm max-w-[95%] sm:max-w-[90%]">
+        {/* TITLE SECTION - Between hero and menu */}
+        <section className="bg-[#21263A]/95 backdrop-blur-sm py-4">
+          <div className="flex items-center justify-center px-4">
+            <div className="inline-flex items-center gap-2 sm:gap-3 px-3 sm:px-4 md:px-6 py-2 sm:py-3 max-w-[95%] sm:max-w-[90%]">
               <h1 className="text-sm sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl font-bold tracking-wide text-white leading-tight" style={{ fontFamily: getSectionFont('hero') }}>
                 {content.hero.title[lang]}
               </h1>
@@ -153,7 +153,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* NAVIGATION MENU - Separate section below hero */}
+        {/* NAVIGATION MENU - Below title */}
         <section className="relative bg-[#21263A]/95 backdrop-blur-sm border-t border-white/10">
           {/* Mobile - Hamburger Button */}
           <button
