@@ -137,8 +137,8 @@ export default function Home() {
 
           {/* Title Bar - At top of hero bottom section */}
           <div className="absolute bottom-16 sm:bottom-[4.5rem] w-full text-center px-4 z-10">
-            <div className="inline-flex items-center space-x-2 sm:space-x-3 bg-[#21263A]/95 px-3 sm:px-6 py-2 sm:py-3 rounded-md shadow-lg backdrop-blur-sm max-w-full">
-              <h1 className="text-sm sm:text-lg md:text-2xl lg:text-3xl font-bold tracking-wide text-white whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontFamily: getSectionFont('hero') }}>
+            <div className="inline-flex items-center gap-2 sm:gap-3 bg-[#21263A]/95 px-3 sm:px-6 py-2 sm:py-3 rounded-md shadow-lg backdrop-blur-sm max-w-[95%] sm:max-w-[90%]">
+              <h1 className="text-xs sm:text-base md:text-xl lg:text-2xl xl:text-3xl font-bold tracking-wide text-white leading-tight" style={{ fontFamily: getSectionFont('hero') }}>
                 {content.hero.title[lang]}
               </h1>
               <img
@@ -631,8 +631,8 @@ export default function Home() {
           </div>
 
           {/* Desktop: All speakers centered */}
-          <div className="hidden md:block">
-            <div className="flex justify-center gap-8 overflow-x-auto pb-4">
+          <div className="hidden md:block overflow-hidden">
+            <div className="flex justify-start gap-8 overflow-x-auto pb-4 px-4">
               {content.speakers.list.map((speaker, index) => (
                 <div key={index} className="w-80 flex-shrink-0">
                   <div className="bg-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
