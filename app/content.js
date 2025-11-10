@@ -325,7 +325,7 @@ const content = {
         "image": "/1762259860464-Unknown-5.jpg",
         "topic": {
           "en": "The Role of Architecture in Energy Efficiency",
-          "ka": "არქიტექტურის როლი ენერგოეფექტიანობაში"
+          "ka": "არქიტექტურის როლი ენერგოეფექტურობაში"
         },
         "bio": {
           "en": "Director -  Energy Efficiency Center Georgia",
@@ -492,7 +492,7 @@ const content = {
       },
       {
         "en": "A half-day professional conference connecting architects, engineers, and developers to explore how smart technologies and sustainable design are shaping modern architecture.\nLearn from international experts from Aluprof and Aluplast, along with other special guests, about the future of façades, shading systems, and energy efficiency.\nGain valuable insights, practical knowledge, and new professional connections.\n\n",
-        "ka": "ნახევარდღიანი პროფესიული კონფერენცია, რომელიც აერთიანებს არქიტექტორებს, ინჟინრებსა და დეველოპერებს, რათა ერთად განიხილონ, როგორ ცვლის ჭკვიანი ტექნოლოგიები და მდგრადი დიზაინი თანამედროვე არქიტექტურას.\nმოისმინეთ Aluprof-ისა და Aluplast-ის საერთაშორისო ექსპერტებისგან, ასევე მოწვეული სპეციალური სტუმრებისგან, რომლებიც ისაუბრებენ ფასადების, საჩრდილობის სისტემებისა და ენერგოეფექტურობის მომავალზე.\nმიიღეთ ღირებული ცოდნა, პრაქტიკული გამოცდილება და ახალი პროფესიული კავშირები.\n\n",
+        "ka": "ნახევარდღიანი პროფესიული კონფერენცია, რომელიც აერთიანებს არქიტექტორებს, ინჟინრებსა და დეველოპერებს, რომ ერთად განიხილონ, როგორ ცვლის ჭკვიანი ტექნოლოგიები და მდგრადი დიზაინი თანამედროვე არქიტექტურას.\nმოისმინეთ Aluprof-ისა და Aluplast-ის საერთაშორისო ექსპერტებისგან, ასევე მოწვეული სპეციალური სტუმრებისგან, რომლებიც ისაუბრებენ ფასადების, საჩრდილობის სისტემებისა და ენერგოეფექტურობის მომავალზე.\nმიიღეთ ღირებული ცოდნა, პრაქტიკული გამოცდილება და ახალი პროფესიული კავშირები.\n\n",
         "highlight": false
       },
       {
