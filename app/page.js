@@ -706,6 +706,38 @@ export default function Home() {
       </section>
       )}
 
+      {/* WELCOME VIDEO */}
+      {content.sectionVisibility?.welcomeVideo !== false && content.welcomeVideo?.youtubeUrl && (
+      <section id="welcome-video" className="bg-gray-50 py-16 sm:py-20" style={{ fontFamily: getSectionFont('speakers') }}>
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#21263A] mb-4">
+              {content.welcomeVideo.title[lang]}
+            </h3>
+            <div className="w-24 h-1 bg-[#21263A] mx-auto rounded-full mb-6"></div>
+            {content.welcomeVideo.description[lang] && (
+              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+                {content.welcomeVideo.description[lang]}
+              </p>
+            )}
+          </div>
+
+          {/* YouTube Video Embed */}
+          <div className="relative w-full max-w-4xl mx-auto">
+            <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-2xl shadow-2xl">
+              <iframe
+                className="absolute top-0 left-0 w-full h-full border-0"
+                src={content.welcomeVideo.youtubeUrl}
+                title={content.welcomeVideo.title[lang]}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+      )}
+
       {/* VENUE */}
       {content.sectionVisibility?.venue !== false && (
       <section id="venue" className="bg-white py-16 sm:py-20" style={{ fontFamily: getSectionFont('venue') }}>

@@ -161,6 +161,7 @@ const content = {
     "architectsClub": true,
     "partners": true,
     "speakers": true,
+    "welcomeVideo": false,
     "venue": true,
     "agenda": true,
     "registration": true
@@ -250,6 +251,17 @@ const content = {
       }
     }
   ],
+  "welcomeVideo": {
+    "title": {
+      "en": "Welcome from Our Speakers",
+      "ka": "მისალმება ჩვენი სპიკერებისგან"
+    },
+    "description": {
+      "en": "Watch our speakers welcome you to the conference",
+      "ka": "იხილეთ ჩვენი სპიკერების მისალმება კონფერენციაზე"
+    },
+    "youtubeUrl": ""
+  },
   "speakers": {
     "title": {
       "en": " Invited Speakers",
