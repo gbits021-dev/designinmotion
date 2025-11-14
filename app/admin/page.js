@@ -198,7 +198,7 @@ export default function AdminPanel() {
       {/* Tabs */}
       <div className="max-w-7xl mx-auto px-4 mt-6">
         <div className="flex space-x-2 border-b overflow-x-auto">
-          {["event", "hero", "menu", "visibility", "fonts", "about", "architects-club", "gallery", "partners", "speakers", "agenda", "venue", "registration"].map((tab) => (
+          {["event", "hero", "menu", "visibility", "fonts", "about", "architects-club", "gallery", "partners", "speakers", "welcomeVideo", "agenda", "venue", "registration"].map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
@@ -208,7 +208,7 @@ export default function AdminPanel() {
                   : "text-gray-600 hover:text-gray-800"
               }`}
             >
-              {tab === "architects-club" ? "Architects Club" : tab.charAt(0).toUpperCase() + tab.slice(1)}
+              {tab === "architects-club" ? "Architects Club" : tab === "welcomeVideo" ? "Welcome Video" : tab.charAt(0).toUpperCase() + tab.slice(1)}
             </button>
           ))}
         </div>
@@ -1962,6 +1962,111 @@ export default function AdminPanel() {
                   <p>No sessions yet. Click "Add Session" to create your first session.</p>
                 </div>
               )}
+            </div>
+          )}
+
+          {/* Welcome Video Tab */}
+          {activeTab === "welcomeVideo" && (
+            <div className="space-y-6">
+              <h2 className="text-xl font-bold text-gray-800 mb-4">Welcome Video Section</h2>
+
+              <div className="border border-gray-200 rounded-lg p-4 bg-blue-50 mb-6">
+                <p className="text-sm text-gray-700">
+                  <strong>About this section:</strong> Add a YouTube welcome video from your speakers.
+                  The video will appear between the Speakers and Venue sections.
+                </p>
+              </div>
+
+              {/* Section Title */}
+              <div className="border border-gray-200 rounded-lg p-4">
+                <h3 className="font-semibold text-gray-800 mb-4">Section Title</h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">English</label>
+                    <input
+                      type="text"
+                      value={editedContent.welcomeVideo?.title?.en || ""}
+                      onChange={(e) => updateNestedValue("welcomeVideo.title.en", e.target.value)}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                      placeholder="Welcome from Our Speakers"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Georgian</label>
+                    <input
+                      type="text"
+                      value={editedContent.welcomeVideo?.title?.ka || ""}
+                      onChange={(e) => updateNestedValue("welcomeVideo.title.ka", e.target.value)}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                      placeholder="მისალმება ჩვენი სპიკერებისგან"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Section Description */}
+              <div className="border border-gray-200 rounded-lg p-4">
+                <h3 className="font-semibold text-gray-800 mb-4">Section Description (Optional)</h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">English</label>
+                    <textarea
+                      value={editedContent.welcomeVideo?.description?.en || ""}
+                      onChange={(e) => updateNestedValue("welcomeVideo.description.en", e.target.value)}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                      placeholder="Watch our speakers welcome you to the conference"
+                      rows={3}
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Georgian</label>
+                    <textarea
+                      value={editedContent.welcomeVideo?.description?.ka || ""}
+                      onChange={(e) => updateNestedValue("welcomeVideo.description.ka", e.target.value)}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                      placeholder="იხილეთ ჩვენი სპიკერების მისალმება კონფერენციაზე"
+                      rows={3}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* YouTube URL */}
+              <div className="border border-gray-200 rounded-lg p-4 bg-yellow-50">
+                <h3 className="font-semibold text-gray-800 mb-4">YouTube Video URL</h3>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    YouTube Embed URL
+                  </label>
+                  <input
+                    type="text"
+                    value={editedContent.welcomeVideo?.youtubeUrl || ""}
+                    onChange={(e) => updateNestedValue("welcomeVideo.youtubeUrl", e.target.value)}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                    placeholder="https://www.youtube.com/embed/VIDEO_ID"
+                  />
+                  <p className="text-xs text-gray-600 mt-2">
+                    <strong>How to get the embed URL:</strong><br/>
+                    1. Go to your YouTube video<br/>
+                    2. Click "Share" → "Embed"<br/>
+                    3. Copy the URL from the iframe src (e.g., https://www.youtube.com/embed/dQw4w9WgXcQ)
+                  </p>
+                  {editedContent.welcomeVideo?.youtubeUrl && (
+                    <div className="mt-4">
+                      <p className="text-sm font-medium text-gray-700 mb-2">Preview:</p>
+                      <div className="relative w-full pb-[56.25%] h-0 overflow-hidden rounded-lg">
+                        <iframe
+                          className="absolute top-0 left-0 w-full h-full border-0"
+                          src={editedContent.welcomeVideo.youtubeUrl}
+                          title="Video Preview"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        ></iframe>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
             </div>
           )}
 
