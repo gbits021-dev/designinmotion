@@ -563,6 +563,7 @@ export default function AdminPanel() {
                   { key: 'architectsClub', label: 'Architects Club' },
                   { key: 'partners', label: 'Partners' },
                   { key: 'speakers', label: 'Speakers' },
+                  { key: 'welcomeVideo', label: 'Welcome Video' },
                   { key: 'venue', label: 'Venue & Location' },
                   { key: 'agenda', label: 'Event Agenda' },
                   { key: 'registration', label: 'Registration' }
