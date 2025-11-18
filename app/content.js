@@ -257,10 +257,10 @@ const content = {
       "ka": "მისალმება ჩვენი სპიკერებისგან"
     },
     "description": {
-      "en": "Watch our speakers welcome you to the conference",
-      "ka": "იხილეთ ჩვენი სპიკერების მისალმება კონფერენციაზე"
+      "en": "",
+      "ka": ""
     },
-    "youtubeUrl": ""
+    "youtubeUrl": "https://youtu.be/g8fqL4z2ffE?si=wC66q2do7pTezOPW"
   },
   "speakers": {
     "title": {
