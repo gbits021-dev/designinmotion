@@ -260,7 +260,7 @@ const content = {
       "en": "",
       "ka": ""
     },
-    "youtubeUrl": "https://youtu.be/g8fqL4z2ffE?si=wC66q2do7pTezOPW"
+    "youtubeUrl": "https://www.youtube.com/embed/g8fqL4z2ffE?si=cg3wFTOd3r2FFKED"
   },
   "speakers": {
     "title": {
