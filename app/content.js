@@ -254,7 +254,7 @@ const content = {
   "welcomeVideo": {
     "title": {
       "en": "Welcome from Our Speakers",
-      "ka": "მისალმება ჩვენი სპიკერებისგან"
+      "ka": "მოწვევა ჩვენი სპიკერებისგან"
     },
     "description": {
       "en": "",
